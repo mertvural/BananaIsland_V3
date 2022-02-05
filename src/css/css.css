@@ -65,7 +65,7 @@ transition: all .4s ease;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: astounder-squared-bb, fantasy;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 30px;
   height: 100%;
   justify-content: center;
