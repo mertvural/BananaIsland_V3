@@ -37,14 +37,14 @@ transition: all .4s ease;
 }
 
   .video-arrow.left {
-    background-image: url(../images/leftArrow.svg);
+    background-image: url(../images/leftArrow.png);
     left: 50%;
     margin-left: -140px;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
 .video-arrow.right {
-  background-image: url(../images/rightArrow.svg);
+  background-image: url(../images/rightArrow.png);
   left: 50%;
   margin-left: 140px;
   -webkit-transform: translateX(-50%);
