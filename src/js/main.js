@@ -366,12 +366,14 @@ var vue = new Vue({
             }
         ],
         activeScene: 1,
-        duration: 200,
+        duration: 500,
         junction: false,
         junctionBack: false,
         loopScreen: false,
         buildScreen: false,
-        end: false
+        end: false,
+        isWalk: false,
+        walkDelay: false
     },
     methods: {
 
@@ -381,15 +383,16 @@ var vue = new Vue({
             var $this = this,
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
-                isLoop = getVideo.loop;
-
+                isLoop = getVideo.loop,
+                videoActive = $(".video-active");
+            getVideo.playbackRate = 1
             $this.loopScreen = isLoop;
 
-            if ($this.junction || $this.buildScreen || $this.end) return
+            if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
 
             if ($this.loopScreen !== true) {
+                $this.isWalk = true
                 getVideo.play()
-                getVideo.playbackRate = 2.1
             } else {
                 if ($this.activeScene === 18 || $this.activeScene === 31) {
                     $this.activeScene = 32;
@@ -402,6 +405,7 @@ var vue = new Vue({
 
             setTimeout(() => {
                 $this.loopScreen === false ? getVideo.pause() : ""
+                $this.isWalk = false
             }, $this.duration);
 
             // video bittiğinde calisir
@@ -424,8 +428,8 @@ var vue = new Vue({
                         $this.junctionBack = true
                         break;
                 }
-
-                $this.duration = 300;
+                $this.isWalk = false
+                $this.duration = 200;
 
             };
 
@@ -438,13 +442,34 @@ var vue = new Vue({
 
             //     active = $this.getActiveVideos(),
 
-            //     getVideo = $(active).find("video")[0];
+            //     getVideo = $(active).find("video")[0],
+
+            //     isLoop = getVideo.loop;
+
+            // $this.loopScreen = isLoop;
 
             // $this.junction = false
 
-            // getVideo.currentTime = getVideo.currentTime - 0.5
+            // getVideo.currentTime -= 0.05
 
-            // getVideo.currentTime === 0 && $this.activeScene !== 1 ? $this.activeScene-- : ""
+            
+
+            // if(getVideo.currentTime === 0 && $this.activeScene === 2) {
+            //     $this.activeScene = 1;
+            //     $this.resetVideos()
+            // }
+         
+            // if($this.loopScreen && $this.activeScene !==1) {
+
+            //     $this.activeScene--
+            // }
+
+            // if(getVideo.currentTime === 0 && $this.activeScene !==1) {
+
+            //     $this.activeScene--
+            // }
+
+
 
         },
 
@@ -538,7 +563,7 @@ var vue = new Vue({
         $this.$nextTick(function () {
 
             document.addEventListener("wheel", function (event) {
-                event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
+                if (!$this.walkDelay) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
             });
 
             $(document).on('touchmove', function () {
@@ -551,5 +576,14 @@ var vue = new Vue({
 
         })
 
+    },
+    updated() {
+        var $this = this;
+        if ($(".video-active").find(".build-capsul").length > 0) {
+            $this.walkDelay = true
+            setTimeout(() => {
+                $this.walkDelay = false
+            }, 2000);
+        }
     }
 })
