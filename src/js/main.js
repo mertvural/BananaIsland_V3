@@ -558,8 +558,8 @@ var vue = new Vue({
                 if (!$this.walkDelay) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
             });
 
-            $(document).on('touchmove', function () {
-                $this.goMonkey()
+            document.addEventListener("touchmove", function (event) {
+                if (!$this.walkDelay)  $this.goMonkey()
             });
 
             $(window).on('load', function () {
