@@ -366,7 +366,7 @@ var vue = new Vue({
             }
         ],
         activeScene: 1,
-        duration: 500,
+        duration: 200,
         junction: false,
         junctionBack: false,
         loopScreen: false,
