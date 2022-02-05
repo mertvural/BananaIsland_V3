@@ -487,9 +487,9 @@ var vue = new Vue({
 
         getScrollWidth(direction) {
             if(direction === "left") {
-                return parseInt(parseInt($(".build-capsul.active-left .buildings__build.left area").attr("coords").split(",")[0]))
+                return parseInt(parseInt($(".build-capsul.active-left .buildings__build.left area").attr("coords")?.split(",")[0]))
             }else {
-                return parseInt(parseInt($(".build-capsul.active-right .buildings__build.right area").attr("coords").split(",")[0]))   
+                return parseInt(parseInt($(".build-capsul.active-right .buildings__build.right area").attr("coords")?.split(",")[0]))   
             }
         },
 
