@@ -365,8 +365,8 @@ var vue = new Vue({
                 build: false
             }
         ],
-        activeScene: 1,
-        duration: 200,
+        activeScene: 17,
+        duration: 250,
         junction: false,
         junctionBack: false,
         loopScreen: false,
@@ -571,11 +571,11 @@ var vue = new Vue({
     },
     updated() {
         var $this = this;
-        if ($(".video-active").find(".build-capsul").length > 0) {
+        if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
             $this.walkDelay = true
             setTimeout(() => {
                 $this.walkDelay = false
-            }, 2000);
+            }, 2500);
         }
     }
 })
