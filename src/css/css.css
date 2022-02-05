@@ -1,0 +1,105 @@
+[v-cloak] {
+  display: none;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.video {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.video-capsul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.video-active {z-index:100 !important} 
+.video-arrow {    background-color: transparent;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  cursor: pointer;
+  height: 115px;
+  padding: 0;
+  position: fixed;
+  width: 180px;
+  top: 20%;
+transition: all .4s ease;
+}
+
+  .video-arrow.left {
+    background-image: url(../images/leftArrow.svg);
+    left: 50%;
+    margin-left: -140px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.video-arrow.right {
+  background-image: url(../images/rightArrow.svg);
+  left: 50%;
+  margin-left: 140px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.video-loader {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  background-color: #fff;
+  color: #1e2868;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: astounder-squared-bb, fantasy;
+  font-size: 30px;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.buildings__build {position: fixed;z-index: 103;text-align: center;overflow-x: auto;}
+.buildings__arrows, .buildings__build, .buildings__turn, .build-capsul.active-right .mouse-whell, .build-capsul.active-left .mouse-whell {display: none;}
+.buildings__build {width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;}
+.video-active .buildings__arrows {display: block;}
+.build-capsul.active-right .buildings__build.right, .build-capsul.active-right .buildings__turn,
+.build-capsul.active-left .buildings__build.left, .build-capsul.active-left .buildings__turn {display: block;}
+.buildings__turn, .restart-turn {position: fixed;bottom:20px;left:0;right:0;margin: auto;width: 150px;z-index: 105;cursor: pointer;}
+.mouse-whell {background: url(../images/mouse-whell.png) no-repeat;width: 200px;height:200px;position: fixed;bottom: 50px;left:0;right: 0;margin:auto;
+  z-index: 102;background-size: 100%;animation: mouseWhell 2s ease alternate infinite;opacity: 1;}
+  .buildings__build--pathimg {position: absolute;}
+  @keyframes mouseWhell {
+    0% {bottom:20px}
+    100% {bottom:50px;opacity: .8;}
+  }
+  .insiderItem:not(.active) {display: none;}
+  .insiderItem {position: fixed;top:0;left:0;right:0;bottom: 0;z-index: 104;text-align: center;overflow-x: auto;}
+  .insiderItem img {min-width: 100%;height: 100%;object-fit: cover;}
+
+  
+
+  @media only screen and (max-width: 768px) {
+  .video-arrow {width:80px;height: 70px;}
+  .video-arrow.left {margin-left: -70px;}
+  .video-arrow.right {margin-left: 70px;}
+  .buildings__turn, .restart-turn {width: 90px;}
+  .mouse-whell {width:100px;height: 100px;}
+  }

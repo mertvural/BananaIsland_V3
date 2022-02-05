@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Island</title>
+  <link rel="stylesheet" type="text/css" href="src/css/css.css" />
+  <script src="src/js/jquery-3.6.0.min.js"></script>
+  <script src="src/js/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="app" v-cloak>
+
+    <!--loading-->
+    <div class="video-loader">
+      <img src="./src/images/loader.svg" alt="loader">
+      <span>Banana Island Loading...</span>
+    </div>
+    <!--loading-->
+
+    <!--again-->
+    <img src="src/images/turn.png" @click="resetVideos()" class="restart-turn" v-if="end" title="restart"
+      alt="restart" />
+    <!--again-->
+
+    <div class="mouse-whell" v-if="activeScene===1"></div>
+
+    <section class="video-list">
+
+      <article class="video-capsul" :class="video.id === activeScene ? 'video-active' : ''" v-for="video in sourceState"
+        :data-id="video.id">
+
+        <!--video-->
+        <video v-show="!buildScreen" class="video"
+          v-if="video.id === activeScene || video.id === activeScene+1 || video.id === 19 || video.id === 6 || video.id === 1 ||  video.id === 32"
+          :key="video.id" :src="video.src" :autoplay="video.autoplay" :muted="video.muted" :loop="video.loop"></video>
+        <!--video-->
+
+        <!--building-->
+        <div class="build-capsul" :data-build="video.id" v-if="video.build">
+          <div class="buildings__arrows">
+            <button type="button" class="video-arrow left" @click="buildEnter(video.id,'left')"></button>
+            <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')"></button>
+          </div>
+          <div class="buildings__build right">
+            <img :src="video.buildOptions.rightImg" class="buildings__build--img" :usemap="'#'+'mapRight'+video.id"  />
+            <map :name="'mapRight'+video.id">
+              <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'right'" href="javascript:;" @click='insideEnter(useMap.href)'
+                :coords="useMap.coords" shape="rect">
+            </map>
+          </div>
+          <div class="buildings__build left">
+            <img :src="video.buildOptions.leftImg" class="buildings__build--img" :usemap="'#'+'mapLeft'+video.id" />
+            <map :name="'mapLeft'+video.id">
+              <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'left'" href="javascript:;" @click='insideEnter(useMap.href)'
+                :coords="useMap.coords" shape="rect">
+            </map>
+          </div>
+          <img src="src/images/turn.png" @click="buildExit(video.id)" class="buildings__turn" />
+          <div class="mouse-whell" v-show="!buildScreen"></div>
+
+          <!--insider-->
+          <div class="insiderCapsul">
+            <div class="insiderItem" v-for="insider in video.buildOptions.usemaps" :data-href="insider.href">
+              <img :src="insider.inside" />
+            </div>
+          </div>
+          <!--insider-->
+
+        </div>
+        <!--building-->
+
+        <!--junction-->
+        <div v-if="junction || junctionBack">
+          <button type="button" class="video-arrow left" @click="direction('left')"></button>
+          <button type="button" class="video-arrow right" @click="direction('right')"></button>
+        </div>
+        <!--junction-->
+
+      </article>
+
+    </section>
+
+  </div>
+
+  <script src="src/js/main.js"></script>
+</body>
+
+</html>
