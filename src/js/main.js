@@ -481,15 +481,15 @@ var vue = new Vue({
         //yapılara giris aninda
         buildEnter(getVideoID, direction) {
             $(".build-capsul").filter("[data-build=" + getVideoID + "]").addClass("active-" + direction + "").find(".buildings__build")
-            .scrollLeft(this.getScrollWidth(direction))
+                .scrollLeft(this.getScrollWidth(direction))
             this.buildScreen = true;
         },
 
         getScrollWidth(direction) {
-            if(direction === "left") {
+            if (direction === "left") {
                 return parseInt(parseInt($(".build-capsul.active-left .buildings__build.left area").attr("coords")?.split(",")[0]))
-            }else {
-                return parseInt(parseInt($(".build-capsul.active-right .buildings__build.right area").attr("coords")?.split(",")[0]))   
+            } else {
+                return parseInt(parseInt($(".build-capsul.active-right .buildings__build.right area").attr("coords")?.split(",")[0]))
             }
         },
 
@@ -539,6 +539,10 @@ var vue = new Vue({
 
             document.addEventListener("wheel", function (event) {
                 event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
+            });
+
+            $(document).on('touchmove', function () {
+                $this.goMonkey()
             });
 
             $(window).on('load', function () {
