@@ -505,17 +505,9 @@ var vue = new Vue({
 
         //yapılara giris aninda
         buildEnter(getVideoID, direction) {
-            $(".build-capsul").filter("[data-build=" + getVideoID + "]").addClass("active-" + direction + "").find(".buildings__build")
-                .scrollLeft(this.getScrollWidth(direction))
+            $('img[usemap]').rwdImageMaps();
+            $(".build-capsul").filter("[data-build=" + getVideoID + "]").addClass("active-" + direction + "");
             this.buildScreen = true;
-        },
-
-        getScrollWidth(direction) {
-            if (direction === "left") {
-                return parseInt(parseInt($(".build-capsul.active-left .buildings__build.left area").attr("coords")?.split(",")[0]))
-            } else {
-                return parseInt(parseInt($(".build-capsul.active-right .buildings__build.right area").attr("coords")?.split(",")[0]))
-            }
         },
 
         //yapılardan cikis aninda
