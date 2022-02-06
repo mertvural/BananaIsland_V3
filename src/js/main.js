@@ -15,6 +15,7 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
+                playsinline: true,
                 build: false
             },
             {
@@ -515,7 +516,7 @@ var vue = new Vue({
 
         scrollLeftPosition(direction) {
             var build = $(".build-capsul.active .buildings__build"),
-            inside = $(".insiderItem.active");
+                inside = $(".insiderItem.active");
             switch (direction) {
                 case "left":
                     return (build.filter(".left").children("img").width() - build.filter(".left").width()) / 2
@@ -524,8 +525,8 @@ var vue = new Vue({
                     return (build.filter(".right").children("img").width() - build.filter(".right").width()) / 2
                     break;
                 case "inside":
-                return (inside.children("img").width() - inside.width()) / 2
-                break;
+                    return (inside.children("img").width() - inside.width()) / 2
+                    break;
             }
         },
 
