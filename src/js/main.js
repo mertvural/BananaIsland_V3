@@ -3,8 +3,6 @@
 *  codes cannot be used without permission. copyright 2022                    
 *
 *********************************************/
-Vue.config.productionTip = false;
-
 var vue = new Vue({
     el: "#app",
     data: {
