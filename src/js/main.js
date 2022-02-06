@@ -366,7 +366,7 @@ var vue = new Vue({
             }
         ],
         activeScene: 1,
-        duration: 250,
+        duration: 220,
         junction: false,
         junctionBack: false,
         loopScreen: false,
@@ -429,7 +429,7 @@ var vue = new Vue({
                         break;
                 }
                 $this.isWalk = false
-                $this.duration = 200;
+                $this.duration = 220;
 
             };
 
@@ -452,13 +452,13 @@ var vue = new Vue({
 
             // getVideo.currentTime -= 0.05
 
-            
+
 
             // if(getVideo.currentTime === 0 && $this.activeScene === 2) {
             //     $this.activeScene = 1;
             //     $this.resetVideos()
             // }
-         
+
             // if($this.loopScreen && $this.activeScene !==1) {
 
             //     $this.activeScene--
@@ -506,8 +506,25 @@ var vue = new Vue({
         //yapılara giris aninda
         buildEnter(getVideoID, direction) {
             $('img[usemap]').rwdImageMaps();
-            $(".build-capsul").filter("[data-build=" + getVideoID + "]").addClass("active-" + direction + "");
+            $(".build-capsul").filter("[data-build=" + getVideoID + "]").addClass("active" + " " + direction).find(".buildings__build")
+                .scrollLeft(this.scrollLeftPosition(direction))
             this.buildScreen = true;
+        },
+
+        scrollLeftPosition(direction) {
+            var build = $(".build-capsul.active .buildings__build"),
+            inside = $(".insiderItem.active");
+            switch (direction) {
+                case "left":
+                    return (build.filter(".left").children("img").width() - build.filter(".left").width()) / 2
+                    break;
+                case "right":
+                    return (build.filter(".right").children("img").width() - build.filter(".right").width()) / 2
+                    break;
+                case "inside":
+                return (inside.children("img").width() - inside.width()) / 2
+                break;
+            }
         },
 
         //yapılardan cikis aninda
@@ -517,21 +534,22 @@ var vue = new Vue({
 
         //yapılari resetler. en bas ozelliklerine geri dondurur
         resetBuild(target) {
-            var buildCapsul = $(".build-capsul");
-            if (buildCapsul.find(".insiderItem").hasClass("active")) {
-                buildCapsul.find(".insiderItem").removeClass("active")
+            var buildCapsul = $(".build-capsul"),
+                insiderItem = buildCapsul.find(".insiderItem");
+            if (insiderItem.hasClass("active")) {
+                insiderItem.removeClass("active")
             } else {
                 target
                     ?
-                    buildCapsul.filter("[data-build=" + target + "]").removeClass("active-right active-left")
+                    buildCapsul.filter("[data-build=" + target + "]").removeClass("active left right")
                     :
-                    buildCapsul.removeClass("active-right active-left")
+                    buildCapsul.removeClass("active left right")
                 this.buildScreen = false
             }
         },
 
         insideEnter(id) {
-            $(".insiderItem").filter("[data-href=" + id + "]").addClass("active")
+            $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft(this.scrollLeftPosition("inside"))
         },
 
         //basa dondugunde videolarin currentTime'ını basa alir
@@ -559,7 +577,7 @@ var vue = new Vue({
             });
 
             document.addEventListener("touchmove", function (event) {
-                if (!$this.walkDelay)  $this.goMonkey()
+                if (!$this.walkDelay) $this.goMonkey()
             });
 
             $(window).on('load', function () {

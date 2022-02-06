@@ -81,8 +81,10 @@ transition: all .4s ease;
 .buildings__build {width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;}
 .buildings__build>img {min-width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;}
 .video-active .buildings__arrows {display: block;}
-.build-capsul.active-right .buildings__build.right, .build-capsul.active-right .buildings__turn,
-.build-capsul.active-left .buildings__build.left, .build-capsul.active-left .buildings__turn {display: block;}
+
+.build-capsul.active.right .buildings__build.right, 
+.build-capsul.active.left .buildings__build.left, .build-capsul.active .buildings__turn {display: block;}
+
 .buildings__turn, .restart-turn {position: fixed;bottom:20px;left:0;right:0;margin: auto;width: 150px;z-index: 105;cursor: pointer;}
 .mouse-whell {background: url(../images/mouse-whell.png) no-repeat;width: 200px;height:200px;position: fixed;bottom: 50px;left:0;right: 0;margin:auto;
   z-index: 102;background-size: 100%;animation: mouseWhell 2s ease alternate infinite;opacity: 1;}
