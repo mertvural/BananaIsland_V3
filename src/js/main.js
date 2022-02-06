@@ -577,7 +577,7 @@ var vue = new Vue({
                 if (!$this.walkDelay) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
             });
 
-            document.addEventListener("touchmove", function (event) {
+            document.addEventListener("touchstart", function (event) {
                 if (!$this.walkDelay) $this.goMonkey()
             });
 
