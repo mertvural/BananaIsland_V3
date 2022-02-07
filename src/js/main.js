@@ -504,7 +504,7 @@ var vue = new Vue({
 
         //yapılara giris aninda
         buildEnter(getVideoID, direction) {
-            
+            $('img[usemap]').rwdImageMaps();
             $(".build-capsul").filter("[data-build=" + getVideoID + "]").addClass("active" + " " + direction).find(".buildings__build")
                 .scrollLeft(this.scrollLeftPosition(direction))
             this.buildScreen = true;
@@ -599,7 +599,6 @@ var vue = new Vue({
             $this.walkDelay = true
             setTimeout(() => {
                 $this.walkDelay = false
-                $('img[usemap]').rwdImageMaps();
             }, 2500);
         }
     }
