@@ -393,7 +393,8 @@ var vue = new Vue({
 
             if ($this.loopScreen !== true) {
                 $this.isWalk = true
-                //getVideo.play()
+                getVideo.play()
+                getVideo.pause() 
             } else {
                 if ($this.activeScene === 18 || $this.activeScene === 31) {
                     $this.activeScene = 32;
