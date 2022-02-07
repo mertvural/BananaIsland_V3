@@ -384,7 +384,7 @@ var vue = new Vue({
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
                 isLoop = getVideo.loop;
-            getVideo.playbackRate = 1.1
+            getVideo.playbackRate = 1
             $this.loopScreen = isLoop;
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
@@ -560,6 +560,11 @@ var vue = new Vue({
                 $(el).children("video").length > 0 ? $(el).children("video")[0].currentTime = 0 : ""
             })
             videoCapsul.first().children("video")[0].play()
+        },
+
+        isMobile() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            return isMobile ? true : false
         }
 
     },
@@ -570,6 +575,8 @@ var vue = new Vue({
         var $this = this;
 
         $this.$nextTick(function () {
+
+            $this.isMobile() ? $this.duration = 600 : ""
 
             document.addEventListener("wheel", function (event) {
                 if (!$this.walkDelay) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
