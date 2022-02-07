@@ -380,7 +380,7 @@ var vue = new Vue({
 
         // ileri sarma
         goMonkey() {
-
+            alert("test")
             var $this = this,
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
@@ -578,7 +578,7 @@ var vue = new Vue({
             });
 
             document.addEventListener("touchstart", function (event) {//touchstart
-             
+                if (!$this.walkDelay) $this.goMonkey()
             });
 
             $(window).on('load', function () {
