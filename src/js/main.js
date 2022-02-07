@@ -391,20 +391,7 @@ var vue = new Vue({
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
 
-            if ($this.loopScreen !== true) {
-                $this.isWalk = true
-               // getVideo.play()
-            } else {
-                if ($this.activeScene === 18 || $this.activeScene === 31) {
-                    $this.activeScene = 32;
-                    $this.junctionBack = false
-                }
-                else {
-                    $this.activeScene++
-                }
-            }
-
-          
+           
 
             // video bittiğinde calisir
             getVideo.onended = function () {
