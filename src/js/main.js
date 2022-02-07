@@ -366,7 +366,7 @@ var vue = new Vue({
             }
         ],
         activeScene: 1,
-        duration: 220,
+        duration: 250,
         junction: false,
         junctionBack: false,
         loopScreen: false,
@@ -384,7 +384,7 @@ var vue = new Vue({
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
                 isLoop = getVideo.loop;
-            getVideo.playbackRate = 1
+            getVideo.playbackRate = 1.1
             $this.loopScreen = isLoop;
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
@@ -428,7 +428,7 @@ var vue = new Vue({
                         break;
                 }
                 $this.isWalk = false
-                $this.duration = 220;
+                $this.duration = 250;
 
             };
 
@@ -575,7 +575,7 @@ var vue = new Vue({
                 if (!$this.walkDelay) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
             });
 
-            document.addEventListener("touchmove", function (event) {//touchstart
+            document.addEventListener("touchmove", function (event) {
                 if (!$this.walkDelay) $this.goMonkey()
             });
 
