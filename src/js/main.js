@@ -393,7 +393,7 @@ var vue = new Vue({
 
             if ($this.loopScreen !== true) {
                 $this.isWalk = true
-                getVideo.play()
+                //getVideo.play()
             } else {
                 if ($this.activeScene === 18 || $this.activeScene === 31) {
                     $this.activeScene = 32;
@@ -578,7 +578,7 @@ var vue = new Vue({
             });
 
             document.addEventListener("touchstart", function (event) {//touchstart
-              
+                if (!$this.walkDelay) $this.goMonkey()
             });
 
             $(window).on('load', function () {
