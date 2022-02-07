@@ -400,7 +400,7 @@ var vue = new Vue({
                     $this.junctionBack = false
                 }
                 else {
-                  //  $this.activeScene++
+                    $this.activeScene = $this.activeScene + 1
                 }
             }
 
