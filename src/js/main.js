@@ -405,8 +405,7 @@ var vue = new Vue({
             }
 
             setTimeout(() => {
-                alert("test")
-                $this.loopScreen === false ? getVideo.pause() : ""
+  
                 $this.isWalk = false
             }, $this.duration);
 
