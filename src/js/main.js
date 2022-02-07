@@ -573,11 +573,11 @@ var vue = new Vue({
 
         $this.$nextTick(function () {
 
-            document.addEventListener("wheel", function (event) {
-                if (!$this.walkDelay) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
-            });
+            // document.addEventListener("wheel", function (event) {
+            //     if (!$this.walkDelay) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
+            // });
 
-            document.addEventListener("touchmove", function (event) {//touchstart
+            document.addEventListener("touchstart", function (event) {//touchstart
                 if (!$this.walkDelay) $this.goMonkey()
             });
 
