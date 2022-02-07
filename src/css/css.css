@@ -109,3 +109,14 @@ transition: all .4s ease;
   .buildings__turn, .restart-turn {width: 90px;}
   .mouse-whell {width:100px;height: 100px;}
   }
+
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: hidden;
+  }
