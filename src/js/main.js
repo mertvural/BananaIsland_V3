@@ -20,7 +20,6 @@ var vue = new Vue({
                 id: 2,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/101-Main_Street_1-FWR.mp4",
                 autoplay: false,
-                playsinline: false,
                 muted: true,
                 loop: false,
                 build: false
