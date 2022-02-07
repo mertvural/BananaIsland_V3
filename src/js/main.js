@@ -383,7 +383,7 @@ var vue = new Vue({
             var $this = this,
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
-                isLoop = getVideo.loop
+                isLoop = getVideo.loop;
             getVideo.playbackRate = 1
             $this.loopScreen = isLoop;
 
