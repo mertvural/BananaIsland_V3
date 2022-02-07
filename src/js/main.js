@@ -504,7 +504,7 @@ var vue = new Vue({
 
         //yapılara giris aninda
         buildEnter(getVideoID, direction) {
-            
+            $('img[usemap]').rwdImageMaps();
             $(".build-capsul").filter("[data-build=" + getVideoID + "]").addClass("active" + " " + direction).find(".buildings__build")
                 .scrollLeft(this.scrollLeftPosition(direction))
             this.buildScreen = true;
@@ -575,7 +575,7 @@ var vue = new Vue({
         var $this = this;
 
         $this.$nextTick(function () {
-           
+
             $this.isMobile() ? $this.duration = 600 : ""
 
             document.addEventListener("wheel", function (event) {
@@ -595,7 +595,6 @@ var vue = new Vue({
     },
     updated() {
         var $this = this;
-        $('img[usemap]').rwdImageMaps();
         if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
             $this.walkDelay = true
             setTimeout(() => {
