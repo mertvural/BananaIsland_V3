@@ -15,7 +15,6 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  pointer-events: none;
 }
 .video-capsul {
   position: fixed;
@@ -107,3 +106,24 @@ transition: all .4s ease;
   .buildings__turn, .restart-turn {width: 90px;}
   .mouse-whell {width:100px;height: 100px;}
   }
+
+
+
+
+video::-webkit-media-controls-panel {
+display: none;
+-webkit-appearance: none;
+}
+video::-webkit-media-controls-play-button {
+display: none;
+-webkit-appearance: none;
+}
+video::-webkit-media-controls-start-playback-button {
+display: none;
+-webkit-appearance: none
+}
+
+video::-webkit-media-controls {
+display: none;
+-webkit-appearance: none;
+}
