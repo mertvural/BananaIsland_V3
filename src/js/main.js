@@ -400,7 +400,7 @@ var vue = new Vue({
                     $this.junctionBack = false
                 }
                 else {
-                    $this.activeScene = $this.activeScene + 1
+                    $this.activeScene++
                 }
             }
 
@@ -409,30 +409,7 @@ var vue = new Vue({
                 $this.isWalk = false
             }, $this.duration);
 
-            // video bittiğinde calisir
-            getVideo.onended = function () {
-
-                if ($this.activeScene === $this.sourceState.length - 1) {
-                    $this.end = true;
-                }
-
-                $this.activeScene += 1;
-
-                switch ($this.activeScene) {
-                    case 5:
-                        $this.junction = true
-                        break;
-                    case 18:
-                        $this.junctionBack = true
-                        break;
-                    case 31:
-                        $this.junctionBack = true
-                        break;
-                }
-                $this.isWalk = false
-                $this.duration = 220;
-
-            };
+         
 
         },
 
