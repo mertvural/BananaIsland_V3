@@ -405,13 +405,14 @@ var vue = new Vue({
             }
 
             setTimeout(() => {
+                alert("test")
                 $this.loopScreen === false ? getVideo.pause() : ""
                 $this.isWalk = false
             }, $this.duration);
 
             // video bittiğinde calisir
             getVideo.onended = function () {
-                alert("test")
+
                 if ($this.activeScene === $this.sourceState.length - 1) {
                     $this.end = true;
                 }
