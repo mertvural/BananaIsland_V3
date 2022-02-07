@@ -16,9 +16,6 @@ html {
   top: 0;
   width: 100%;
 }
-.video-list {
-  height: 500vh;
-}
 .video-capsul {
   position: fixed;
   top: 0;
@@ -108,15 +105,4 @@ transition: all .4s ease;
   .video-arrow.right {margin-left: 70px;}
   .buildings__turn, .restart-turn {width: 90px;}
   .mouse-whell {width:100px;height: 100px;}
-  }
-
-
-  body::-webkit-scrollbar {
-    display: none;
-  }
-  
-  body{
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow: hidden;
   }
