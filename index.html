@@ -39,7 +39,7 @@
         <!--video-->
         <video v-show="!buildScreen" class="video"
           v-if="video.id === activeScene || video.id === activeScene+1 || video.id === activeScene-1 || video.id === 19 || video.id === 6 || video.id === 1 ||  video.id === 32"
-          :key="video.id" :src="video.src" :autoplay="video.autoplay" :muted="video.muted" :loop="video.loop" playsinline="false"></video>
+          :key="video.id" :src="video.src" :autoplay="video.autoplay" :muted="video.muted" :loop="video.loop" :playsinline="activeScene===1 ? 'true' : 'false' "></video>
         <!--video-->
 
         <!--building-->
