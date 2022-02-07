@@ -428,7 +428,7 @@ var vue = new Vue({
                         break;
                 }
                 $this.isWalk = false
-                $this.duration = 250;
+                $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
 
             };
 
