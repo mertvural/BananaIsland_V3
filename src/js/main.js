@@ -578,7 +578,7 @@ var vue = new Vue({
             });
 
             document.addEventListener("touchstart", function (event) {//touchstart
-                if (!$this.walkDelay) $this.goMonkey()
+              
             });
 
             $(window).on('load', function () {
