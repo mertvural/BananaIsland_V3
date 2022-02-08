@@ -1,6 +1,7 @@
 [v-cloak] {
   display: none;
 }
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 body,
 html {
   margin: 0;
@@ -65,8 +66,9 @@ transition: all .4s ease;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 30px;
+  font-family: 'Kaushan Script', cursive;
+  font-weight: bold;
+  font-size: 28px;
   height: 100%;
   justify-content: center;
   left: 0;
