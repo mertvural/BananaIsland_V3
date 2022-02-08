@@ -49,14 +49,14 @@
             <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')"></button>
           </div>
           <div class="buildings__build right">
-            <img :src="video.buildOptions.rightImg" class="buildings__build--img" :usemap="'#'+'mapRight'+video.id" width="1920" height="1080"  />
+            <img :src="video.buildOptions.rightImg" class="buildings__build--img" :usemap="'#'+'mapRight'+video.id" width="" height=""  />
             <map :name="'mapRight'+video.id">
               <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'right'" href="javascript:;" @click='insideEnter(useMap.href)'
                 :coords="useMap.coords" shape="rect">
             </map>
           </div>
           <div class="buildings__build left">
-            <img :src="video.buildOptions.leftImg" class="buildings__build--img" :usemap="'#'+'mapLeft'+video.id" width="1920" height="1080" />
+            <img :src="video.buildOptions.leftImg" class="buildings__build--img" :usemap="'#'+'mapLeft'+video.id" width="" height="" />
             <map :name="'mapLeft'+video.id">
               <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'left'" href="javascript:;" @click='insideEnter(useMap.href)'
                 :coords="useMap.coords" shape="rect">
