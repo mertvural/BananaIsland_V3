@@ -81,7 +81,7 @@ transition: all .4s ease;
 .buildings__build {position: fixed;z-index: 103;text-align: center;overflow-x: auto;overflow-y: hidden;}
 .buildings__arrows, .buildings__build, .buildings__turn, .build-capsul.active-right .mouse-whell, .build-capsul.active-left .mouse-whell {display: none;}
 .buildings__build {width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;}
-.buildings__build>img {min-width: 100%;height: 100%;}
+.buildings__build>img {min-width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;}
 .video-active .buildings__arrows {display: block;}
 
 .build-capsul.active.right .buildings__build.right, 
