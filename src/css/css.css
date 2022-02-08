@@ -101,10 +101,17 @@ transition: all .4s ease;
 
   
 
-  @media only screen and (max-width: 768px) {
-  .video-arrow {width:80px;height: 70px;}
-  .video-arrow.left {margin-left: -70px;}
-  .video-arrow.right {margin-left: 70px;}
-  .buildings__turn, .restart-turn {width: 90px;}
-  .mouse-whell {width:100px;height: 100px;}
-  }
+@media only screen and (max-width: 768px) {
+.video-arrow {width:80px;height: 70px;}
+.video-arrow.left {margin-left: -70px;}
+.video-arrow.right {margin-left: 70px;}
+.buildings__turn, .restart-turn {width: 90px;}
+.mouse-whell {width:100px;height: 100px;}
+}
+
+@media only screen and (max-width: 480px) {
+
+  .buildings__turn, .restart-turn {bottom: 10px;width:60px}
+  .buildings__build>img {object-position: center 33%;}
+
+}
