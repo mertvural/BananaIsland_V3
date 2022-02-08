@@ -402,10 +402,12 @@ var vue = new Vue({
                 }
             }
 
-            setTimeout(() => {
-                $this.loopScreen === false ? getVideo.pause() : ""
-                $this.isWalk = false
-            }, $this.duration);
+            if($this.duration !== "end") {
+                setTimeout(() => {
+                    $this.loopScreen === false ? getVideo.pause() : ""
+                    $this.isWalk = false
+                }, $this.duration); 
+            }
 
             // video bittiğinde calisir
             getVideo.onended = function () {
@@ -428,7 +430,10 @@ var vue = new Vue({
                         break;
                 }
                 $this.isWalk = false
-                $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
+                
+                if($this.duration !== "end") {
+                    $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
+                }
 
             };
 
@@ -488,14 +493,14 @@ var vue = new Vue({
                     this.activeScene = 6;
                     this.junction = false;
                     this.junctionBack = false;
-                    this.duration = 10000;
+                    this.duration !== "end" ? this.duration = 10000 : ""                    
                     this.goMonkey();
                     break;
                 case "right":
                     this.activeScene = 19;
                     this.junction = false
                     this.junctionBack = false;
-                    this.duration = 10000;
+                    this.duration !== "end" ? this.duration = 10000 : ""
                     this.goMonkey();
                     break;
             }
@@ -565,6 +570,10 @@ var vue = new Vue({
         isMobile() {
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             return isMobile ? true : false
+        },
+
+        isSafari() {
+            if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) return true
         }
 
     },
@@ -576,7 +585,13 @@ var vue = new Vue({
 
         $this.$nextTick(function () {
 
-            $this.isMobile() ? $this.duration = 600 : ""
+            if ($this.isSafari()) {
+                alert("safari")
+                $this.duration = "end"
+            } else if ($this.isMobile()) {
+                alert("diğer tarayıcılar ve mobil")
+                $this.duration = 600
+            }
 
             document.addEventListener("wheel", function (event) {
                 if (!$this.walkDelay) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
@@ -593,6 +608,7 @@ var vue = new Vue({
         })
 
     },
+
     updated() {
         var $this = this;
         if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
