@@ -573,7 +573,8 @@ var vue = new Vue({
         },
 
         isSafari() {
-            if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) return true
+            var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+            return isSafari;
         }
 
     },
@@ -586,10 +587,8 @@ var vue = new Vue({
         $this.$nextTick(function () {
 
             if ($this.isSafari()) {
-                alert("safari")
                 $this.duration = "end"
             } else if ($this.isMobile()) {
-                alert("diğer tarayıcılar ve mobil")
                 $this.duration = 600
             }
 
