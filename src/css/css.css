@@ -132,6 +132,4 @@ transition: all .4s ease;
 
   .buildings__turn, .restart-turn {bottom: 10px;width:60px}
   .buildings__build>img {width: auto;min-width: auto;}
-  .handrightleft {width: 100px;height: 70px;background-size:70px;}
-
 }
