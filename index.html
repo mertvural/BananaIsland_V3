@@ -62,13 +62,17 @@
                 :coords="useMap.coords" shape="rect">
             </map>
           </div>
+          
           <img src="src/images/turn.png" @click="buildExit(video.id)" class="buildings__turn" />
+          
           <div class="mouse-whell" v-show="!buildScreen"></div>
+
+          <div class="handrightleft" v-show="isHorizontalScroll && buildScreen"></div>
 
           <!--insider-->
           <div class="insiderCapsul">
             <div class="insiderItem" v-for="insider in video.buildOptions.usemaps" :data-href="insider.href">
-              <img :src="insider.inside" />
+              <img :src="insider.inside" class="insiderCapsul__build--img" />
             </div>
           </div>
           <!--insider-->

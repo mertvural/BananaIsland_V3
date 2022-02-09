@@ -83,7 +83,8 @@ transition: all .4s ease;
 .buildings__build {width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;}
 .buildings__build>img {min-width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;}
 .video-active .buildings__arrows {display: block;}
-
+.handrightleft {width: 200px;height: 166px;background: url("../images/handrightleft.png") no-repeat center center;position: fixed;top:0;left: 0;right: 0;margin: auto;z-index: 105;
+  animation: shake 1s ease infinite}
 .build-capsul.active.right .buildings__build.right, 
 .build-capsul.active.left .buildings__build.left, .build-capsul.active .buildings__turn {display: block;}
 
@@ -94,6 +95,23 @@ transition: all .4s ease;
   @keyframes mouseWhell {
     0% {bottom:20px}
     100% {bottom:50px;opacity: .8;}
+  }
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
   }
   .insiderItem:not(.active) {display: none;}
   .insiderItem {position: fixed;top:0;left:0;right:0;bottom: 0;z-index: 104;text-align: center;overflow-x: auto;overflow-y: hidden;}
@@ -106,7 +124,8 @@ transition: all .4s ease;
 .video-arrow.left {margin-left: -70px;}
 .video-arrow.right {margin-left: 70px;}
 .buildings__turn, .restart-turn {width: 90px;}
-.mouse-whell {background-size: 80%;}
+.mouse-whell {background-size: 50%;}
+.handrightleft {width: 104px;height: 90px;background-size:97px;}
 }
 
 @media only screen and (max-width: 480px) {

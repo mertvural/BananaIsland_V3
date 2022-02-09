@@ -140,7 +140,7 @@ var vue = new Vue({
                             position: "right"
                         }
                     ]
-                }               
+                }
 
             },
             {
@@ -206,7 +206,7 @@ var vue = new Vue({
                             position: "right"
                         }
                     ]
-                }               
+                }
 
             },
             {
@@ -437,7 +437,8 @@ var vue = new Vue({
         buildScreen: false,
         end: false,
         isWalk: false,
-        walkDelay: false
+        walkDelay: false,
+        isHorizontalScroll: false
     },
     methods: {
 
@@ -466,11 +467,11 @@ var vue = new Vue({
                 }
             }
 
-            if($this.duration !== "end") {
+            if ($this.duration !== "end") {
                 setTimeout(() => {
                     $this.loopScreen === false ? getVideo.pause() : ""
                     $this.isWalk = false
-                }, $this.duration); 
+                }, $this.duration);
             }
 
             // video bittiğinde calisir
@@ -494,8 +495,8 @@ var vue = new Vue({
                         break;
                 }
                 $this.isWalk = false
-                
-                if($this.duration !== "end") {
+
+                if ($this.duration !== "end") {
                     $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
                 }
 
@@ -557,7 +558,7 @@ var vue = new Vue({
                     this.activeScene = 6;
                     this.junction = false;
                     this.junctionBack = false;
-                    this.duration !== "end" ? this.duration = 10000 : ""                    
+                    this.duration !== "end" ? this.duration = 10000 : ""
                     this.goMonkey();
                     break;
                 case "right":
@@ -577,6 +578,15 @@ var vue = new Vue({
             $(".build-capsul").filter("[data-build=" + getVideoID + "]").addClass("active" + " " + direction).find(".buildings__build")
                 .scrollLeft(this.scrollLeftPosition(direction))
             this.buildScreen = true;
+            var build = $(".build-capsul.active .buildings__build").filter(":visible"),
+                buildW = build.width(),
+                buildImgW = build.find(".buildings__build--img").width();
+            this.horizontalScrollControl(buildW, buildImgW);
+        },
+
+        horizontalScrollControl(buildW, buildImgW) {
+
+            buildImgW > buildW + 100 ? this.isHorizontalScroll = true : this.isHorizontalScroll = false
         },
 
         scrollLeftPosition(direction) {
@@ -646,7 +656,7 @@ var vue = new Vue({
     //DOM hazir oldugunda
     mounted: function () {
 
-        var $this = this;
+        var $this = this;            
 
         $this.$nextTick(function () {
 
@@ -662,11 +672,12 @@ var vue = new Vue({
 
             document.addEventListener("touchmove", function (event) {
                 if (!$this.walkDelay) $this.goMonkey()
+                $this.isHorizontalScroll = false
             });
 
             $(window).on('load', function () {
                 $('.video-loader').remove();
-            });
+            })
 
         })
 
