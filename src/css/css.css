@@ -129,7 +129,6 @@ transition: all .4s ease;
 }
 
 @media only screen and (max-width: 480px) {
-
   .buildings__turn, .restart-turn {bottom: 10px;width:60px}
   .buildings__build>img {width: auto;min-width: auto;}
 }
