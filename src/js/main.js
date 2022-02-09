@@ -36,21 +36,33 @@ var vue = new Vue({
                     leftImg: "src/images/left-1-perspective.png",
                     usemaps: [
                         {
-                            coords: "710,376,976,700",
+                            coords: "718,372,974,724",
                             href: "sunrise",
-                            inside: "src/images/sunrise-inside-design.png",
+                            inside: "src/images/sunrise-insider.png",
                             position: "left"
                         },
                         {
-                            coords: "1734,751,1919,405",
+                            coords: "1670,158,1917,744",
+                            href: "manor",
+                            inside: "src/images/manor-insider.png",
+                            position: "left"
+                        },
+                        {
+                            coords: "1726,773,1918,373",
                             href: "store",
-                            inside: "src/images/monkey_store.png",
+                            inside: "src/images/monkey_store-insider.png",
                             position: "right"
                         },
                         {
-                            coords: "812,190,1115,710",
+                            coords: "802,142,1122,726",
                             href: "postFinance",
-                            inside: "src/images/postinside.png",
+                            inside: "src/images/post-insider.png",
+                            position: "right"
+                        },
+                        {
+                            coords: "349,361,561,743",
+                            href: "orellfussli",
+                            inside: "src/images/orell-insider.png",
                             position: "right"
                         }
                     ]
@@ -107,8 +119,28 @@ var vue = new Vue({
                 buildOptions:
                 {
                     rightImg: "src/images/right-2-perspective.png",
-                    leftImg: "src/images/left-2-perspective.png"
-                }
+                    leftImg: "src/images/left-2-perspective.png",
+                    usemaps: [
+                        {
+                            coords: "3,292,327,791",
+                            href: "ochsner",
+                            inside: "src/images/ochsner-insider.png",
+                            position: "left"
+                        },
+                        {
+                            coords: "791,318,328,768",
+                            href: "mediamarkt",
+                            inside: "src/images/mediamarkt-insider.png",
+                            position: "left"
+                        },
+                        {
+                            coords: "1304,203,1763,727",
+                            href: "migros",
+                            inside: "src/images/migros-insider.png",
+                            position: "right"
+                        }
+                    ]
+                }               
 
             },
             {
@@ -153,8 +185,28 @@ var vue = new Vue({
                 buildOptions:
                 {
                     rightImg: "src/images/right-2-perspective.png",
-                    leftImg: "src/images/left-2-perspective.png"
-                }
+                    leftImg: "src/images/left-2-perspective.png",
+                    usemaps: [
+                        {
+                            coords: "3,292,327,791",
+                            href: "ochsner",
+                            inside: "src/images/ochsner-insider.png",
+                            position: "left"
+                        },
+                        {
+                            coords: "791,318,328,768",
+                            href: "mediamarkt",
+                            inside: "src/images/mediamarkt-insider.png",
+                            position: "left"
+                        },
+                        {
+                            coords: "1304,203,1763,727",
+                            href: "migros",
+                            inside: "src/images/migros-insider.png",
+                            position: "right"
+                        }
+                    ]
+                }               
 
             },
             {
@@ -327,21 +379,33 @@ var vue = new Vue({
                     leftImg: "src/images/left-1-perspective.png",
                     usemaps: [
                         {
-                            coords: "710,376,976,700",
+                            coords: "718,372,974,724",
                             href: "sunrise",
-                            inside: "src/images/sunrise-inside-design.png",
+                            inside: "src/images/sunrise-insider.png",
                             position: "left"
                         },
                         {
-                            coords: "1734,751,1919,405",
+                            coords: "1670,158,1917,744",
+                            href: "manor",
+                            inside: "src/images/manor-insider.png",
+                            position: "left"
+                        },
+                        {
+                            coords: "1726,773,1918,373",
                             href: "store",
-                            inside: "src/images/monkey_store.png",
+                            inside: "src/images/monkey_store-insider.png",
                             position: "right"
                         },
                         {
-                            coords: "812,190,1115,710",
+                            coords: "802,142,1122,726",
                             href: "postFinance",
-                            inside: "src/images/postinside.png",
+                            inside: "src/images/post-insider.png",
+                            position: "right"
+                        },
+                        {
+                            coords: "349,361,561,743",
+                            href: "orellfussli",
+                            inside: "src/images/orell-insider.png",
                             position: "right"
                         }
                     ]
@@ -384,7 +448,7 @@ var vue = new Vue({
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
                 isLoop = getVideo.loop;
-            getVideo.playbackRate = 1
+            getVideo.playbackRate = 1;
             $this.loopScreen = isLoop;
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
