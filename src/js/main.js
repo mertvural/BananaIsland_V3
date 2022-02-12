@@ -699,6 +699,10 @@ var vue = new Vue({
                 baseId: 'iframe-store-3'
               };
 
+              $(".buildings__build").on("click", function() {
+                $(".handrightleft").hide()
+              })
+
         })
 
     },
