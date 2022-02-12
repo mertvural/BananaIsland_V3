@@ -51,7 +51,8 @@ var vue = new Vue({
                             coords: "1726,773,1918,373",
                             href: "store",
                             inside: "src/images/monkey_store-insider.png",
-                            position: "right"
+                            position: "right",
+                            iframePosition: "717,202,1212,531"
                         },
                         {
                             coords: "802,142,1122,726",
@@ -394,7 +395,8 @@ var vue = new Vue({
                             coords: "1726,773,1918,373",
                             href: "store",
                             inside: "src/images/monkey_store-insider.png",
-                            position: "right"
+                            position: "right",
+                            iframePosition: "717,202,1212,531"
                         },
                         {
                             coords: "802,142,1122,726",
@@ -449,7 +451,7 @@ var vue = new Vue({
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
                 isLoop = getVideo.loop;
-            getVideo.playbackRate = 1;
+            getVideo.playbackRate = 7;
             $this.loopScreen = isLoop;
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
@@ -627,7 +629,18 @@ var vue = new Vue({
         },
 
         insideEnter(id) {
+            $('img[usemap]').rwdImageMaps();
             $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft(this.scrollLeftPosition("inside"))
+            if (!$(".insiderItem.active area").length) return
+            setTimeout(() => {           
+                var coord = $(".insiderItem.active area").attr("coords").split(",")
+                $(".insiderItem.active .iframeCapsul").css({
+                    'left': coord[0] + "px",
+                    'top': coord[1] + "px",
+                    'width': coord[2] - coord[0] + "px",
+                    'height': coord[3] - coord[1] + "px"
+                });
+            }, 500);
         },
 
         //basa dondugunde videolarin currentTime'ını basa alir
@@ -656,7 +669,7 @@ var vue = new Vue({
     //DOM hazir oldugunda
     mounted: function () {
 
-        var $this = this;            
+        var $this = this;
 
         $this.$nextTick(function () {
 
@@ -678,6 +691,13 @@ var vue = new Vue({
             $(window).on('load', function () {
                 $('.video-loader').remove();
             })
+
+             spread_shop_config = {
+                shopName: 'monkey-munchy-store',
+                locale: 'en_EU',
+                prefix: 'https://shop.spreadshirt.net',
+                baseId: 'iframe-store-3'
+              };
 
         })
 

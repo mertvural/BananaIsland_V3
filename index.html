@@ -39,7 +39,8 @@
         <!--video-->
         <video v-show="!buildScreen" class="video"
           v-if="video.id === activeScene || video.id === activeScene+1 || video.id === activeScene+2 || video.id === 19 || video.id === 6 || video.id === 1 ||  video.id === 32"
-          :key="video.id" :src="video.src" :autoplay="video.autoplay" :muted="video.muted" :loop="video.loop" playsinline></video>
+          :key="video.id" :src="video.src" :autoplay="video.autoplay" :muted="video.muted" :loop="video.loop"
+          playsinline></video>
         <!--video-->
 
         <!--building-->
@@ -49,22 +50,24 @@
             <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')"></button>
           </div>
           <div class="buildings__build right">
-            <img :src="video.buildOptions.rightImg" class="buildings__build--img" :usemap="'#'+'mapRight'+video.id" width="1920" height="1080"  />
+            <img :src="video.buildOptions.rightImg" class="buildings__build--img" :usemap="'#'+'mapRight'+video.id"
+              width="1920" height="1080" />
             <map :name="'mapRight'+video.id">
-              <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'right'" href="javascript:;" @click='insideEnter(useMap.href)'
-                :coords="useMap.coords" shape="rect">
+              <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'right'" href="javascript:;"
+                @click='insideEnter(useMap.href)' :coords="useMap.coords" shape="rect">
             </map>
           </div>
           <div class="buildings__build left">
-            <img :src="video.buildOptions.leftImg" class="buildings__build--img" :usemap="'#'+'mapLeft'+video.id" width="1920" height="1080" />
+            <img :src="video.buildOptions.leftImg" class="buildings__build--img" :usemap="'#'+'mapLeft'+video.id"
+              width="1920" height="1080" />
             <map :name="'mapLeft'+video.id">
-              <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'left'" href="javascript:;" @click='insideEnter(useMap.href)'
-                :coords="useMap.coords" shape="rect">
+              <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'left'" href="javascript:;"
+                @click='insideEnter(useMap.href)' :coords="useMap.coords" shape="rect">
             </map>
           </div>
-          
+
           <img src="src/images/turn.png" @click="buildExit(video.id)" class="buildings__turn" />
-          
+
           <div class="mouse-whell" v-show="!buildScreen"></div>
 
           <div class="handrightleft" v-show="isHorizontalScroll && buildScreen"></div>
@@ -72,7 +75,14 @@
           <!--insider-->
           <div class="insiderCapsul">
             <div class="insiderItem" v-for="insider in video.buildOptions.usemaps" :data-href="insider.href">
-              <img :src="insider.inside" class="insiderCapsul__build--img" />
+              <img :src="insider.inside" class="insiderCapsul__build--img" :usemap="'#imagemap'+insider.href" width="1920" height="1080" />
+              <map :name="'imagemap'+insider.href" v-if="insider.iframePosition">
+                <area target="" alt="" title="" href="javascript:;" :coords="insider.iframePosition" shape="rect">
+              </map>
+              <div :id="'iframe-'+insider.href+'-'+video.id" class="iframeCapsul">
+                <a href="https://shop.spreadshirt.net/monkey-munchy-store">monkey-munchy-store</a>
+              </div>             
+              
             </div>
           </div>
           <!--insider-->
@@ -93,7 +103,18 @@
 
   </div>
 
+
+    
+ 
+
+
+
   <script src="src/js/main.js?v=1"></script>
+
+  <script type="text/javascript"
+    src="https://shop.spreadshirt.net/shopfiles/shopclient/shopclient.nocache.js">
+    </script>
+  
 </body>
 
 </html>
