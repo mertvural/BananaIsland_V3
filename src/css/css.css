@@ -115,10 +115,11 @@ transition: all .4s ease;
   }
   .insiderItem:not(.active) {display: none;}
   .insiderItem {position: fixed;top:0;left:0;right:0;bottom: 0;z-index: 104;text-align: center;overflow-x: auto;overflow-y: hidden;}
-  .insiderItem img {min-width: 100%;min-height: 100%;}
+  .insiderItem img {min-width: 100%;height: 100%}
 .iframeCapsul {position: absolute;z-index: 106;overflow: auto;}
 #onetrust-consent-sdk {display: none !important;opacity: 0 !important;visibility: hidden !important;}
 .SprdMain .sprd-startpage-preview-tiles {margin: 10px !important;}
+.SprdMain .sprd-listpage, .SprdMain .sprd-listpage__header {margin-left: 0 !important;}
 
 @media only screen and (max-width: 768px) {
 .video-arrow {width:80px;height: 70px;}
