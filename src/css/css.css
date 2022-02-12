@@ -115,7 +115,7 @@ transition: all .4s ease;
   }
   .insiderItem:not(.active) {display: none;}
   .insiderItem {position: fixed;top:0;left:0;right:0;bottom: 0;z-index: 104;text-align: center;overflow-x: auto;overflow-y: hidden;}
-  .insiderItem img {min-width: 100%;height: 100%}
+  .insiderItem img {min-width: 100%;min-height: 100%}
 .iframeCapsul {position: absolute;z-index: 106;overflow: auto;}
 #onetrust-consent-sdk {display: none !important;opacity: 0 !important;visibility: hidden !important;}
 .SprdMain .sprd-startpage-preview-tiles {margin: 10px !important;}
@@ -133,4 +133,5 @@ transition: all .4s ease;
 @media only screen and (max-width: 480px) {
   .buildings__turn, .restart-turn {bottom: 10px;width:60px}
   .buildings__build>img, .insiderItem img {width: auto;min-width: auto;}
+  .insiderItem img {min-height: auto;height: 100%;}
 }
