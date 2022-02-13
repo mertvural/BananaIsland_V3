@@ -52,7 +52,8 @@ var vue = new Vue({
                             href: "store",
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
-                            iframePosition: "717,202,1212,531"
+                            iframePosition: "717,202,1212,531",
+                            iframeURL : "https://monkey-munchy-store.myspreadshop.net/"
                         },
                         {
                             coords: "802,142,1122,726",
@@ -396,7 +397,8 @@ var vue = new Vue({
                             href: "store",
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
-                            iframePosition: "717,202,1212,531"
+                            iframePosition: "717,202,1212,531",
+                            iframeURL : "https://monkey-munchy-store.myspreadshop.net/"
                         },
                         {
                             coords: "802,142,1122,726",
@@ -691,13 +693,6 @@ var vue = new Vue({
             $(window).on('load', function () {
                 $('.video-loader').remove();
             })
-
-             spread_shop_config = {
-                shopName: 'monkey-munchy-store',
-                locale: 'en_EU',
-                prefix: 'https://shop.spreadshirt.net',
-                baseId: 'iframe-store-3'
-              };
 
               $(".buildings__build").on("click", function() {
                 $(".handrightleft").hide()

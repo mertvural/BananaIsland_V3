@@ -79,10 +79,7 @@
               <map :name="'imagemap'+insider.href" v-if="insider.iframePosition">
                 <area target="" alt="" title="" href="javascript:;" :coords="insider.iframePosition" shape="rect">
               </map>
-              <div :id="'iframe-'+insider.href+'-'+video.id" class="iframeCapsul">
-                <a href="https://shop.spreadshirt.net/monkey-munchy-store">monkey-munchy-store</a>
-              </div>             
-              
+              <iframe :src="insider.iframeURL" allowtransparency="true" class="iframeCapsul" v-if="insider.iframeURL"></iframe>         
             </div>
           </div>
           <!--insider-->
@@ -103,18 +100,8 @@
 
   </div>
 
-
-    
- 
-
-
-
   <script src="src/js/main.js?v=1"></script>
 
-  <script type="text/javascript"
-    src="https://shop.spreadshirt.net/shopfiles/shopclient/shopclient.nocache.js">
-    </script>
-  
 </body>
 
 </html>
