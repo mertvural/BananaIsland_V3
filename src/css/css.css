@@ -116,7 +116,7 @@ transition: all .4s ease;
 .SprdMain .sprd-listpage, .SprdMain .sprd-listpage__header {margin-left: 0 !important;}
 iframe {border:0;outline: 0}
 
-@media only screen and (min-width: 1500px) {
+@media (min-height: 900px) and (min-width: 1500px) {
   .insiderItem {overflow: hidden;}
   .insiderItem img {min-width: calc(1920px + 50%)}
 }
