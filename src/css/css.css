@@ -132,6 +132,11 @@ iframe {border:0;outline: 0}
   .insiderItem img {min-width: calc(1920px + 50%)}
 }
 
+@media (min-height: 808px) and (min-width: 1339px) {
+  .insiderItem {overflow: hidden;}
+  .insiderItem img {min-width: calc(1920px + 30%)}
+}
+
 @media only screen and (max-width: 768px) {
 .video-arrow {width:80px;height: 70px;}
 .video-arrow.left {margin-left: -70px;}
