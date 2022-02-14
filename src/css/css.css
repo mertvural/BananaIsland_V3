@@ -121,6 +121,12 @@ transition: all .4s ease;
 .SprdMain .sprd-startpage-preview-tiles {margin: 10px !important;}
 .SprdMain .sprd-listpage, .SprdMain .sprd-listpage__header {margin-left: 0 !important;}
 iframe {border:0;outline: 0}
+
+
+@media only screen and (max-width: 1600px) {
+  .insiderItem img {min-width: calc(1920px + 25%);}
+}
+
 @media only screen and (max-width: 768px) {
 .video-arrow {width:80px;height: 70px;}
 .video-arrow.left {margin-left: -70px;}
