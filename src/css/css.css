@@ -138,17 +138,16 @@ iframe {border:0;outline: 0}
 .insiderItem img {min-width: 140%}
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
 .video-arrow {width:80px;height: 70px;}
 .video-arrow.left {margin-left: -70px;}
 .video-arrow.right {margin-left: 70px;}
 .buildings__turn, .restart-turn {width: 90px;}
 .mouse-whell {background-size: 50%;}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
-
+.insiderItem img {height: 100%;}
 }
 
 @media only screen and (max-width: 480px) {
   .buildings__turn, .restart-turn {bottom: 10px;width:60px}
-  .insiderItem img {height: 100%;}
 }
