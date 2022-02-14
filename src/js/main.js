@@ -53,7 +53,7 @@ var vue = new Vue({
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
                             iframePosition: "717,202,1212,531",
-                            iframeURL : "https://monkey-munchy-store.myspreadshop.net/"
+                            iframeURL : "https://monkey-munchy-store.myspreadshop.net/all"
                         },
                         {
                             coords: "802,142,1122,726",
