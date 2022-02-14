@@ -84,7 +84,7 @@ transition: all .4s ease;
 .buildings__build>img {min-width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;}
 .video-active .buildings__arrows {display: block;}
 .handrightleft {width: 200px;height: 166px;background: url("../images/handrightleft.png") no-repeat center center;position: fixed;top:0;left:0;z-index: 105;
-  animation: leftRight 4s ease infinite;margin: auto;}
+  margin: auto;animation: leftRight 10s linear infinite;}
 .build-capsul.active.right .buildings__build.right, 
 .build-capsul.active.left .buildings__build.left, .build-capsul.active .buildings__turn {display: block;}
 
@@ -102,6 +102,17 @@ transition: all .4s ease;
     }
     50% {
       left: calc(100vw - 200px);
+    }
+    100% {
+      left: 0;    
+    }
+  }
+  @keyframes leftRightMobil {
+    0% {
+      left: 0;
+    }
+    50% {
+      left: calc(100vw - 104px);
     }
     100% {
       left: 0;    
@@ -127,18 +138,8 @@ iframe {border:0;outline: 0}
 .video-arrow.right {margin-left: 70px;}
 .buildings__turn, .restart-turn {width: 90px;}
 .mouse-whell {background-size: 50%;}
-.handrightleft {width: 104px;height: 90px;background-size:97px;}
-@keyframes leftRight {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: calc(100vw - 104px);
-  }
-  100% {
-    left: 0;    
-  }
-}
+.handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 7s linear infinite;}
+
 }
 
 @media only screen and (max-width: 480px) {
