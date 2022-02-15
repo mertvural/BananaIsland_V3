@@ -134,7 +134,10 @@ transition: all .4s ease;
 iframe {border:0;outline: 0}
 
 @media only screen and (max-width: 1441px) {
+
 .buildings__turn, .restart-turn {width: 60px;}
+.insiderItem {zoom: 1.5;}
+
 }
 
 @media only screen and (max-width: 992px) {
@@ -158,5 +161,5 @@ width:100vw;height: 100%;}
 
 
 @media only screen and (max-height: 945px) {
-.insiderItem {overflow-y: auto;zoom: 1.5;}
+.insiderItem {overflow-y: auto;zoom:1.5}
 }
