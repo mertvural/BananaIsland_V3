@@ -150,16 +150,16 @@ iframe {border:0;outline: 0}
 }
 
 
-@media only screen and (max-width: 470px) {
+@media only screen and (max-height: 945px) {
+.insiderItem {overflow-y: auto;zoom:1.5}
+}
+
+
+@media only screen and (max-width: 768px) {
 .buildings__build>img {width: auto;min-width: auto;}
 .iframeCapsul {height: 100% !important;left: 0 !important;position: fixed;width: 100vw !important;top: 23vw !important}
 .insiderItem {zoom:1}
 .insiderItem[data-href="store"] img {display: none;}
 .insiderItem[data-href="store"]::before {content:"";background: url(../images/store-mobil-header.png) no-repeat;position: fixed;top:0;left:0;background-size: contain;
-width:100vw;height: 100%;}
-}
-
-
-@media only screen and (max-height: 945px) {
-.insiderItem {overflow-y: auto;zoom:1.5}
+width:100%;height: 100%;}
 }
