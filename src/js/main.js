@@ -41,7 +41,7 @@ var vue = new Vue({
                             inside: "src/images/sunrise-insider.png",
                             position: "left",
                             iframePosition: "727,224,1192,515",
-                            iframeURL : "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
+                            iframeURL: "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
                         },
                         {
                             coords: "1670,158,1917,744",
@@ -49,7 +49,7 @@ var vue = new Vue({
                             inside: "src/images/manor-insider.png",
                             position: "left",
                             iframePosition: "725,220,1192,522",
-                            iframeURL : "https://www.manor.ch/de/u/sale"
+                            iframeURL: "https://www.manor.ch/de/u/sale"
                         },
                         {
                             coords: "1726,773,1918,373",
@@ -57,7 +57,7 @@ var vue = new Vue({
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
                             iframePosition: "1057,267,1825,758",
-                            iframeURL : "https://monkey-munchy-store.myspreadshop.net/all"
+                            iframeURL: "https://monkey-munchy-store.myspreadshop.net/all"
                         },
                         {
                             coords: "802,142,1122,726",
@@ -65,7 +65,7 @@ var vue = new Vue({
                             inside: "src/images/post-insider.png",
                             position: "right",
                             iframePosition: "725,217,1190,524",
-                            iframeURL : "https://www.postfinance.ch/de/privat.html"
+                            iframeURL: "https://www.postfinance.ch/de/privat.html"
                         },
                         {
                             coords: "349,361,561,743",
@@ -73,7 +73,7 @@ var vue = new Vue({
                             inside: "src/images/orell-insider.png",
                             position: "right",
                             iframePosition: "723,219,1190,521",
-                            iframeURL : "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
+                            iframeURL: "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
                         }
                     ]
                 }
@@ -394,7 +394,7 @@ var vue = new Vue({
                             inside: "src/images/sunrise-insider.png",
                             position: "left",
                             iframePosition: "727,224,1192,515",
-                            iframeURL : "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
+                            iframeURL: "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
                         },
                         {
                             coords: "1670,158,1917,744",
@@ -402,7 +402,7 @@ var vue = new Vue({
                             inside: "src/images/manor-insider.png",
                             position: "left",
                             iframePosition: "725,220,1192,522",
-                            iframeURL : "https://www.manor.ch/de/u/sale"
+                            iframeURL: "https://www.manor.ch/de/u/sale"
                         },
                         {
                             coords: "1726,773,1918,373",
@@ -410,7 +410,7 @@ var vue = new Vue({
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
                             iframePosition: "1057,267,1825,758",
-                            iframeURL : "https://monkey-munchy-store.myspreadshop.net/"
+                            iframeURL: "https://monkey-munchy-store.myspreadshop.net/"
                         },
                         {
                             coords: "802,142,1122,726",
@@ -418,7 +418,7 @@ var vue = new Vue({
                             inside: "src/images/post-insider.png",
                             position: "right",
                             iframePosition: "725,217,1190,524",
-                            iframeURL : "https://www.postfinance.ch"
+                            iframeURL: "https://www.postfinance.ch"
                         },
                         {
                             coords: "349,361,561,743",
@@ -426,7 +426,7 @@ var vue = new Vue({
                             inside: "src/images/orell-insider.png",
                             position: "right",
                             iframePosition: "723,219,1190,521",
-                            iframeURL : "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
+                            iframeURL: "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
                         }
                     ]
                 }
@@ -650,7 +650,7 @@ var vue = new Vue({
             $('img[usemap]').rwdImageMaps();
             $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft(this.scrollLeftPosition("inside"))
             if (!$(".insiderItem.active area").length) return
-            setTimeout(() => {           
+            setTimeout(() => {
                 var coord = $(".insiderItem.active area").attr("coords").split(",")
                 $(".insiderItem.active .iframeCapsul").css({
                     'left': coord[0] + "px",
@@ -710,11 +710,27 @@ var vue = new Vue({
                 $('.video-loader').remove();
             })
 
-              $(".buildings__build").on("click", function() {
+            $(".buildings__build").on("click", function () {
                 $(".handrightleft").hide()
-              })
+            })
 
-        })
+            var percent = $(".video-loader .percent");
+            var time = parseInt(percent.text().split("%")[0]),
+                myInterval = setInterval(timer, 25);
+            function timer() {
+                time >= 100 ? stopTime() : time++
+                percent.text(`${time}%`)
+            }
+            function stopTime() {
+                clearInterval(myInterval);
+            }
+
+            setTimeout(() => {
+                $(".text-loading").fadeIn(500)
+            }, 3000);
+
+
+        })//nextTick end
 
     },
 

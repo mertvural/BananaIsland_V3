@@ -1,6 +1,13 @@
 [v-cloak] {
   display: none;
 }
+@font-face {
+  font-family: '000_astounder_squared_tbRg';
+  src: url('../fonts/astoundersquaredbb-webfont.woff2') format('woff2'),
+       url('../fonts/astoundersquaredbb-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 body,
 html {
   margin: 0;
@@ -74,9 +81,10 @@ transition: all .4s ease;
 .SprdMain .sprd-startpage-preview-tiles {margin: 10px !important;}
 .SprdMain .sprd-listpage, .SprdMain .sprd-listpage__header {margin-left: 0 !important;}
 iframe {border:0;outline: 0}
-.video-loader {background: url("../images/loadingbg.png") no-repeat center center;background-size: cover;position: fixed;top:0;left:0;width:100%;height: 100%;z-index: 1001}
-
-
+.video-loader {background: url("../images/loadingbg.png") no-repeat center center;background-size: cover;position: fixed;top:0;left:0;width:100%;height: 100%;z-index: 1001;
+  font-size: 70px;font-family: '000_astounder_squared_tbRg', Sans-serif;color: #1E2868;}
+.video-loader .text {animation: heartbeat 1s infinite;position: fixed;bottom: 64%;right: 0;left: 0;text-align: center}
+.text-loading {display: none;}
 
 
 @keyframes mouseWhell {
@@ -111,7 +119,33 @@ iframe {border:0;outline: 0}
     left: 0;    
   }
 }
-
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .90 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .90 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .90 );
+  }
+  100%
+  {
+    transform: scale( .90 );
+  }
+}
 
 /*responsive*/
 @media only screen and (max-width: 992px) {
