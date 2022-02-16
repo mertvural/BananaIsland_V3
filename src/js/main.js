@@ -449,7 +449,7 @@ var vue = new Vue({
                 build: false
             }
         ],
-        activeScene: 3,
+        activeScene: 1,
         duration: 250,
         junction: false,
         junctionBack: false,
