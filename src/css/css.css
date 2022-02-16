@@ -148,6 +148,7 @@ iframe {border:0;outline: 0}
 .mouse-whell {background-size: 50%;}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
 .buildings__turn, .restart-turn {width: 60px;}
+.buildings__build>img, .insiderItem img {height: 100%}
 }
 
 
@@ -157,5 +158,4 @@ iframe {border:0;outline: 0}
 .insiderItem[data-href="store"] img {display: none;}
 .insiderItem[data-href="store"]::before {content:"";background: url(../images/store-mobil-header.png) no-repeat;position: fixed;top:0;left:0;background-size: contain;
 width:100%;height: 100%;}
-.buildings__build>img, .insiderItem img {height: 100%}
 }
