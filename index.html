@@ -19,7 +19,7 @@
   <div id="app" v-cloak>
 
     <!--loading-->
-    <div class="video-loader">
+    <div class="video-loader" v-if="!pageLoad">
       <div class="text">
         <span class="text-loading">Loading</span>
       <span class="percent">0%</span>

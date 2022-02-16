@@ -458,7 +458,8 @@ var vue = new Vue({
         end: false,
         isWalk: false,
         walkDelay: false,
-        isHorizontalScroll: false
+        isHorizontalScroll: false,
+        pageLoad : false
     },
     methods: {
 
@@ -698,16 +699,16 @@ var vue = new Vue({
             }
 
             document.addEventListener("wheel", function (event) {
-                if (!$this.walkDelay) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
+                if (!$this.walkDelay && $this.pageLoad) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
             });
 
             document.addEventListener("touchmove", function (event) {
-                if (!$this.walkDelay) $this.goMonkey()
+                if (!$this.walkDelay && $this.pageLoad) $this.goMonkey()
                 $this.isHorizontalScroll = false
             });
 
             $(window).on('load', function () {
-                $('.video-loader').remove();
+               $this.pageLoad = true
             })
 
             $(".buildings__build").on("click", function () {
