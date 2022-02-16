@@ -76,7 +76,7 @@
           <!--insider-->
           <div class="insiderCapsul">
             <div class="insiderItem" v-for="insider in video.buildOptions.usemaps" :data-href="insider.href">
-              <img :src="insider.inside" class="insiderCapsul__build--img" :usemap="'#imagemap'+insider.href" width="1920" height="1080" />
+              <img :src="insider.inside" class="insiderCapsul__build--img" :usemap="'#imagemap'+insider.href" width="2880" height="1800" />
               <map :name="'imagemap'+insider.href" v-if="insider.iframePosition">
                 <area target="" alt="" title="" href="javascript:;" :coords="insider.iframePosition" shape="rect">
               </map>

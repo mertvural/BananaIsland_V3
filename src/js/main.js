@@ -56,7 +56,7 @@ var vue = new Vue({
                             href: "store",
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
-                            iframePosition: "717,202,1212,531",
+                            iframePosition: "1057,267,1825,758",
                             iframeURL : "https://monkey-munchy-store.myspreadshop.net/all"
                         },
                         {
@@ -409,7 +409,7 @@ var vue = new Vue({
                             href: "store",
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
-                            iframePosition: "717,202,1212,531",
+                            iframePosition: "1057,267,1825,758",
                             iframeURL : "https://monkey-munchy-store.myspreadshop.net/"
                         },
                         {
