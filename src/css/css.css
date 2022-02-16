@@ -82,7 +82,10 @@ transition: all .4s ease;
 .buildings__build {z-index: 103;}
 .insiderItem {z-index: 104;}
 .insiderItem:not(.active) {display: none;}
-.buildings__build>img, .insiderItem img {min-width: 100%;min-height: 100%;width: auto;height: auto;}
+
+.buildings__build>img, .insiderItem img {min-width: 100%;width: auto;}
+.buildings__build>img {height: 100%;object-fit: cover}
+.insiderItem img {height: auto}
 .buildings__arrows, .buildings__build, .buildings__turn, .build-capsul.active-right .mouse-whell, .build-capsul.active-left .mouse-whell {display: none;}
 .video-active .buildings__arrows {display: block;}
 .handrightleft {width: 200px;height: 166px;background: url("../images/handrightleft.png") no-repeat center center;position: fixed;right:0;top:0;left:0;z-index: 105;
