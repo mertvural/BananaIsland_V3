@@ -39,13 +39,17 @@ var vue = new Vue({
                             coords: "718,372,974,724",
                             href: "sunrise",
                             inside: "src/images/sunrise-insider.png",
-                            position: "left"
+                            position: "left",
+                            iframePosition: "727,224,1192,515",
+                            iframeURL : "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
                         },
                         {
                             coords: "1670,158,1917,744",
                             href: "manor",
                             inside: "src/images/manor-insider.png",
-                            position: "left"
+                            position: "left",
+                            iframePosition: "725,220,1192,522",
+                            iframeURL : "https://www.manor.ch/de/u/sale"
                         },
                         {
                             coords: "1726,773,1918,373",
@@ -59,13 +63,17 @@ var vue = new Vue({
                             coords: "802,142,1122,726",
                             href: "postFinance",
                             inside: "src/images/post-insider.png",
-                            position: "right"
+                            position: "right",
+                            iframePosition: "725,217,1190,524",
+                            iframeURL : "https://www.postfinance.ch/de/privat.html"
                         },
                         {
                             coords: "349,361,561,743",
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
-                            position: "right"
+                            position: "right",
+                            iframePosition: "723,219,1190,521",
+                            iframeURL : "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
                         }
                     ]
                 }
@@ -384,13 +392,17 @@ var vue = new Vue({
                             coords: "718,372,974,724",
                             href: "sunrise",
                             inside: "src/images/sunrise-insider.png",
-                            position: "left"
+                            position: "left",
+                            iframePosition: "727,224,1192,515",
+                            iframeURL : "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
                         },
                         {
                             coords: "1670,158,1917,744",
                             href: "manor",
                             inside: "src/images/manor-insider.png",
-                            position: "left"
+                            position: "left",
+                            iframePosition: "725,220,1192,522",
+                            iframeURL : "https://www.manor.ch/de/u/sale"
                         },
                         {
                             coords: "1726,773,1918,373",
@@ -404,13 +416,17 @@ var vue = new Vue({
                             coords: "802,142,1122,726",
                             href: "postFinance",
                             inside: "src/images/post-insider.png",
-                            position: "right"
+                            position: "right",
+                            iframePosition: "725,217,1190,524",
+                            iframeURL : "https://www.postfinance.ch"
                         },
                         {
                             coords: "349,361,561,743",
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
-                            position: "right"
+                            position: "right",
+                            iframePosition: "723,219,1190,521",
+                            iframeURL : "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
                         }
                     ]
                 }
@@ -433,7 +449,7 @@ var vue = new Vue({
                 build: false
             }
         ],
-        activeScene: 1,
+        activeScene: 3,
         duration: 250,
         junction: false,
         junctionBack: false,

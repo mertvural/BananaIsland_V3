@@ -78,86 +78,81 @@ transition: all .4s ease;
   z-index: 1000;
 }
 
-.buildings__build {position: fixed;z-index: 103;text-align: center;overflow-x: auto;overflow-y: hidden;}
+.buildings__build, .insiderItem {position: fixed;text-align: center;overflow-x: auto;overflow-y: hidden;top:0;left:0;right:0;bottom: 0}
+.buildings__build {z-index: 103;}
+.insiderItem {z-index: 104;}
+.insiderItem:not(.active) {display: none;}
+.buildings__build>img, .insiderItem img {min-width: 100%;min-height: 100%;width: auto;height: auto;}
 .buildings__arrows, .buildings__build, .buildings__turn, .build-capsul.active-right .mouse-whell, .build-capsul.active-left .mouse-whell {display: none;}
-.buildings__build {width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;}
-.buildings__build>img {min-width: 100%;height: 100%;object-fit: cover;-o-object-fit: cover;width: auto;}
 .video-active .buildings__arrows {display: block;}
 .handrightleft {width: 200px;height: 166px;background: url("../images/handrightleft.png") no-repeat center center;position: fixed;right:0;top:0;left:0;z-index: 105;
   margin: auto;animation: leftRight 2s linear infinite;}
 .build-capsul.active.right .buildings__build.right, 
 .build-capsul.active.left .buildings__build.left, .build-capsul.active .buildings__turn {display: block;}
-
 .buildings__turn, .restart-turn {position: fixed;bottom:10px;left:0;right:0;margin: auto;width: 100px;z-index: 105;cursor: pointer;}
 .mouse-whell {background: url(../images/mouse-whell.png) no-repeat center center;width: 87px;height:200px;position: fixed;bottom: 50px;left:0;right: 0;margin:auto;
   z-index: 102;background-size: 100%;animation: mouseWhell 2s ease alternate infinite;opacity: 1;}
-  .buildings__build--pathimg {position: absolute;}
-  @keyframes mouseWhell {
-    0% {bottom:20px}
-    100% {bottom:50px;opacity: .8;}
-  }
-  @keyframes leftRight {
-    10%, 90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    
-    20%, 80% {
-      transform: translate3d(10px, 0, 0);
-    }
-  
-    30%, 50%, 70% {
-      transform: translate3d(-20px, 0, 0);
-    }
-  
-    40%, 60% {
-      transform: translate3d(20px, 0, 0);
-    }
-  }
-  @keyframes leftRightMobil {
-    0% {
-      left: 0;
-    }
-    50% {
-      left: calc(100vw - 104px);
-    }
-    100% {
-      left: 0;    
-    }
-  }
-.insiderItem:not(.active) {display: none;}
-.insiderItem {position: fixed;top:0;left:0;right:0;bottom: 0;z-index: 104;text-align: center;overflow:hidden;zoom:1.6}
-.insiderItem img {min-width: 100%;min-height: 100%}
+.buildings__build--pathimg {position: absolute;}
 .iframeCapsul {position: absolute;z-index: 106;overflow: auto;}
 #onetrust-consent-sdk {display: none !important;opacity: 0 !important;visibility: hidden !important;}
 .SprdMain .sprd-startpage-preview-tiles {margin: 10px !important;}
 .SprdMain .sprd-listpage, .SprdMain .sprd-listpage__header {margin-left: 0 !important;}
 iframe {border:0;outline: 0}
 
-@media only screen and (max-width: 1441px) {
 
-.buildings__turn, .restart-turn {width: 60px;}
-.insiderItem {zoom: 1.5;}
+
+
+
+@keyframes mouseWhell {
+  0% {bottom:20px}
+  100% {bottom:50px;opacity: .8;}
+}
+@keyframes leftRight {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(20px, 0, 0);
+  }
+}
+@keyframes leftRightMobil {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100vw - 104px);
+  }
+  100% {
+    left: 0;    
+  }
 }
 
+
+/*responsive*/
 @media only screen and (max-width: 992px) {
 .video-arrow {width:80px;height: 70px;}
 .video-arrow.left {margin-left: -70px;}
 .video-arrow.right {margin-left: 70px;}
 .mouse-whell {background-size: 50%;}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
+.buildings__turn, .restart-turn {width: 60px;}
 }
 
-
-@media only screen and (max-height: 945px) {
-.insiderItem {overflow-y: auto;zoom:1.5}
-}
 
 
 @media only screen and (max-width: 768px) {
-.buildings__build>img {width: auto;min-width: auto;}
 .iframeCapsul {height: 100% !important;left: 0 !important;position: fixed;width: 100vw !important;top: 23vw !important}
-.insiderItem {zoom:1}
 .insiderItem[data-href="store"] img {display: none;}
 .insiderItem[data-href="store"]::before {content:"";background: url(../images/store-mobil-header.png) no-repeat;position: fixed;top:0;left:0;background-size: contain;
 width:100%;height: 100%;}
+.buildings__build>img, .insiderItem img {height: 100%}
 }
