@@ -137,28 +137,25 @@ iframe {border:0;outline: 0}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
 .buildings__turn, .restart-turn {width: 60px;}
 
-
 }
-
-
-@media only screen and (max-height: 770px) {
-
-.insiderItem {margin-top: -60px;}
-
-}
-
-@media only screen and (max-height: 700px) {
-
-  .insiderItem {margin-top: 0;}
-  .insiderItem img {width: 1920px;}
-  
-  }
-
 
 
 @media only screen and (max-width: 768px) {
 .iframeCapsul {height: 100% !important;left: 0 !important;position: fixed;width: 100vw !important;top: 23vw !important}
 .insiderItem[data-href="store"] img {display: none;}
 .insiderItem[data-href="store"]::before {content:"";background: url(../images/store-mobil-header.png) no-repeat;position: fixed;top:0;left:0;background-size: contain;
-width:100%;height: 100%;}
+width:100%;height: 100%}
+}
+
+@media only screen and (max-height: 770px) {
+
+.insiderItem {margin-top: -60px}
+
+}
+
+@media only screen and (max-height: 700px) {
+
+.insiderItem {margin-top: 0;}
+.insiderItem img {width: 1920px}
+
 }
