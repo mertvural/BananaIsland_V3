@@ -18,11 +18,11 @@ html {
 .video-capsul {position: fixed;top: 0;width: 100%;}
 .video-active {z-index:100 !important} 
 .video-arrow {    background-color: transparent;background-position: 50%;background-repeat: no-repeat;background-size: contain;border: 0;
-cursor: pointer;height: 115px;padding: 0;position: fixed;width: 180px;top: 12%;transition: all .4s ease;}
+cursor: pointer;height: 115px;padding: 0;position: fixed;width: 180px;top: 10%;transition: all .4s ease;}
 .video-arrow.left {background-image: url(../images/leftArrow.png);left: 50%;margin-left: -140px;-webkit-transform: translateX(-50%);transform: translateX(-50%)}
 .video-arrow.right {background-image: url(../images/rightArrow.png);left: 50%;margin-left: 140px;-webkit-transform: translateX(-50%);transform: translateX(-50%)}
 .video-arrow:hover {opacity: .8;}
-.video-arrow.turn {background-image: url("../images/turn.png");left:50%;margin:100px 0 0 -90px;}
+.video-arrow.turn {background-image: url("../images/turn.png");left:50%;margin:120px 0 0 -90px;}
 
 .buildings__build, .insiderItem {position: fixed;text-align: center;top:0;left:0;right:0;bottom: 0}
 .buildings__build {z-index: 103;overflow-x: auto;overflow-y: hidden;}
