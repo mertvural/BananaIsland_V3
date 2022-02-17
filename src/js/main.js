@@ -783,7 +783,7 @@ var vue = new Vue({
             var percent = $(".video-loader .percent"),
                 textLoading = $(".text-loading"),
                 time = parseInt(percent.text().split("%")[0]),
-                myInterval = setInterval(timer, 25);
+                myInterval = setInterval(timer, 30);
 
             function timer() {
                 time >= 100 ? stopTime() : time++
