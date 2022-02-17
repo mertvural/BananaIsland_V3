@@ -1,8 +1,3 @@
-/*********************************************
-*
-*  codes cannot be used without permission. copyright 2022                    
-*
-*********************************************/
 var vue = new Vue({
     el: "#app",
     data: {
@@ -473,12 +468,15 @@ var vue = new Vue({
                 isLoop = getVideo.loop;
             getVideo.playbackRate = 1;
             $this.loopScreen = isLoop;
+            
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
 
-            if ($this.loopScreen !== true) {
+            if ($this.loopScreen === false) {
                 $this.isWalk = true
                 getVideo.play()
-            } else {
+            } 
+            
+            else {
                 if ($this.activeScene === 18 || $this.activeScene === 31) {
                     $this.activeScene = 32;
                     $this.junctionBack = false

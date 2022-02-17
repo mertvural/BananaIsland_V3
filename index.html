@@ -22,9 +22,9 @@
     <div class="video-loader" v-if="!pageLoad">
       <div class="text">
         <span class="text-loading">Loading</span>
-      <span class="percent">0%</span>
+        <span class="percent">0%</span>
       </div>
-    </div>    
+    </div>
     <!--loading-->
 
     <!--again-->
@@ -39,13 +39,11 @@
       <article class="video-capsul" :class="video.id === activeScene ? 'video-active' : ''" v-for="video in sourceState"
         :data-id="video.id">
 
-      <!--video-->
-      <video v-show="!buildScreen" class="video"
-      v-if="video.id === activeScene || video.id === activeScene+1 || video.id === activeScene+2 || video.id === 19 || video.id === 6 || video.id === 1 || 
-      video.id === 32 || video.id === backCorner"
-      :key="video.id" :src="video.src" :autoplay="video.autoplay" :muted="video.muted" :loop="video.loop"
-      playsinline></video>
-    <!--video-->
+        <!--video-->
+        <video v-show="!buildScreen" class="video" v-if="video.id === activeScene || video.id === activeScene+1 || video.id === activeScene+2 || video.id === 19 || video.id === 6 || video.id === 1 || 
+      video.id === 32 || video.id === backCorner" :key="video.id" :src="video.src" :autoplay="video.autoplay"
+          :muted="video.muted" :loop="video.loop" playsinline></video>
+        <!--video-->
 
         <!--building-->
         <div class="build-capsul" :data-build="video.id" v-if="video.build">
@@ -80,11 +78,13 @@
           <!--insider-->
           <div class="insiderCapsul">
             <div class="insiderItem" v-for="insider in video.buildOptions.usemaps" :data-href="insider.href">
-              <img :src="insider.inside" class="insiderCapsul__build--img" :usemap="'#imagemap'+insider.href" width="2880" height="1800" />
+              <img :src="insider.inside" class="insiderCapsul__build--img" :usemap="'#imagemap'+insider.href"
+                width="2880" height="1800" />
               <map :name="'imagemap'+insider.href" v-if="insider.iframePosition">
                 <area target="" alt="" title="" href="javascript:;" :coords="insider.iframePosition" shape="rect">
               </map>
-              <iframe :src="insider.iframeURL" allowtransparency="true" class="iframeCapsul" v-if="insider.iframeURL"></iframe>
+              <iframe :src="insider.iframeURL" allowtransparency="true" class="iframeCapsul"
+                v-if="insider.iframeURL"></iframe>
             </div>
           </div>
           <!--insider-->
@@ -106,7 +106,7 @@
 
   </div>
 
-  <script src="src/js/main.js?v=1"></script>
+  <script src="src/js/main.js?v=2"></script>
 
 </body>
 
