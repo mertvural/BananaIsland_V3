@@ -112,18 +112,36 @@ iframe {border:0;outline: 0}
 }
 
 /*responsive*/
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1400px) {
 .video-arrow {width:80px;height: 70px;}
 .video-arrow.left {margin-left: -70px;}
 .video-arrow.right {margin-left: 70px;}
 .mouse-whell {background-size: 50%;height:102px}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
 .buildings__turn, .restart-turn {width: 60px;}
-.buildings__build>img, .insiderItem img {height: 100%}
-.video-arrow.turn {background-image: url(../images/turn.png);left: 50%;margin: 68px 0 0 -37px;width: 70px;height: 55px}
+.video-arrow.turn {margin: 68px 0 0 -37px;width: 70px;height: 55px}
+}
 
+
+@media only screen and (max-width: 992px) {
+
+.buildings__build>img, .insiderItem img {height: 100%}
 
 }
+
+
+@media only screen and (max-height: 770px) {
+
+.insiderItem {margin-top: -60px;}
+
+}
+
+@media only screen and (max-height: 700px) {
+
+  .insiderItem {margin-top: 0;}
+  .insiderItem img {width: 1920px;}
+  
+  }
 
 
 
