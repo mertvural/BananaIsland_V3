@@ -694,7 +694,31 @@ var vue = new Vue({
             }
         },
 
-        backCorner() {
+        //basa dondugunde videolarin currentTime'ını basa alir
+        resetVideos() {
+            this.end = false;
+            this.activeScene = 1;
+            var videoCapsul = $(".video-capsul");
+            videoCapsul.each(function (i, el) {
+                $(el).children("video").length > 0 ? $(el).children("video")[0].currentTime = 0 : ""
+            })
+            videoCapsul.first().children("video")[0].play()
+        },
+
+        isMobile() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            return isMobile ? true : false
+        },
+
+        isSafari() {
+            var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+            return isSafari;
+        }
+
+    },
+
+    computed: {
+        backCorner: function () {
             switch (this.activeScene) {
                 case 3:
                     return 33
@@ -724,29 +748,7 @@ var vue = new Vue({
                     return 31
                     break;
             }
-        },
-
-        //basa dondugunde videolarin currentTime'ını basa alir
-        resetVideos() {
-            this.end = false;
-            this.activeScene = 1;
-            var videoCapsul = $(".video-capsul");
-            videoCapsul.each(function (i, el) {
-                $(el).children("video").length > 0 ? $(el).children("video")[0].currentTime = 0 : ""
-            })
-            videoCapsul.first().children("video")[0].play()
-        },
-
-        isMobile() {
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            return isMobile ? true : false
-        },
-
-        isSafari() {
-            var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
-            return isSafari;
         }
-
     },
 
     //DOM hazir oldugunda
@@ -771,7 +773,7 @@ var vue = new Vue({
                 $this.pageLoad = true
                 var active = $this.getActiveVideos();
                 setTimeout(() => {
-                    $(active).find("video")[0].play() 
+                    $(active).find("video")[0].play()
                 }, 1200);
 
             })
