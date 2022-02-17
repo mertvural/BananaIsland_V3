@@ -112,7 +112,7 @@ iframe {border:0;outline: 0}
 }
 
 /*responsive*/
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1550px) {
 .video-arrow {width:80px;height: 70px;}
 .video-arrow.left {margin-left: -70px;}
 .video-arrow.right {margin-left: 70px;}
