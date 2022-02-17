@@ -9,8 +9,8 @@ var vue = new Vue({
         sourceState: [
             {
                 id: 1,
-                src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/100-Main_Street_1-FWR-LOOP.mp4",
-                autoplay: true,
+                src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/099-Main_Street_1-FWR-LOOP.mp4",
+                autoplay: false,
                 muted: true,
                 loop: true,
                 build: false
@@ -579,12 +579,14 @@ var vue = new Vue({
                     this.junction = false;
                     this.junctionBack = false;
                     this.duration !== "end" ? this.duration = 10000 : ""
+                    this.goMonkey();
                     break;
                 case "right":
                     this.activeScene = 19;
-                    this.junction = false;
+                    this.junction = false
                     this.junctionBack = false;
                     this.duration !== "end" ? this.duration = 10000 : ""
+                    this.goMonkey();
                     break;
             }
 
@@ -659,7 +661,7 @@ var vue = new Vue({
             }, 500);
         },
 
-        backCorner(id) {
+        backCornerBttn(id) {
             switch (id) {
                 case 3:
                     this.activeScene = 33;
@@ -688,6 +690,38 @@ var vue = new Vue({
                 case 5:
                     this.activeScene = 31;
                     this.junction = false
+                    break;
+            }
+        },
+
+        backCorner() {
+            switch (this.activeScene) {
+                case 3:
+                    return 33
+                    break;
+                case 33:
+                    return 3
+                    break;
+                case 9:
+                    return 14
+                    break;
+                case 14:
+                    return 9
+                    break;
+                case 22:
+                    return 27
+                    break;
+                case 27:
+                    return 22
+                    break;
+                case 31:
+                    return 5
+                    break;
+                case 18:
+                    return 5
+                    break;
+                case 5:
+                    return 31
                     break;
             }
         },
@@ -735,6 +769,11 @@ var vue = new Vue({
 
             $(window).on('load', function () {
                 $this.pageLoad = true
+                var active = $this.getActiveVideos();
+                setTimeout(() => {
+                    $(active).find("video")[0].play() 
+                }, 1500);
+
             })
 
             $(".buildings__build").on("click", function () {
@@ -752,23 +791,13 @@ var vue = new Vue({
             }
             function stopTime() {
                 clearInterval(myInterval);
-                textLoading.fadeIn(500)
+                textLoading.show()
+                percent.hide()
             }
 
 
         })//nextTick end
 
-    },
-
-    watch: {
-        activeScene: function (newValue, oldValue) {
-
-            this.prevActiveScene = oldValue
-            setTimeout(() => {
-                this.prevActiveScene = null
-            }, 2000);
-
-        }
     },
 
     updated() {
@@ -779,16 +808,5 @@ var vue = new Vue({
                 $this.walkDelay = false
             }, 2500);
         }
-
-        switch ($this.activeScene) {
-            case 6:
-                $this.goMonkey()
-                break
-            case 19:
-                $this.goMonkey()
-                break
-        }
-
-
     }
 })

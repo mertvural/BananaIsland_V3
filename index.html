@@ -39,19 +39,20 @@
       <article class="video-capsul" :class="video.id === activeScene ? 'video-active' : ''" v-for="video in sourceState"
         :data-id="video.id">
 
-        <!--video-->
-        <video v-show="!buildScreen" class="video"
-          v-if="video.id === activeScene || video.id === prevActiveScene"
-          :key="video.id" :src="video.src" :autoplay="video.autoplay" :muted="video.muted" :loop="video.loop"
-          playsinline></video>
-        <!--video-->
+      <!--video-->
+      <video v-show="!buildScreen" class="video"
+      v-if="video.id === activeScene || video.id === activeScene+1 || video.id === activeScene+2 || video.id === 19 || video.id === 6 || video.id === 1 || 
+      video.id === 32 || video.id === backCorner()"
+      :key="video.id" :src="video.src" :autoplay="video.autoplay" :muted="video.muted" :loop="video.loop"
+      playsinline></video>
+    <!--video-->
 
         <!--building-->
         <div class="build-capsul" :data-build="video.id" v-if="video.build">
           <div class="buildings__arrows">
             <button type="button" class="video-arrow left" @click="buildEnter(video.id,'left')"></button>
             <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')"></button>
-            <button type="button" class="video-arrow turn" @click="backCorner(video.id)"></button>
+            <button type="button" class="video-arrow turn" @click="backCornerBttn(video.id)"></button>
           </div>
           <div class="buildings__build right">
             <img :src="video.buildOptions.rightImg" class="buildings__build--img" :usemap="'#'+'mapRight'+video.id"
@@ -95,7 +96,7 @@
         <div v-if="junction || junctionBack">
           <button type="button" class="video-arrow left" @click="direction('left')"></button>
           <button type="button" class="video-arrow right" @click="direction('right')"></button>
-          <button type="button" class="video-arrow turn" @click="backCorner(video.id)"></button>
+          <button type="button" class="video-arrow turn" @click="backCornerBttn(video.id)"></button>
         </div>
         <!--junction-->
 
