@@ -450,6 +450,7 @@ var vue = new Vue({
             }
         ],
         activeScene: 1,
+        prevActiveScene: null,
         duration: 250,
         junction: false,
         junctionBack: false,
@@ -459,7 +460,7 @@ var vue = new Vue({
         isWalk: false,
         walkDelay: false,
         isHorizontalScroll: false,
-        pageLoad : false
+        pageLoad: false
     },
     methods: {
 
@@ -472,7 +473,6 @@ var vue = new Vue({
                 isLoop = getVideo.loop;
             getVideo.playbackRate = 1;
             $this.loopScreen = isLoop;
-
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
 
             if ($this.loopScreen !== true) {
@@ -573,21 +573,18 @@ var vue = new Vue({
 
         //kavsaklarda yon
         direction(direction) {
-
             switch (direction) {
                 case "left":
                     this.activeScene = 6;
                     this.junction = false;
                     this.junctionBack = false;
                     this.duration !== "end" ? this.duration = 10000 : ""
-                    this.goMonkey();
                     break;
                 case "right":
                     this.activeScene = 19;
-                    this.junction = false
+                    this.junction = false;
                     this.junctionBack = false;
                     this.duration !== "end" ? this.duration = 10000 : ""
-                    this.goMonkey();
                     break;
             }
 
@@ -662,6 +659,39 @@ var vue = new Vue({
             }, 500);
         },
 
+        backCorner(id) {
+            switch (id) {
+                case 3:
+                    this.activeScene = 33;
+                    break;
+                case 33:
+                    this.activeScene = 3;
+                    break;
+                case 9:
+                    this.activeScene = 14;
+                    break;
+                case 14:
+                    this.activeScene = 9;
+                    break;
+                case 22:
+                    this.activeScene = 27;
+                    break;
+                case 27:
+                    this.activeScene = 22;
+                    break;
+                case 31:
+                    this.activeScene = 5;
+                    break;
+                case 18:
+                    this.activeScene = 5;
+                    break;
+                case 5:
+                    this.activeScene = 31;
+                    this.junction = false
+                    break;
+            }
+        },
+
         //basa dondugunde videolarin currentTime'ını basa alir
         resetVideos() {
             this.end = false;
@@ -692,11 +722,7 @@ var vue = new Vue({
 
         $this.$nextTick(function () {
 
-            if ($this.isSafari()) {
-                $this.duration = "end"
-            } else if ($this.isMobile()) {
-                $this.duration = 600
-            }
+            $this.isSafari() ? $this.duration = "end" : $this.duration = 600
 
             document.addEventListener("wheel", function (event) {
                 if (!$this.walkDelay && $this.pageLoad) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
@@ -708,31 +734,41 @@ var vue = new Vue({
             });
 
             $(window).on('load', function () {
-               $this.pageLoad = true
+                $this.pageLoad = true
             })
 
             $(".buildings__build").on("click", function () {
                 $(".handrightleft").hide()
             })
 
-            var percent = $(".video-loader .percent");
-            var time = parseInt(percent.text().split("%")[0]),
+            var percent = $(".video-loader .percent"),
+                textLoading = $(".text-loading"),
+                time = parseInt(percent.text().split("%")[0]),
                 myInterval = setInterval(timer, 25);
+
             function timer() {
                 time >= 100 ? stopTime() : time++
                 percent.text(`${time}%`)
             }
             function stopTime() {
                 clearInterval(myInterval);
+                textLoading.fadeIn(500)
             }
-
-            setTimeout(() => {
-                $(".text-loading").fadeIn(500)
-            }, 3000);
 
 
         })//nextTick end
 
+    },
+
+    watch: {
+        activeScene: function (newValue, oldValue) {
+
+            this.prevActiveScene = oldValue
+            setTimeout(() => {
+                this.prevActiveScene = null
+            }, 2000);
+
+        }
     },
 
     updated() {
@@ -743,5 +779,16 @@ var vue = new Vue({
                 $this.walkDelay = false
             }, 2500);
         }
+
+        switch ($this.activeScene) {
+            case 6:
+                $this.goMonkey()
+                break
+            case 19:
+                $this.goMonkey()
+                break
+        }
+
+
     }
 })

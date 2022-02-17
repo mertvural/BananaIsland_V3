@@ -41,7 +41,7 @@
 
         <!--video-->
         <video v-show="!buildScreen" class="video"
-          v-if="video.id === activeScene || video.id === activeScene+1 || video.id === activeScene+2 || video.id === 19 || video.id === 6 || video.id === 1 ||  video.id === 32"
+          v-if="video.id === activeScene || video.id === prevActiveScene"
           :key="video.id" :src="video.src" :autoplay="video.autoplay" :muted="video.muted" :loop="video.loop"
           playsinline></video>
         <!--video-->
@@ -51,6 +51,7 @@
           <div class="buildings__arrows">
             <button type="button" class="video-arrow left" @click="buildEnter(video.id,'left')"></button>
             <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')"></button>
+            <button type="button" class="video-arrow turn" @click="backCorner(video.id)"></button>
           </div>
           <div class="buildings__build right">
             <img :src="video.buildOptions.rightImg" class="buildings__build--img" :usemap="'#'+'mapRight'+video.id"
@@ -82,7 +83,7 @@
               <map :name="'imagemap'+insider.href" v-if="insider.iframePosition">
                 <area target="" alt="" title="" href="javascript:;" :coords="insider.iframePosition" shape="rect">
               </map>
-              <iframe :src="insider.iframeURL" allowtransparency="true" class="iframeCapsul" v-if="insider.iframeURL"></iframe>         
+              <iframe :src="insider.iframeURL" allowtransparency="true" class="iframeCapsul" v-if="insider.iframeURL"></iframe>
             </div>
           </div>
           <!--insider-->
@@ -94,6 +95,7 @@
         <div v-if="junction || junctionBack">
           <button type="button" class="video-arrow left" @click="direction('left')"></button>
           <button type="button" class="video-arrow right" @click="direction('right')"></button>
+          <button type="button" class="video-arrow turn" @click="backCorner(video.id)"></button>
         </div>
         <!--junction-->
 
