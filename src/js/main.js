@@ -772,7 +772,7 @@ var vue = new Vue({
                 var active = $this.getActiveVideos();
                 setTimeout(() => {
                     $(active).find("video")[0].play() 
-                }, 1500);
+                }, 1200);
 
             })
 
@@ -783,7 +783,7 @@ var vue = new Vue({
             var percent = $(".video-loader .percent"),
                 textLoading = $(".text-loading"),
                 time = parseInt(percent.text().split("%")[0]),
-                myInterval = setInterval(timer, 30);
+                myInterval = setInterval(timer, 60);
 
             function timer() {
                 time >= 100 ? stopTime() : time++
