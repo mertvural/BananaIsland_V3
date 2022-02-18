@@ -12,6 +12,7 @@
   <script src="src/js/vue.js"></script>
   <script src="src/js/jquery-migrate-1.4.1.min.js"></script>
   <script src="src/js/jquery.rwdImageMaps.min.js"></script>
+  <script src="src/js/jquery.mobile-events.min.js"></script>
 </head>
 
 <body>
@@ -32,12 +33,12 @@
       alt="restart" />
     <!--again-->
 
-    <div class="mouse-whell" v-if="activeScene===1"></div>
-
     <section class="video-list">
 
       <article class="video-capsul" :class="video.id === activeScene ? 'video-active' : ''" v-for="video in sourceState"
         :data-id="video.id">
+
+        <div class="mouse-whell" :class="video.backTurned ? 'down' : ''" v-if="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow"></div>
 
         <!--video-->
         <video v-show="!buildScreen" class="video" v-if="video.id === activeScene || video.id === activeScene+1 || video.id === activeScene+2 || video.id === 19 || video.id === 6 || video.id === 1 || 
@@ -70,8 +71,6 @@
           </div>
 
           <img src="src/images/turn.png" @click="buildExit(video.id)" class="buildings__turn" />
-
-          <div class="mouse-whell" v-show="!buildScreen"></div>
 
           <div class="handrightleft" v-show="isHorizontalScroll && buildScreen"></div>
 

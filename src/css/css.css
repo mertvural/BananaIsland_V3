@@ -40,7 +40,8 @@ cursor: pointer;height: 115px;padding: 0;position: fixed;width: 180px;top: 10%;t
 .build-capsul.active.left .buildings__build.left, .build-capsul.active .buildings__turn {display: block;}
 .buildings__turn, .restart-turn {position: fixed;bottom:10px;left:0;right:0;margin: auto;width: 100px;z-index: 105;cursor: pointer;}
 .mouse-whell {background: url(../images/mouse-whell.png) no-repeat center center;width: 87px;height:200px;position: fixed;bottom:10px;left:0;right: 0;margin:auto;
-  z-index: 102;background-size: 100%;animation: mouseWhell 1s ease alternate infinite}
+  z-index: 102;background-size: 100%;animation: mouseWhell 1s ease-out alternate infinite}
+.mouse-whell.down {background-image: url("../images/mouse-whell-down.png");height: 150px;animation: mouseWhellDown 1s ease alternate infinite}
 .buildings__build--pathimg {position: absolute;}
 .iframeCapsul {position: absolute;z-index: 106;overflow: auto;}
 #onetrust-consent-sdk {display: none !important;opacity: 0 !important;visibility: hidden !important;}
@@ -54,6 +55,10 @@ iframe {border:0;outline: 0}
 
 
 @keyframes mouseWhell {
+  0% {bottom:10px}
+  100% {bottom:40px}
+}
+@keyframes mouseWhellDown {
   0% {bottom:10px}
   100% {bottom:40px}
 }
@@ -119,7 +124,7 @@ iframe {border:0;outline: 0}
 .video-arrow.left {margin-left: -100px;}
 .video-arrow.right {margin-left: 100px;}
 .video-arrow.turn {margin:90px 0 0 -53px;width: 100px;height: 71px;}
-.mouse-whell {background-size: 70%;height:145px}
+.mouse-whell {background-size: 70%;height:145px !important}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
 .buildings__turn, .restart-turn {width: 60px;}
 
@@ -133,7 +138,7 @@ iframe {border:0;outline: 0}
 .video-arrow.left {margin-left: -70px;}
 .video-arrow.right {margin-left: 70px;}
 .video-arrow.turn {margin: 68px 0 0 -37px;width: 70px;height: 55px}
-.mouse-whell {background-size: 50%;height:102px}
+.mouse-whell {background-size: 50%;height:102px !important}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
 .buildings__turn, .restart-turn {width: 60px;}
 

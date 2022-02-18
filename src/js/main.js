@@ -8,7 +8,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 2,
@@ -16,7 +17,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 3,
@@ -71,7 +73,8 @@ var vue = new Vue({
                             iframeURL: "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
                         }
                     ]
-                }
+                },
+                backTurned: false
 
             },
             {
@@ -80,7 +83,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 5,
@@ -88,7 +92,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 6,
@@ -96,7 +101,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 7,
@@ -104,7 +110,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 8,
@@ -112,7 +119,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 9,
@@ -145,7 +153,8 @@ var vue = new Vue({
                             position: "right"
                         }
                     ]
-                }
+                },
+                backTurned: false
 
             },
             {
@@ -154,7 +163,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 11,
@@ -162,7 +172,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 12,
@@ -170,7 +181,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 13,
@@ -178,7 +190,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 14,
@@ -211,8 +224,8 @@ var vue = new Vue({
                             position: "right"
                         }
                     ]
-                }
-
+                },
+                backTurned: true
             },
             {
                 id: 15,
@@ -220,7 +233,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 16,
@@ -228,7 +242,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 17,
@@ -236,7 +251,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 18,
@@ -244,7 +260,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 19,
@@ -252,7 +269,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 20,
@@ -260,7 +278,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: false
             },
 
             {
@@ -269,7 +288,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 22,
@@ -282,8 +302,8 @@ var vue = new Vue({
                 {
                     rightImg: "src/images/right-3-perspective.png",
                     leftImg: "src/images/left-3-perspective.png"
-                }
-
+                },
+                backTurned: false
             },
             {
                 id: 23,
@@ -291,7 +311,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 24,
@@ -299,7 +320,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: false
             },
             {
                 id: 25,
@@ -307,7 +329,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 26,
@@ -315,7 +338,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 27,
@@ -328,7 +352,8 @@ var vue = new Vue({
                 {
                     rightImg: "src/images/right-3-perspective.png",
                     leftImg: "src/images/left-3-perspective.png"
-                }
+                },
+                backTurned: true
 
             },
             {
@@ -337,7 +362,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 29,
@@ -345,7 +371,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 30,
@@ -353,7 +380,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 31,
@@ -361,7 +389,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 32,
@@ -369,7 +398,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 33,
@@ -424,8 +454,8 @@ var vue = new Vue({
                             iframeURL: "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
                         }
                     ]
-                }
-
+                },
+                backTurned: true
             },
             {
                 id: 34,
@@ -433,7 +463,8 @@ var vue = new Vue({
                 autoplay: false,
                 muted: true,
                 loop: false,
-                build: false
+                build: false,
+                backTurned: true
             },
             {
                 id: 35,
@@ -441,7 +472,8 @@ var vue = new Vue({
                 autoplay: true,
                 muted: true,
                 loop: true,
-                build: false
+                build: false,
+                backTurned: true
             }
         ],
         activeScene: 1,
@@ -455,7 +487,8 @@ var vue = new Vue({
         isWalk: false,
         walkDelay: false,
         isHorizontalScroll: false,
-        pageLoad: false
+        pageLoad: false,
+        mouseWhellShow: true
     },
     methods: {
 
@@ -468,14 +501,14 @@ var vue = new Vue({
                 isLoop = getVideo.loop;
             getVideo.playbackRate = 1;
             $this.loopScreen = isLoop;
-            
+
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
 
             if ($this.loopScreen === false) {
                 $this.isWalk = true
                 getVideo.play()
-            } 
-            
+            }
+
             else {
                 if ($this.activeScene === 18 || $this.activeScene === 31) {
                     $this.activeScene = 32;
@@ -520,44 +553,6 @@ var vue = new Vue({
                 }
 
             };
-
-        },
-
-        // geri sarma
-        backMonkey() {
-
-            // var $this = this,
-
-            //     active = $this.getActiveVideos(),
-
-            //     getVideo = $(active).find("video")[0],
-
-            //     isLoop = getVideo.loop;
-
-            // $this.loopScreen = isLoop;
-
-            // $this.junction = false
-
-            // getVideo.currentTime -= 0.05
-
-
-
-            // if(getVideo.currentTime === 0 && $this.activeScene === 2) {
-            //     $this.activeScene = 1;
-            //     $this.resetVideos()
-            // }
-
-            // if($this.loopScreen && $this.activeScene !==1) {
-
-            //     $this.activeScene--
-            // }
-
-            // if(getVideo.currentTime === 0 && $this.activeScene !==1) {
-
-            //     $this.activeScene--
-            // }
-
-
 
         },
 
@@ -690,6 +685,7 @@ var vue = new Vue({
                     this.junction = false
                     break;
             }
+
         },
 
         //basa dondugunde videolarin currentTime'ını basa alir
@@ -755,17 +751,28 @@ var vue = new Vue({
         var $this = this;
 
         $this.$nextTick(function () {
-
+            
             $this.isSafari() ? $this.duration = "end" : $this.duration = 600
 
             document.addEventListener("wheel", function (event) {
-                if (!$this.walkDelay && $this.pageLoad) event.deltaY < 0 ? $this.goMonkey() : $this.backMonkey()
+                if ($(".video-active .mouse-whell").hasClass("down") && event.deltaY > 0 && !$this.walkDelay && $this.pageLoad) {
+                    $this.goMonkey()
+                } else if (!$(".video-active .mouse-whell").hasClass("down") && event.deltaY < 0 && !$this.walkDelay && $this.pageLoad) {
+                    $this.goMonkey()
+                }
             });
 
-            document.addEventListener("touchmove", function (event) {
-                if (!$this.walkDelay && $this.pageLoad) $this.goMonkey()
-                $this.isHorizontalScroll = false
-            });
+            $(document).swipedown(function() { 
+                if ($(".video-active .mouse-whell").hasClass("down") && !$this.walkDelay && $this.pageLoad) {
+                    $this.goMonkey()
+                }
+            })
+
+            $(document).swipeup(function() { 
+                if (!$(".video-active .mouse-whell").hasClass("down") && !$this.walkDelay && $this.pageLoad) {
+                    $this.goMonkey()
+                }
+            })
 
             $(window).on('load', function () {
                 $this.pageLoad = true
@@ -798,6 +805,12 @@ var vue = new Vue({
 
         })//nextTick end
 
+    },
+
+    watch: {
+        isWalk: function (newVal) {
+            newVal === true ? this.mouseWhellShow = false : this.mouseWhellShow = true
+        }
     },
 
     updated() {
