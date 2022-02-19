@@ -515,11 +515,11 @@ var vue = new Vue({
                     $this.junctionBack = false
                 }
                 else {
-                    alert("123123")
+                    $this.activeScene++
+                    alert("3")
                     getVideo.play()
                     getVideo.currentTime = 0
                     getVideo.pause()
-                    $this.activeScene++
                 }
             }
 
