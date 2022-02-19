@@ -790,8 +790,10 @@ var vue = new Vue({
             }, 2500);
         }
 
-        document.querySelectorAll("video").currentTime = 0.1
-              
+        if(!videoActiveNext.attr("autoplay") && $this.isSafari()) {
+            videoActiveNext[0].play()
+            videoActiveNext[0].pause()
+        }       
     })
     }
 })
