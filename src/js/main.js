@@ -501,7 +501,8 @@ var vue = new Vue({
                 isLoop = getVideo.loop;
             getVideo.playbackRate = 1;
             $this.loopScreen = isLoop;
-
+            $(".video-active video")[0].play()
+            $(".video-active video")[0].pause()
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
 
             if ($this.loopScreen === false) {
