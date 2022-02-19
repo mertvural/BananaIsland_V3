@@ -506,6 +506,7 @@ var vue = new Vue({
 
             if ($this.loopScreen === false) {
                 $this.isWalk = true
+                alert("ad")
                 getVideo.play()
             }
 
@@ -821,9 +822,5 @@ var vue = new Vue({
                 $this.walkDelay = false
             }, 2500);
         }
-
-        $(".video-active video")[0].play()
-        $(".video-active video")[0].currentTime = 0
-        $(".video-active video")[0].pause()
     }
 })
