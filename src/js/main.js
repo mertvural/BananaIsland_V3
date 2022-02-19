@@ -506,7 +506,6 @@ var vue = new Vue({
 
             if ($this.loopScreen === false) {
                 $this.isWalk = true
-                alert()
                 getVideo.play()
             }
 
@@ -770,6 +769,7 @@ var vue = new Vue({
             })
 
             $(document).swipeup(function() { 
+                alert("asdasd")
                 if (!$(".video-active .mouse-whell").hasClass("down") && !$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
                 }
