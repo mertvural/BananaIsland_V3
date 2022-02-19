@@ -35,7 +35,7 @@
 
     <section class="video-list">
 
-      <article class="video-capsul" :style="video.id === activeScene ? 'z-index:100' : ''" v-for="video in sourceState"
+      <article class="video-capsul" :class="video.id === activeScene ? 'video-active' : ''" v-for="video in sourceState"
         :data-id="video.id">
 
         <div class="mouse-whell" :class="video.backTurned ? 'down' : ''" v-if="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow"></div>
