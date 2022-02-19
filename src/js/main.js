@@ -821,6 +821,5 @@ var vue = new Vue({
                 $this.walkDelay = false
             }, 2500);
         }
-        $(".video-active video")[0].play()
     }
 })
