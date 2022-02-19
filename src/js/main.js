@@ -781,6 +781,7 @@ var vue = new Vue({
 
     updated() {
         var $this = this;
+        $this.$nextTick(function () {
         console.log("mert")
 
         for(var i = 1;i<$this.sourceState.length-1;i++) {
@@ -793,5 +794,6 @@ var vue = new Vue({
                 $this.walkDelay = false
             }, 2500);
         }
+    })
     }
 })
