@@ -486,7 +486,6 @@ var vue = new Vue({
                         $(activeVideo).find("video")[0].play();
                         $(activeVideo).find("video")[0].pause();
                     });
-
                 }
             }
 
