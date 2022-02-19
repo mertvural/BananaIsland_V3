@@ -452,7 +452,7 @@ var vue = new Vue({
         isWalk: false,
         walkDelay: false,
         isHorizontalScroll: false,
-        pageLoad: false,
+        pageLoad: true,
         mouseWhellShow: true
     },
     methods: {
@@ -480,12 +480,7 @@ var vue = new Vue({
                     $this.junctionBack = false
                 }
                 else {
-                    $this.activeScene++
-                    $this.$nextTick(function () {
-                        var activeVideo = $this.getActiveVideos();
-                        $(activeVideo).find("video")[0].play();
-                        $(activeVideo).find("video")[0].pause();
-                    });
+                    $this.activeScene++                    
                 }
             }
 
@@ -721,7 +716,7 @@ var vue = new Vue({
         var $this = this;
 
         $this.$nextTick(function () {
-
+            
             var active = $this.getActiveVideos();
             $(active).find("video")[0].pause();
 
@@ -786,6 +781,9 @@ var vue = new Vue({
 
     updated() {
         var $this = this;
+        console.log("mert")
+        $(".video-capsul").not(".video-active").find("video")[0].pause()
+
         if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
             $this.walkDelay = true
             setTimeout(() => {
