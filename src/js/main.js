@@ -782,6 +782,7 @@ var vue = new Vue({
     updated() {
         var $this = this;
         console.log("mert")
+        $(".video-capsul").not(".video-active").find("video")[0].currentTime = 0
         $(".video-capsul").not(".video-active").find("video")[0].pause()
 
         if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
