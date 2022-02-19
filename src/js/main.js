@@ -782,7 +782,7 @@ var vue = new Vue({
     updated() {
         var $this = this;        
         $this.$nextTick(function () {
-            var videoActiveNext = $(".video-capsul").find("video")
+            var videoActiveNext = $(".video-active + .video-capsul").find("video")
         if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
             $this.walkDelay = true
             setTimeout(() => {
@@ -790,10 +790,8 @@ var vue = new Vue({
             }, 2500);
         }
 
-        if($this.isSafari()) {
-            videoActiveNext[0].play()
-            videoActiveNext[0].pause()
-        }       
+        document.querySelectorAll("video").currentTime = 0.1
+              
     })
     }
 })
