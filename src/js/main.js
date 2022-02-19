@@ -480,8 +480,9 @@ var vue = new Vue({
                     $this.junctionBack = false
                 }
                 else {
-                    $this.activeScene++            
-                   
+                    $this.activeScene++         
+                    $(".video-active + .video-capsul video")[0].play()
+               
                 }
             }
 
