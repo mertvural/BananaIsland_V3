@@ -769,9 +769,6 @@ var vue = new Vue({
             })
 
             $(document).swipeup(function() { 
-                $(".video-active video")[0].play()
-                $(".video-active video")[0].currentTime = 0
-                $(".video-active video")[0].pause()
                 if (!$(".video-active .mouse-whell").hasClass("down") && !$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
                 }
@@ -824,5 +821,9 @@ var vue = new Vue({
                 $this.walkDelay = false
             }, 2500);
         }
+        alert()
+        $(".video-active video")[0].play()
+        $(".video-active video")[0].currentTime = 0
+        $(".video-active video")[0].pause()
     }
 })
