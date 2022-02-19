@@ -482,8 +482,9 @@ var vue = new Vue({
                 else {
                     $this.activeScene++
                     $this.$nextTick(function () {
-                        $(".video-active video")[0].play()
-                        $(".video-active video")[0].pause()
+                        var activeVideo = $this.getActiveVideos();
+                        $(activeVideo).play();
+                        $(activeVideo).pause();
                     });
 
                 }
