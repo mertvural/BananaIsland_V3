@@ -17,6 +17,7 @@ html {
 .video {height: 100%;-o-object-fit: cover;object-fit: cover;left: 0;position: fixed;top: 0;width: 100%;}
 .video-capsul {position: fixed;top: 0;width: 100%;z-index: 1;}
 .video-active {z-index:100 !important} 
+.video-capsul:not(.video-active) {display: none !important;}
 .video-arrow {    background-color: transparent;background-position: 50%;background-repeat: no-repeat;background-size: contain;border: 0;
 cursor: pointer;height: 115px;padding: 0;position: fixed;width: 180px;top: 10%;transition: all .4s ease;}
 .video-arrow.left {background-image: url(../images/leftArrow.png);left: 50%;margin-left: -140px;-webkit-transform: translateX(-50%);transform: translateX(-50%)}
