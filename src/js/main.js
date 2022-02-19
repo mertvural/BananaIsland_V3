@@ -516,11 +516,10 @@ var vue = new Vue({
                 }
                 else {
                     $this.activeScene++
-                    alert("5")
-                    getVideo.play()
-                    getVideo.currentTime = 1
-
-                    getVideo.pause()
+                    alert("10")
+                    $(".video-active + .video-capsul video")[0].play()
+                    $(".video-active + .video-capsul video")[0].currentTime = 0
+                    $(".video-active + .video-capsul video")[0].pause()
                 }
             }
 
@@ -756,7 +755,7 @@ var vue = new Vue({
         var $this = this;
 
         $this.$nextTick(function () {
-            
+
             $this.isSafari() ? $this.duration = "end" : $this.duration = 600
 
             document.addEventListener("wheel", function (event) {
@@ -767,13 +766,13 @@ var vue = new Vue({
                 }
             });
 
-            $(document).swipedown(function() { 
+            $(document).swipedown(function () {
                 if ($(".video-active .mouse-whell").hasClass("down") && !$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
                 }
             })
 
-            $(document).swipeup(function() { 
+            $(document).swipeup(function () {
                 if (!$(".video-active .mouse-whell").hasClass("down") && !$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
                 }
