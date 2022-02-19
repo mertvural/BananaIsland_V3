@@ -795,6 +795,8 @@ var vue = new Vue({
         }
        
         document.querySelectorAll("video").currentTime = 0
+        document.querySelectorAll("video").play()
+        document.querySelectorAll("video").pause()
     })
     }
 })
