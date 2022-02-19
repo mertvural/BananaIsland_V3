@@ -784,9 +784,7 @@ var vue = new Vue({
         $this.$nextTick(function () {
         console.log("mert")
 
-        for(var i = 1;i<$this.sourceState.length-1;i++) {
-            $(".video-capsul:not(.video-active)").filter("[data-id="+i+"]").find("video").currentTime = 0;
-        }
+        $(".video-capsul:not(.video-active)").find("video")[0].currentTime = 0;
 
         if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
             $this.walkDelay = true
