@@ -821,7 +821,7 @@ var vue = new Vue({
                 $this.walkDelay = false
             }, 2500);
         }
-        alert()
+
         $(".video-active video")[0].play()
         $(".video-active video")[0].currentTime = 0
         $(".video-active video")[0].pause()
