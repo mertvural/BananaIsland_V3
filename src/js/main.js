@@ -690,7 +690,7 @@ var vue = new Vue({
 
         //basa dondugunde videolarin currentTime'ını basa alir
         resetVideos() {
-            alert("ok")
+            
             this.end = false;
             this.activeScene = 1;
             var videoCapsul = $(".video-capsul");
