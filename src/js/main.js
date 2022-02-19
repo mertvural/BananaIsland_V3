@@ -519,6 +519,7 @@ var vue = new Vue({
                     alert("3")
                     getVideo.play()
                     getVideo.currentTime = 0
+                    
                     getVideo.pause()
                 }
             }
