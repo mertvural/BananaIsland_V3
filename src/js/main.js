@@ -483,8 +483,8 @@ var vue = new Vue({
                     $this.activeScene++
                     $this.$nextTick(function () {
                         var activeVideo = $this.getActiveVideos();
-                        $(activeVideo).play();
-                        $(activeVideo).pause();
+                        $(activeVideo).find("video")[0].play();
+                        $(activeVideo).find("video")[0].pause();
                     });
 
                 }
