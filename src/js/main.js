@@ -481,9 +481,7 @@ var vue = new Vue({
                 }
                 else {
                     $this.activeScene++            
-                    $(".video-active + .video-capsul video")[0].currentTime = 0
-                    $(".video-active + .video-capsul video")[0].play()
-                    $(".video-active + .video-capsul video")[0].pause()
+                   
                 }
             }
 
