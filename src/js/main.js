@@ -791,8 +791,8 @@ var vue = new Vue({
             }
 
             if (!!videoActiveNext.attr("autoplay")) {
-                videoActiveNext.play()
-                videoActiveNext.pause()
+                videoActiveNext[0].play()
+                videoActiveNext[0].pause()
             }
         })
     }
