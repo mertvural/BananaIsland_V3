@@ -480,7 +480,12 @@ var vue = new Vue({
                     $this.junctionBack = false
                 }
                 else {
-                    $this.activeScene++                    
+                    $this.activeScene++
+                    $this.$nextTick(function () {
+                        var activeVideo = $this.getActiveVideos();
+                        $(activeVideo).find("video")[0].play();
+                        $(activeVideo).find("video")[0].pause();
+                    });
                 }
             }
 
@@ -716,7 +721,7 @@ var vue = new Vue({
         var $this = this;
 
         $this.$nextTick(function () {
-            
+
             var active = $this.getActiveVideos();
             $(active).find("video")[0].pause();
 
@@ -781,21 +786,11 @@ var vue = new Vue({
 
     updated() {
         var $this = this;
-        $this.$nextTick(function () {
-        console.log("mert")
-
-        $(".video-capsul:not(.video-active)").each(function() {
-            $(this).find("video")[0].play()
-            $(this).find("video")[0].pause()
-        })
-
-
         if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
             $this.walkDelay = true
             setTimeout(() => {
                 $this.walkDelay = false
             }, 2500);
         }
-    })
     }
 })
