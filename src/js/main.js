@@ -515,8 +515,7 @@ var vue = new Vue({
                     $this.junctionBack = false
                 }
                 else {
-                    $this.activeScene++
-            
+                    $this.activeScene++            
                     $(".video-active + .video-capsul video")[0].play()
                     $(".video-active + .video-capsul video")[0].currentTime = 0
                     $(".video-active + .video-capsul video")[0].pause()
