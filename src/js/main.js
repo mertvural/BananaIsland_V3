@@ -781,15 +781,19 @@ var vue = new Vue({
 
     updated() {
         var $this = this;
-        if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
-            $this.walkDelay = true
-            setTimeout(() => {
-                $this.walkDelay = false
-            }, 2500);
-        }
+        $this.$nextTick(function () {
+            var videoActiveNext = $(".video-active + .video-capsul").find("video")
+            if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
+                $this.walkDelay = true
+                setTimeout(() => {
+                    $this.walkDelay = false
+                }, 2500);
+            }
 
-        $(".video-active + .video-capsul").find("video")[0].play()
-        $(".video-active + .video-capsul").find("video")[0].pause()
-
+            if (!!videoActiveNext.attr("autoplay")) {
+                videoActiveNext.play()
+                videoActiveNext.pause()
+            }
+        })
     }
 })
