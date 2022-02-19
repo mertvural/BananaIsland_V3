@@ -516,10 +516,10 @@ var vue = new Vue({
                 }
                 else {
                     $this.activeScene++
-                    alert("3")
+                    alert("5")
                     getVideo.play()
-                    getVideo.currentTime = 0
-                    
+                    getVideo.currentTime = 1
+
                     getVideo.pause()
                 }
             }
