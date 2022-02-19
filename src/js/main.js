@@ -690,7 +690,6 @@ var vue = new Vue({
 
         //basa dondugunde videolarin currentTime'ını basa alir
         resetVideos() {
-            
             this.end = false;
             this.activeScene = 1;
             var videoCapsul = $(".video-capsul");
@@ -777,7 +776,6 @@ var vue = new Vue({
 
             $(window).on('load', function () {
                 $this.pageLoad = true
-                $this.resetVideos();
                 var active = $this.getActiveVideos();
                 setTimeout(() => {
                     $(active).find("video")[0].play()
