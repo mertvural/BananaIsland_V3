@@ -459,75 +459,71 @@ var vue = new Vue({
 
         // ileri sarma
         goMonkey() {
-            var $this = this;
 
-            $this.$nextTick(function () {
-                
-                var active = $this.getActiveVideos(),
-                    getVideo = $(active).find("video")[0],
-                    isLoop = getVideo.loop;
-                getVideo.playbackRate = 1;
-                $this.loopScreen = isLoop;
+            var $this = this,
+                active = $this.getActiveVideos(),
+                getVideo = $(active).find("video")[0],
+                isLoop = getVideo.loop;
+            getVideo.playbackRate = 1;
+            $this.loopScreen = isLoop;
 
-                if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
+            if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
 
-                if ($this.loopScreen === false) {
-                    $this.isWalk = true
-                    getVideo.play()
+            if ($this.loopScreen === false) {
+                $this.isWalk = true
+                getVideo.play()
+            }
+
+            else {
+                if ($this.activeScene === 18 || $this.activeScene === 31) {
+                    $this.activeScene = 32;
+                    $this.junctionBack = false
                 }
-
                 else {
-                    if ($this.activeScene === 18 || $this.activeScene === 31) {
-                        $this.activeScene = 32;
-                        $this.junctionBack = false
-                    }
-                    else {
-                        $this.activeScene++
+                    $this.activeScene++
+                    $this.$nextTick(function () {
+                        $(".video-active video")[0].play()
+                        $(".video-active video")[0].pause()
+                    });
 
-
-                        getVideo.pause()
-                        getVideo.play()
-                        getVideo.pause()
-
-
-                    }
                 }
+            }
+
+            if ($this.duration !== "end") {
+                setTimeout(() => {
+                    $this.loopScreen === false ? getVideo.pause() : ""
+                    $this.isWalk = false
+                }, $this.duration);
+            }
+
+            // video bittiğinde calisir
+            getVideo.onended = function () {
+
+                if ($this.activeScene === $this.sourceState.length - 1) {
+                    $this.end = true;
+                }
+
+                $this.activeScene += 1;
+
+                switch ($this.activeScene) {
+                    case 5:
+                        $this.junction = true
+                        break;
+                    case 18:
+                        $this.junctionBack = true
+                        break;
+                    case 31:
+                        $this.junctionBack = true
+                        break;
+                }
+                $this.isWalk = false
 
                 if ($this.duration !== "end") {
-                    setTimeout(() => {
-                        $this.loopScreen === false ? getVideo.pause() : ""
-                        $this.isWalk = false
-                    }, $this.duration);
+                    $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
                 }
 
-                // video bittiğinde calisir
-                getVideo.onended = function () {
+            };
 
-                    if ($this.activeScene === $this.sourceState.length - 1) {
-                        $this.end = true;
-                    }
-
-                    $this.activeScene += 1;
-
-                    switch ($this.activeScene) {
-                        case 5:
-                            $this.junction = true
-                            break;
-                        case 18:
-                            $this.junctionBack = true
-                            break;
-                        case 31:
-                            $this.junctionBack = true
-                            break;
-                    }
-                    $this.isWalk = false
-
-                    if ($this.duration !== "end") {
-                        $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
-                    }
-
-                };
-            })
         },
 
         //aktif videoyu dondurur
