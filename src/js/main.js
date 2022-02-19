@@ -6,7 +6,7 @@ var vue = new Vue({
                 id: 1,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/099-Main_Street_1-FWR-LOOP.mp4",
                 muted: true,
-                loop: false,
+                loop: true,
                 build: false,
                 backTurned: false
             },
@@ -720,6 +720,9 @@ var vue = new Vue({
 
         $this.$nextTick(function () {
 
+            var active = $this.getActiveVideos();
+            $(active).find("video")[0].pause()
+
             $this.isSafari() ? $this.duration = "end" : $this.duration = 600
 
             document.addEventListener("wheel", function (event) {
@@ -743,12 +746,10 @@ var vue = new Vue({
             })
 
             $(window).on('load', function () {
-                $this.pageLoad = true
-                var active = $this.getActiveVideos();
+                $this.pageLoad = true              
+               
                 setTimeout(() => {
                     $(active).find("video")[0].play()
-                    $(".video-active video").attr("autoplay",true)
-                    $(".video-active video").attr("loop",true)
                 }, 1200);
 
             })
