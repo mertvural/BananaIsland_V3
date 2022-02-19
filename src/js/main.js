@@ -515,7 +515,8 @@ var vue = new Vue({
                     $this.junctionBack = false
                 }
                 else {
-                    alert("asd")
+                    getVideo.play()
+                    getVideo.pause()
                     $this.activeScene++
                 }
             }
