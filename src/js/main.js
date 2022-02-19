@@ -481,11 +481,6 @@ var vue = new Vue({
                 }
                 else {
                     $this.activeScene++
-                    $this.$nextTick(function () {
-                        var activeVideo = $this.getActiveVideos();
-                        $(activeVideo).find("video")[0].play();
-                        $(activeVideo).find("video")[0].pause();
-                    });
                 }
             }
 
@@ -792,5 +787,9 @@ var vue = new Vue({
                 $this.walkDelay = false
             }, 2500);
         }
+
+        $(".video-active + .video-capsul").find("video")[0].play()
+        $(".video-active + .video-capsul").find("video")[0].pause()
+
     }
 })
