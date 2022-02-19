@@ -501,8 +501,7 @@ var vue = new Vue({
                 isLoop = getVideo.loop;
             getVideo.playbackRate = 1;
             $this.loopScreen = isLoop;
-            $(".video-active video")[0].play()
-            $(".video-active video")[0].pause()
+
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
 
             if ($this.loopScreen === false) {
@@ -770,6 +769,9 @@ var vue = new Vue({
             })
 
             $(document).swipeup(function() { 
+                $(".video-active video")[0].play()
+                $(".video-active video")[0].currentTime = 0
+                $(".video-active video")[0].pause()
                 if (!$(".video-active .mouse-whell").hasClass("down") && !$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
                 }
