@@ -723,7 +723,7 @@ var vue = new Vue({
         $this.$nextTick(function () {
 
             var active = $this.getActiveVideos();
-            $(active).find("video")[0].pause()
+            $(active).find("video")[0].pause();
 
             $this.isSafari() ? $this.duration = "end" : $this.duration = 600
 
@@ -749,11 +749,9 @@ var vue = new Vue({
 
             $(window).on('load', function () {
                 $this.pageLoad = true
-
                 setTimeout(() => {
                     $(active).find("video")[0].play()
                 }, 1200);
-
             })
 
             $(".buildings__build").on("click", function () {
