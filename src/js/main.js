@@ -494,7 +494,7 @@ var vue = new Vue({
 
         // ileri sarma
         goMonkey() {
-            alert("1")
+
             var $this = this,
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
@@ -503,9 +503,8 @@ var vue = new Vue({
             $this.loopScreen = isLoop;
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
-            alert("2")
+            alert($this.loopScreen)
             if ($this.loopScreen === false) {
-                alert("3")
                 $this.isWalk = true
                 getVideo.play()
             }
