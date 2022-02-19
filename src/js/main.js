@@ -783,8 +783,8 @@ var vue = new Vue({
         var $this = this;
         console.log("mert")
 
-        for(var i = 1;i<$this.sourceState.length;i++) {
-            $(".video-capsul[data-id="+i+"]").not(".video-active").find("video")[0].currentTime = 0;
+        for(var i = 1;i<$this.sourceState.length-1;i++) {
+            $(".video-capsul:not(.video-active)").filter("[data-id="+i+"]").find("video").currentTime = 0;
         }
 
         if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
