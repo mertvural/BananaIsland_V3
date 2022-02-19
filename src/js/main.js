@@ -503,7 +503,7 @@ var vue = new Vue({
             $this.loopScreen = isLoop;
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
-            alert($this.loopScreen)
+
             if ($this.loopScreen === false) {
                 $this.isWalk = true
                 getVideo.play()
@@ -515,6 +515,7 @@ var vue = new Vue({
                     $this.junctionBack = false
                 }
                 else {
+                    alert("asd")
                     $this.activeScene++
                 }
             }
