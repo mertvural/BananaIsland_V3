@@ -5,16 +5,14 @@ var vue = new Vue({
             {
                 id: 1,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/099-Main_Street_1-FWR-LOOP.mp4",
-                autoplay: false,
                 muted: true,
-                loop: true,
+                loop: false,
                 build: false,
                 backTurned: false
             },
             {
                 id: 2,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/101-Main_Street_1-FWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -23,7 +21,6 @@ var vue = new Vue({
             {
                 id: 3,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/102-Main_Street-2-FWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: true,
@@ -80,7 +77,6 @@ var vue = new Vue({
             {
                 id: 4,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/103-Main_Street_2-FWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -89,7 +85,6 @@ var vue = new Vue({
             {
                 id: 5,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/104-Main_Street_Juction-FWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -98,7 +93,6 @@ var vue = new Vue({
             {
                 id: 6,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/200-Turn_Left.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -107,7 +101,6 @@ var vue = new Vue({
             {
                 id: 7,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/300-Left_Street_1-FWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -116,7 +109,6 @@ var vue = new Vue({
             {
                 id: 8,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/301-Left_Street_1-FWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -125,7 +117,6 @@ var vue = new Vue({
             {
                 id: 9,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/302-Left_Street_2-FWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: true,
@@ -160,7 +151,6 @@ var vue = new Vue({
             {
                 id: 10,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/303-Left_Street_2-FWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -169,7 +159,6 @@ var vue = new Vue({
             {
                 id: 11,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/304-Left_Street-Turn_Back.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -178,7 +167,6 @@ var vue = new Vue({
             {
                 id: 12,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/305-Left_Street_Turn_Back-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -187,7 +175,6 @@ var vue = new Vue({
             {
                 id: 13,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/306-Left_Street_2-BWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -196,7 +183,6 @@ var vue = new Vue({
             {
                 id: 14,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/307-Left_Street_2-BWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: true,
@@ -230,7 +216,6 @@ var vue = new Vue({
             {
                 id: 15,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/308-Left_Street_1-BWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -239,7 +224,6 @@ var vue = new Vue({
             {
                 id: 16,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/309-Left_Street_1-BWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -248,7 +232,6 @@ var vue = new Vue({
             {
                 id: 17,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/310-Left_Street_Turn_Juction.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -257,7 +240,6 @@ var vue = new Vue({
             {
                 id: 18,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/400-Main_Street_Juction-BWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -266,7 +248,6 @@ var vue = new Vue({
             {
                 id: 19,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/500-Turn_Right.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -275,7 +256,6 @@ var vue = new Vue({
             {
                 id: 20,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/600-Right_Street_1-FWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -285,7 +265,6 @@ var vue = new Vue({
             {
                 id: 21,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/601-Right_Street_1-FWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -294,7 +273,6 @@ var vue = new Vue({
             {
                 id: 22,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/602-Right_Street_2-FWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: true,
@@ -308,7 +286,6 @@ var vue = new Vue({
             {
                 id: 23,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/603-Right_Street_2-FWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -317,7 +294,6 @@ var vue = new Vue({
             {
                 id: 24,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/604-Right_Street_Turn_Back.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -326,7 +302,6 @@ var vue = new Vue({
             {
                 id: 25,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/605-Right_Street_Turn_Back-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -335,7 +310,6 @@ var vue = new Vue({
             {
                 id: 26,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/606-Right_Street_2-BWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -344,7 +318,6 @@ var vue = new Vue({
             {
                 id: 27,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/607-Right_Street_2-BWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: true,
@@ -359,7 +332,6 @@ var vue = new Vue({
             {
                 id: 28,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/608-Right_Street_1-BWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -368,7 +340,6 @@ var vue = new Vue({
             {
                 id: 29,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/609-Right_Street_1-BWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -377,7 +348,6 @@ var vue = new Vue({
             {
                 id: 30,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/610-Right_Street_Turn_Juction.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -386,7 +356,6 @@ var vue = new Vue({
             {
                 id: 31,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/400-Main_Street_Juction-BWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -395,7 +364,6 @@ var vue = new Vue({
             {
                 id: 32,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/701-Main_Street_2-BWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -404,7 +372,6 @@ var vue = new Vue({
             {
                 id: 33,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/702-Main_Street-2-BWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: true,
@@ -460,7 +427,6 @@ var vue = new Vue({
             {
                 id: 34,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/703-Main_Street_1-BWR.mp4",
-                autoplay: false,
                 muted: true,
                 loop: false,
                 build: false,
@@ -469,7 +435,6 @@ var vue = new Vue({
             {
                 id: 35,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/704-Main_Street_1-BWR-LOOP.mp4",
-                autoplay: true,
                 muted: true,
                 loop: true,
                 build: false,
@@ -782,6 +747,8 @@ var vue = new Vue({
                 var active = $this.getActiveVideos();
                 setTimeout(() => {
                     $(active).find("video")[0].play()
+                    $(".video-active video").attr("autoplay",true)
+                    $(".video-active video").attr("loop",true)
                 }, 1200);
 
             })
