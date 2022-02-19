@@ -786,17 +786,11 @@ var vue = new Vue({
 
     updated() {
         var $this = this;
-        $this.$nextTick(function () {
         if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
             $this.walkDelay = true
             setTimeout(() => {
                 $this.walkDelay = false
             }, 2500);
         }
-       
-        document.querySelectorAll("video").currentTime = 0
-        document.querySelectorAll("video").play()
-        document.querySelectorAll("video").pause()
-    })
     }
 })
