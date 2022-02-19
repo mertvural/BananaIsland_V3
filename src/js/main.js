@@ -790,8 +790,7 @@ var vue = new Vue({
             }, 2500);
         }
 
-        if(!videoActiveNext.attr("autoplay" && $this.isSafari())) {
-            alert("safari")
+        if(!videoActiveNext.attr("autoplay") && $this.isSafari()) {
             videoActiveNext[0].play()
             videoActiveNext[0].pause()
         }       
