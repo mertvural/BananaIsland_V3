@@ -506,7 +506,6 @@ var vue = new Vue({
 
             if ($this.loopScreen === false) {
                 $this.isWalk = true
-                alert("ad")
                 getVideo.play()
             }
 
