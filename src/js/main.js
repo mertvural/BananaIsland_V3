@@ -498,7 +498,7 @@ var vue = new Vue({
                     $this.end = true;
                 }
 
-                $this.activeScene += 1;
+                //$this.activeScene += 1;
 
                 switch ($this.activeScene) {
                     case 5:
