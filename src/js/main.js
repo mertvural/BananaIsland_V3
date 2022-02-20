@@ -516,7 +516,7 @@ var vue = new Vue({
                     if ($this.duration !== "end") {
                         $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
                     }
-                }, 2000);
+                }, 10);
 
                 
 
