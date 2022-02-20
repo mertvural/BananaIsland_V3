@@ -441,7 +441,7 @@ var vue = new Vue({
                 backTurned: true
             }
         ],
-        activeScene: 1,
+        activeScene: 4,
         prevActiveScene: null,
         duration: 250,
         junction: false,
@@ -452,7 +452,7 @@ var vue = new Vue({
         isWalk: false,
         walkDelay: false,
         isHorizontalScroll: false,
-        pageLoad: false,
+        pageLoad: true,
         mouseWhellShow: true
     },
     methods: {
@@ -533,10 +533,10 @@ var vue = new Vue({
         direction(direction) {
             switch (direction) {
                 case "left":
-                    this.activeScene = 6;
+                    //this.activeScene = 6;
                     this.junction = false;
                     this.junctionBack = false;
-                   // this.duration !== "end" ? this.duration = 10000 : ""
+                    this.duration !== "end" ? this.duration = 10000 : ""
                     this.goMonkey();
                     break;
                 case "right":
