@@ -441,7 +441,7 @@ var vue = new Vue({
                 backTurned: true
             }
         ],
-        activeScene: 4,
+        activeScene: 1,
         prevActiveScene: null,
         duration: 250,
         junction: false,
