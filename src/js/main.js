@@ -498,24 +498,26 @@ var vue = new Vue({
                     $this.end = true;
                 }
 
-                $this.activeScene += 1;
+                setTimeout(() => {
+                    $this.activeScene += 1; 
+                }, 2000);
 
-                // switch ($this.activeScene) {
-                //     case 5:
-                //         $this.junction = true
-                //         break;
-                //     case 18:
-                //         $this.junctionBack = true
-                //         break;
-                //     case 31:
-                //         $this.junctionBack = true
-                //         break;
-                // }
-                // $this.isWalk = false
+                switch ($this.activeScene) {
+                    case 5:
+                        $this.junction = true
+                        break;
+                    case 18:
+                        $this.junctionBack = true
+                        break;
+                    case 31:
+                        $this.junctionBack = true
+                        break;
+                }
+                $this.isWalk = false
 
-                // if ($this.duration !== "end") {
-                //     $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
-                // }
+                if ($this.duration !== "end") {
+                    $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
+                }
 
             };
 
