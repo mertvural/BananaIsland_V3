@@ -780,20 +780,20 @@ var vue = new Vue({
     },
 
     updated() {
-        var $this = this;        
+        var $this = this;
         $this.$nextTick(function () {
             var videoActiveNext = $(".video-active + .video-capsul").find("video")
-        if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
-            $this.walkDelay = true
-            setTimeout(() => {
-                $this.walkDelay = false
-            }, 2500);
-        }
+            if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
+                $this.walkDelay = true
+                setTimeout(() => {
+                    $this.walkDelay = false
+                }, 2500);
+            }
 
-        if(!videoActiveNext.attr("autoplay") && $this.isSafari()) {
-            videoActiveNext[0].play()
-            videoActiveNext[0].pause()
-        }       
-    })
+            if (!videoActiveNext.attr("autoplay") && $this.isSafari()) {
+                videoActiveNext[0].play()
+                videoActiveNext[0].pause()
+            }
+        })
     }
 })
