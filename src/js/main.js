@@ -536,7 +536,7 @@ var vue = new Vue({
                     this.activeScene = 6;
                     this.junction = false;
                     this.junctionBack = false;
-                    this.duration !== "end" ? this.duration = 10000 : ""
+                   // this.duration !== "end" ? this.duration = 10000 : ""
                     this.goMonkey();
                     break;
                 case "right":
