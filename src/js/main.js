@@ -484,12 +484,12 @@ var vue = new Vue({
                 }
             }
 
-            if ($this.duration !== "end") {
+
                 setTimeout(() => {
                     $this.loopScreen === false ? getVideo.pause() : ""
                     $this.isWalk = false
                 }, $this.duration);
-            }
+     
 
             // video bittiğinde calisir
             getVideo.onended = function () {
@@ -513,9 +513,9 @@ var vue = new Vue({
                 }
                 $this.isWalk = false
 
-                if ($this.duration !== "end") {
+   
                     $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
-                }
+           
 
             };
 
@@ -536,14 +536,14 @@ var vue = new Vue({
                     this.activeScene = 6;
                     this.junction = false;
                     this.junctionBack = false;
-                    this.duration !== "end" ? this.duration = 10000 : ""
+                    this.duration = 10000
                     this.goMonkey();
                     break;
                 case "right":
                     this.activeScene = 19;
                     this.junction = false
                     this.junctionBack = false;
-                    this.duration !== "end" ? this.duration = 10000 : ""
+                    this.duration = 10000
                     this.goMonkey();
                     break;
             }
@@ -719,8 +719,6 @@ var vue = new Vue({
 
             var active = $this.getActiveVideos();
             $(active).find("video")[0].pause();
-
-            $this.isSafari() ? $this.duration = "end" : $this.duration = 600
 
             document.addEventListener("wheel", function (event) {
                 if ($(".video-active .mouse-whell").hasClass("down") && event.deltaY > 0 && !$this.walkDelay && $this.pageLoad) {
