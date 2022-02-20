@@ -500,24 +500,25 @@ var vue = new Vue({
 
                 setTimeout(() => {
                     $this.activeScene += 1; 
+                    switch ($this.activeScene) {
+                        case 5:
+                            $this.junction = true
+                            break;
+                        case 18:
+                            $this.junctionBack = true
+                            break;
+                        case 31:
+                            $this.junctionBack = true
+                            break;
+                    }
+                    $this.isWalk = false
+    
+                    if ($this.duration !== "end") {
+                        $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
+                    }
                 }, 2000);
 
-                switch ($this.activeScene) {
-                    case 5:
-                        $this.junction = true
-                        break;
-                    case 18:
-                        $this.junctionBack = true
-                        break;
-                    case 31:
-                        $this.junctionBack = true
-                        break;
-                }
-                $this.isWalk = false
-
-                if ($this.duration !== "end") {
-                    $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
-                }
+                
 
             };
 
