@@ -452,7 +452,7 @@ var vue = new Vue({
         isWalk: false,
         walkDelay: false,
         isHorizontalScroll: false,
-        pageLoad: true,
+        pageLoad: false,
         mouseWhellShow: true
     },
     methods: {
