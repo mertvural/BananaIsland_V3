@@ -533,7 +533,7 @@ var vue = new Vue({
         direction(direction) {
             switch (direction) {
                 case "left":
-                    //this.activeScene = 6;
+                    this.activeScene = 6;
                     this.junction = false;
                     this.junctionBack = false;
                     this.duration !== "end" ? this.duration = 10000 : ""
