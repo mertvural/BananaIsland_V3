@@ -501,7 +501,9 @@ var vue = new Vue({
                 $this.activeScene += 1;
 
                 switch ($this.activeScene) {
-                  
+                    case 5:
+                        $this.junction = true
+                        break;
                     case 18:
                         $this.junctionBack = true
                         break;
@@ -781,12 +783,7 @@ var vue = new Vue({
         var $this = this;        
         $this.$nextTick(function () {
             var videoActiveNext = $(".video-active + .video-capsul").find("video")
-        if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
-            $this.walkDelay = true
-            setTimeout(() => {
-                $this.walkDelay = false
-            }, 2500);
-        }
+       
 
         if(!videoActiveNext.attr("autoplay") && $this.isSafari()) {
             videoActiveNext[0].play()
