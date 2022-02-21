@@ -20,7 +20,7 @@
   <div id="app" v-cloak>
 
     <!--loading-->
-    <div class="video-loader" v-show="!pageLoad">
+    <div class="video-loader" v-if="!pageLoad">
       <div class="text">
         <span class="text-loading">Loading</span>
         <span class="percent">0%</span>
@@ -29,7 +29,7 @@
     <!--loading-->
 
     <!--again-->
-    <img src="src/images/turn.png" @click="resetVideos()" class="restart-turn" v-show="end" title="restart"
+    <img src="src/images/turn.png" @click="resetVideos()" class="restart-turn" v-if="end" title="restart"
       alt="restart" />
     <!--again-->
 
@@ -38,7 +38,7 @@
       <article class="video-capsul" :class="video.id === activeScene ? 'video-active' : ''" v-for="video in sourceState"
         :data-id="video.id">
 
-        <div class="mouse-whell" :class="video.backTurned ? 'down' : ''" v-show="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow"></div>
+        <div class="mouse-whell" :class="video.backTurned ? 'down' : ''" v-if="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow"></div>
 
         <!--video-->
         <video v-show="!buildScreen" class="video" v-if="video.id === activeScene || video.id === activeScene+1 || video.id === activeScene+2 || video.id === 19 || video.id === 6 || video.id === 1 || 
@@ -47,25 +47,25 @@
         <!--video-->
 
         <!--building-->
-        <div class="build-capsul" :data-build="video.id" v-show="video.build">
+        <div class="build-capsul" :data-build="video.id" v-if="video.build">
           <div class="buildings__arrows">
             <button type="button" class="video-arrow left" @click="buildEnter(video.id,'left')"></button>
             <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')"></button>
             <button type="button" class="video-arrow turn" @click="backCornerBttn(video.id)"></button>
           </div>
           <div class="buildings__build right">
-            <img :src="video.buildOptions?.rightImg" class="buildings__build--img" :usemap="'#'+'mapRight'+video.id"
+            <img :src="video.buildOptions.rightImg" class="buildings__build--img" :usemap="'#'+'mapRight'+video.id"
               width="1920" height="1080" />
             <map :name="'mapRight'+video.id">
-              <area v-for="useMap in video.buildOptions?.usemaps" v-show="useMap.position === 'right'" href="javascript:;"
+              <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'right'" href="javascript:;"
                 @click='insideEnter(useMap.href)' :coords="useMap.coords" shape="rect">
             </map>
           </div>
           <div class="buildings__build left">
-            <img :src="video.buildOptions?.leftImg" class="buildings__build--img" :usemap="'#'+'mapLeft'+video.id"
+            <img :src="video.buildOptions.leftImg" class="buildings__build--img" :usemap="'#'+'mapLeft'+video.id"
               width="1920" height="1080" />
             <map :name="'mapLeft'+video.id">
-              <area v-for="useMap in video.buildOptions?.usemaps" v-show="useMap.position === 'left'" href="javascript:;"
+              <area v-for="useMap in video.buildOptions.usemaps" v-if="useMap.position === 'left'" href="javascript:;"
                 @click='insideEnter(useMap.href)' :coords="useMap.coords" shape="rect">
             </map>
           </div>
@@ -76,14 +76,14 @@
 
           <!--insider-->
           <div class="insiderCapsul">
-            <div class="insiderItem" v-for="insider in video.buildOptions?.usemaps" :data-href="insider.href">
+            <div class="insiderItem" v-for="insider in video.buildOptions.usemaps" :data-href="insider.href">
               <img :src="insider.inside" class="insiderCapsul__build--img" :usemap="'#imagemap'+insider.href"
                 width="2880" height="1800" />
-              <map :name="'imagemap'+insider.href" v-show="insider.iframePosition">
+              <map :name="'imagemap'+insider.href" v-if="insider.iframePosition">
                 <area target="" alt="" title="" href="javascript:;" :coords="insider.iframePosition" shape="rect">
               </map>
               <iframe :src="insider.iframeURL" allowtransparency="true" class="iframeCapsul"
-                v-show="insider.iframeURL"></iframe>
+                v-if="insider.iframeURL"></iframe>
             </div>
           </div>
           <!--insider-->
