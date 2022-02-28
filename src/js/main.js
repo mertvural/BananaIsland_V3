@@ -572,7 +572,7 @@ var vue = new Vue({
 
             // video bittiğinde calisir
             getVideo.onended = function () {
-
+          
                 if ($this.activeScene === $this.sourceState.length - 1) {
                     $this.end = true;
                 }
@@ -815,6 +815,9 @@ var vue = new Vue({
             } else if (!$this.isMouseWhellBackShow() && event.deltaY < 0 && !$this.walkDelay && $this.pageLoad) {
                 $this.goMonkey()
             }
+        },
+        isAutoPlayVideo() {
+            $(".video-active video").attr("loop") ? this.mouseWhellShow = true : this.mouseWhellShow = false
         }
     },
 
@@ -905,12 +908,6 @@ var vue = new Vue({
 
     },
 
-    watch: {
-        isWalk: function (newVal) {
-            newVal === true ? this.mouseWhellShow = false : this.mouseWhellShow = true
-        }
-    },
-
     updated() {
         var $this = this;
         $this.$nextTick(function () {
@@ -926,6 +923,9 @@ var vue = new Vue({
                 videoActiveNext[0].play()
                 videoActiveNext[0].pause()
             }
+
+            $this.isAutoPlayVideo()
+
         })
     }
 })
