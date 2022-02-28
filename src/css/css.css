@@ -168,7 +168,8 @@ width:100%;height: 100%}
 
 @media only screen and (max-width: 992px) and (orientation: landscape) {
 
-.insiderItem img {width: 100%;height: auto;}
+.insiderItem img {width: 130%;height: auto;}
+.buildings__turn, .restart-turn {width: 30px;bottom: 0;}
 
 }
 
