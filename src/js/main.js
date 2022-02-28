@@ -34,7 +34,7 @@ var vue = new Vue({
                             href: "sunrise",
                             inside: "src/images/sunrise-insider.png",
                             position: "left",
-                            iframePosition: "727,224,1192,515",
+                            iframePosition: "1080,297,1795,750",
                             iframeURL: "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
                         },
                         {
@@ -42,7 +42,7 @@ var vue = new Vue({
                             href: "manor",
                             inside: "src/images/manor-insider.png",
                             position: "left",
-                            iframePosition: "725,220,1192,522",
+                            iframePosition: "1072,260,1810,758",
                             iframeURL: "https://www.manor.ch/de/u/sale"
                         },
                         {
@@ -58,7 +58,7 @@ var vue = new Vue({
                             href: "postFinance",
                             inside: "src/images/post-insider.png",
                             position: "right",
-                            iframePosition: "725,217,1190,524",
+                            iframePosition: "1070,283,1801,760",
                             iframeURL: "https://www.postfinance.ch/de/privat.html"
                         },
                         {
@@ -66,7 +66,7 @@ var vue = new Vue({
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
                             position: "right",
-                            iframePosition: "723,219,1190,521",
+                            iframePosition: "1075,282,1797,768",
                             iframeURL: "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
                         }
                     ]
@@ -129,19 +129,33 @@ var vue = new Vue({
                             coords: "3,292,327,791",
                             href: "ochsner",
                             inside: "src/images/ochsner-insider.png",
-                            position: "left"
+                            position: "left",
+                            iframePosition: "1070,285,1800,768",
+                            iframeURL: "https://www.ochsnersport.ch/de/shop/neutral-aktionen-00018068-c.html"
                         },
                         {
                             coords: "791,318,328,768",
                             href: "mediamarkt",
                             inside: "src/images/mediamarkt-insider.png",
-                            position: "left"
+                            position: "left",
+                            iframePosition: "1069,279,1798,764",
+                            iframeURL: "https://www.mediamarkt.ch/de/shop/angebote.html"
                         },
                         {
                             coords: "1304,203,1763,727",
                             href: "migros",
                             inside: "src/images/migros-insider.png",
-                            position: "right"
+                            position: "right",
+                            iframePosition: "1069,284,1798,761",
+                            iframeURL: "https://produkte.migros.ch/angebote"
+                        },
+                        {
+                            coords: "255,731,1,358",
+                            href: "mcdonalds",
+                            inside: "src/images/mcdonalds-insider.png",
+                            position: "right",
+                            iframePosition: "1072,287,1795,763",
+                            iframeURL: "https://www.mcdonalds.com/ch/de-ch/error-page-404.html"
                         }
                     ]
                 },
@@ -195,19 +209,33 @@ var vue = new Vue({
                             coords: "3,292,327,791",
                             href: "ochsner",
                             inside: "src/images/ochsner-insider.png",
-                            position: "left"
+                            position: "left",
+                            iframePosition: "1070,285,1800,768",
+                            iframeURL: "https://www.ochsnersport.ch/de/shop/neutral-aktionen-00018068-c.html"
                         },
                         {
                             coords: "791,318,328,768",
                             href: "mediamarkt",
                             inside: "src/images/mediamarkt-insider.png",
-                            position: "left"
+                            position: "left",
+                            iframePosition: "1069,279,1798,764",
+                            iframeURL: "https://www.mediamarkt.ch/de/shop/angebote.html"
                         },
                         {
                             coords: "1304,203,1763,727",
                             href: "migros",
                             inside: "src/images/migros-insider.png",
-                            position: "right"
+                            position: "right",
+                            iframePosition: "1290,202,1748,719",
+                            iframeURL: "https://produkte.migros.ch/angebote"
+                        },
+                        {
+                            coords: "255,731,1,358",
+                            href: "mcdonalds",
+                            inside: "src/images/mcdonalds-insider.png",
+                            position: "right",
+                            iframePosition: "1072,287,1795,763",
+                            iframeURL: "https://www.mcdonalds.com/ch/de-ch/error-page-404.html"
                         }
                     ]
                 },
@@ -279,7 +307,33 @@ var vue = new Vue({
                 buildOptions:
                 {
                     rightImg: "src/images/right-3-perspective.png",
-                    leftImg: "src/images/left-3-perspective.png"
+                    leftImg: "src/images/left-3-perspective.png",
+                    usemaps: [
+                        {
+                            coords: "306,747,598,369",
+                            href: "jumbo",
+                            inside: "src/images/jumbor-insider.png",
+                            position: "right",
+                            iframePosition: "1070,282,1797,763",
+                            iframeURL: "https://www.jumbo.ch/de/aktionen"
+                        },
+                        {
+                            coords: "1427,778,1652,268",
+                            href: "tchibo",
+                            inside: "src/images/tchibo-insider.png",
+                            position: "right",
+                            iframePosition: "1072,285,1795,760",
+                            iframeURL: "https://www.tchibo.ch/shop-prozente-c400064723.html"
+                        },
+                        {
+                            coords: "601,721,937,263",
+                            href: "conforama",
+                            inside: "src/images/conforama-insider.png",
+                            position: "left",
+                            iframePosition: "1072,285,1795,760",
+                            iframeURL: "https://www.conforama.ch/de/alle-unsere-angebote/c/offres"
+                        }
+                    ]
                 },
                 backTurned: false
             },
@@ -324,7 +378,33 @@ var vue = new Vue({
                 buildOptions:
                 {
                     rightImg: "src/images/right-3-perspective.png",
-                    leftImg: "src/images/left-3-perspective.png"
+                    leftImg: "src/images/left-3-perspective.png",
+                    usemaps: [
+                        {
+                            coords: "306,747,598,369",
+                            href: "jumbo",
+                            inside: "src/images/jumbor-insider.png",
+                            position: "right",
+                            iframePosition: "1070,282,1797,763",
+                            iframeURL: "https://www.jumbo.ch/de/aktionen"
+                        },
+                        {
+                            coords: "1427,778,1652,268",
+                            href: "tchibo",
+                            inside: "src/images/tchibo-insider.png",
+                            position: "right",
+                            iframePosition: "1072,285,1795,760",
+                            iframeURL: "https://www.tchibo.ch/shop-prozente-c400064723.html"
+                        },
+                        {
+                            coords: "601,721,937,263",
+                            href: "conforama",
+                            inside: "src/images/conforama-insider.png",
+                            position: "left",
+                            iframePosition: "1072,285,1795,760",
+                            iframeURL: "https://www.conforama.ch/de/alle-unsere-angebote/c/offres"
+                        }
+                    ]
                 },
                 backTurned: true
 
@@ -385,7 +465,7 @@ var vue = new Vue({
                             href: "sunrise",
                             inside: "src/images/sunrise-insider.png",
                             position: "left",
-                            iframePosition: "727,224,1192,515",
+                            iframePosition: "1080,297,1795,750",
                             iframeURL: "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
                         },
                         {
@@ -393,7 +473,7 @@ var vue = new Vue({
                             href: "manor",
                             inside: "src/images/manor-insider.png",
                             position: "left",
-                            iframePosition: "725,220,1192,522",
+                            iframePosition: "1072,260,1810,758",
                             iframeURL: "https://www.manor.ch/de/u/sale"
                         },
                         {
@@ -409,7 +489,7 @@ var vue = new Vue({
                             href: "postFinance",
                             inside: "src/images/post-insider.png",
                             position: "right",
-                            iframePosition: "725,217,1190,524",
+                            iframePosition: "1070,283,1801,760",
                             iframeURL: "https://www.postfinance.ch"
                         },
                         {
@@ -417,7 +497,7 @@ var vue = new Vue({
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
                             position: "right",
-                            iframePosition: "723,219,1190,521",
+                            iframePosition: "1075,282,1797,768",
                             iframeURL: "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
                         }
                     ]
@@ -442,7 +522,6 @@ var vue = new Vue({
             }
         ],
         activeScene: 1,
-        prevActiveScene: null,
         duration: 250,
         junction: false,
         junctionBack: false,
@@ -452,7 +531,7 @@ var vue = new Vue({
         isWalk: false,
         walkDelay: false,
         isHorizontalScroll: false,
-        pageLoad: false,
+        pageLoad: true,
         mouseWhellShow: true
     },
     methods: {
@@ -464,7 +543,7 @@ var vue = new Vue({
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
                 isLoop = getVideo.loop;
-            getVideo.playbackRate = 1;
+            getVideo.playbackRate = 7;
             $this.loopScreen = isLoop;
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
@@ -653,6 +732,10 @@ var vue = new Vue({
 
         },
 
+        isMouseWhellBackShow() {
+            return $(".video-active .mouse-whell").hasClass("down")
+        },
+
         //basa dondugunde videolarin currentTime'ını basa alir
         resetVideos() {
             this.end = false;
@@ -723,24 +806,22 @@ var vue = new Vue({
             $this.isSafari() ? $this.duration = "end" : $this.duration = 600
 
             document.addEventListener("wheel", function (event) {
-                if ($(".video-active .mouse-whell").hasClass("down") && event.deltaY > 0 && !$this.walkDelay && $this.pageLoad) {
+                if ($this.isMouseWhellBackShow() && event.deltaY > 0 && !$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
-                } else if (!$(".video-active .mouse-whell").hasClass("down") && event.deltaY < 0 && !$this.walkDelay && $this.pageLoad) {
+                } else if (!$this.isMouseWhellBackShow() && event.deltaY < 0 && !$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
                 }
             });
 
-            $(document).swipedown(function () {
-                if ($(".video-active .mouse-whell").hasClass("down") && !$this.walkDelay && $this.pageLoad) {
-                    $this.goMonkey()
-                }
-            })
-
             $(document).swipeup(function () {
-                if (!$(".video-active .mouse-whell").hasClass("down") && !$this.walkDelay && $this.pageLoad) {
+                if (!$this.isMouseWhellBackShow() && !$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
                 }
-            })
+            }).swipedown(function () {
+                if ($this.isMouseWhellBackShow() && !$this.walkDelay && $this.pageLoad) {
+                    $this.goMonkey()
+                }
+            })            
 
             $(window).on('load', function () {
                 $this.pageLoad = true
