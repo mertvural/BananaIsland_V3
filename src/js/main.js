@@ -521,7 +521,7 @@ var vue = new Vue({
                 backTurned: true
             }
         ],
-        activeScene: 34,
+        activeScene: 1,
         duration: 250,
         junction: false,
         junctionBack: false,
@@ -780,7 +780,7 @@ var vue = new Vue({
                         $this.resetVideos()
                         return
                     }
-                    
+
                     if ($this.buildScreen) {
                         $this.buildExit($this.activeScene)
                         return
