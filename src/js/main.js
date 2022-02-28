@@ -531,7 +531,7 @@ var vue = new Vue({
         isWalk: false,
         walkDelay: false,
         isHorizontalScroll: false,
-        pageLoad: false,
+        pageLoad: true,
         mouseWhellShow: true
     },
     methods: {
@@ -755,8 +755,66 @@ var vue = new Vue({
         isSafari() {
             var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
             return isSafari;
-        }
+        },
 
+        showBuild() {
+            return $(".video-active").find(".build-capsul").length>0
+        },
+
+        checkKey(e) {
+            var $this = this;
+            e = e || window.event;
+            switch (e.keyCode) {
+                //ileri
+                case 38:
+                    
+                    if($this.end) {
+                        $this.resetVideos()
+                        return
+                    }
+                    
+                    if ($this.isMouseWhellBackShow())
+                        $this.backCornerBttn($this.activeScene)
+                    else if (!$this.walkDelay && $this.pageLoad)
+                        $this.goMonkey()
+                    break;
+                //geri
+                case 40:
+                    if ($this.buildScreen) {
+                        $this.buildExit($this.activeScene)
+                        return
+                    }                    
+
+                    if (!$this.isMouseWhellBackShow())
+                        $this.backCornerBttn($this.activeScene)
+
+                    else if (!$this.walkDelay && $this.pageLoad)
+                        $this.goMonkey()
+                    break;
+
+                case 37:                    
+                    if ($this.showBuild())
+                        $this.buildEnter($this.activeScene, "left")
+                    else if($this.junction || $this.junctionBack)
+                        $this.direction("left")
+                    break;
+
+                case 39:
+                    if ($this.showBuild())
+                        $this.buildEnter($this.activeScene, "right")
+                    else if($this.junction || $this.junctionBack)
+                        $this.direction("right")
+                    break;
+            }
+        },
+        mouseWhellFunc() {
+            var $this = this;
+            if ($this.isMouseWhellBackShow() && event.deltaY > 0 && !$this.walkDelay && $this.pageLoad) {
+                $this.goMonkey()
+            } else if (!$this.isMouseWhellBackShow() && event.deltaY < 0 && !$this.walkDelay && $this.pageLoad) {
+                $this.goMonkey()
+            }
+        }
     },
 
     computed: {
@@ -805,23 +863,15 @@ var vue = new Vue({
 
             $this.isSafari() ? $this.duration = "end" : $this.duration = 600
 
-            document.addEventListener("wheel", function (event) {
-                if ($this.isMouseWhellBackShow() && event.deltaY > 0 && !$this.walkDelay && $this.pageLoad) {
-                    $this.goMonkey()
-                } else if (!$this.isMouseWhellBackShow() && event.deltaY < 0 && !$this.walkDelay && $this.pageLoad) {
-                    $this.goMonkey()
-                }
-            });
+            document.addEventListener("wheel", $this.mouseWhellFunc);
 
-            $(document).swipeup(function () {
-                if (!$this.isMouseWhellBackShow() && !$this.walkDelay && $this.pageLoad) {
+            document.onkeydown = $this.checkKey;
+
+            $(document).bind("swipeup swipedown",function () {
+                if (!$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
                 }
-            }).swipedown(function () {
-                if ($this.isMouseWhellBackShow() && !$this.walkDelay && $this.pageLoad) {
-                    $this.goMonkey()
-                }
-            })            
+            })
 
             $(window).on('load', function () {
                 $this.pageLoad = true
@@ -864,7 +914,7 @@ var vue = new Vue({
         var $this = this;
         $this.$nextTick(function () {
             var videoActiveNext = $(".video-active + .video-capsul").find("video")
-            if ($(".video-active").find(".build-capsul").length > 0 || $this.junctionBack) {
+            if ($this.showBuild() || $this.junctionBack) {
                 $this.walkDelay = true
                 setTimeout(() => {
                     $this.walkDelay = false
