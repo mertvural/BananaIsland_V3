@@ -35,7 +35,7 @@ var vue = new Vue({
                             inside: "src/images/sunrise-insider.png",
                             position: "left",
                             iframePosition: "1080,297,1795,750",
-                            iframeURL: "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
+                            iframeURL: "https://monkeymunchy.com/company/sunrise"
                         },
                         {
                             coords: "1670,158,1917,744",
@@ -43,7 +43,7 @@ var vue = new Vue({
                             inside: "src/images/manor-insider.png",
                             position: "left",
                             iframePosition: "1072,260,1810,758",
-                            iframeURL: "https://www.manor.ch/de/u/sale"
+                            iframeURL: "https://monkeymunchy.com/company/manor"
                         },
                         {
                             coords: "1726,773,1918,373",
@@ -59,7 +59,7 @@ var vue = new Vue({
                             inside: "src/images/post-insider.png",
                             position: "right",
                             iframePosition: "1070,283,1801,760",
-                            iframeURL: "https://www.postfinance.ch/de/privat.html"
+                            iframeURL: "https://monkeymunchy.com/company/post-finance"
                         },
                         {
                             coords: "349,361,561,743",
@@ -67,7 +67,7 @@ var vue = new Vue({
                             inside: "src/images/orell-insider.png",
                             position: "right",
                             iframePosition: "1075,282,1797,768",
-                            iframeURL: "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
+                            iframeURL: "https://monkeymunchy.com/company/orel-fuessli"
                         }
                     ]
                 },
@@ -131,7 +131,7 @@ var vue = new Vue({
                             inside: "src/images/ochsner-insider.png",
                             position: "left",
                             iframePosition: "1070,285,1800,768",
-                            iframeURL: "https://www.ochsnersport.ch/de/shop/neutral-aktionen-00018068-c.html"
+                            iframeURL: "https://monkeymunchy.com/company/ochsner-sport"
                         },
                         {
                             coords: "791,318,328,768",
@@ -139,7 +139,7 @@ var vue = new Vue({
                             inside: "src/images/mediamarkt-insider.png",
                             position: "left",
                             iframePosition: "1069,279,1798,764",
-                            iframeURL: "https://www.mediamarkt.ch/de/shop/angebote.html"
+                            iframeURL: "https://monkeymunchy.com/company/media-markt"
                         },
                         {
                             coords: "1304,203,1763,727",
@@ -147,7 +147,7 @@ var vue = new Vue({
                             inside: "src/images/migros-insider.png",
                             position: "right",
                             iframePosition: "1069,284,1798,761",
-                            iframeURL: "https://produkte.migros.ch/angebote"
+                            iframeURL: "https://monkeymunchy.com/company/migros"
                         },
                         {
                             coords: "255,731,1,358",
@@ -155,7 +155,7 @@ var vue = new Vue({
                             inside: "src/images/mcdonalds-insider.png",
                             position: "right",
                             iframePosition: "1072,287,1795,763",
-                            iframeURL: "https://www.mcdonalds.com/ch/de-ch/error-page-404.html"
+                            iframeURL: "https://monkeymunchy.com/company/mc-donalds"
                         }
                     ]
                 },
@@ -211,7 +211,7 @@ var vue = new Vue({
                             inside: "src/images/ochsner-insider.png",
                             position: "left",
                             iframePosition: "1070,285,1800,768",
-                            iframeURL: "https://www.ochsnersport.ch/de/shop/neutral-aktionen-00018068-c.html"
+                            iframeURL: "https://monkeymunchy.com/company/ochsner-sport"
                         },
                         {
                             coords: "791,318,328,768",
@@ -219,15 +219,15 @@ var vue = new Vue({
                             inside: "src/images/mediamarkt-insider.png",
                             position: "left",
                             iframePosition: "1069,279,1798,764",
-                            iframeURL: "https://www.mediamarkt.ch/de/shop/angebote.html"
+                            iframeURL: "https://monkeymunchy.com/company/media-markt"
                         },
                         {
                             coords: "1304,203,1763,727",
                             href: "migros",
                             inside: "src/images/migros-insider.png",
                             position: "right",
-                            iframePosition: "1290,202,1748,719",
-                            iframeURL: "https://produkte.migros.ch/angebote"
+                            iframePosition: "1069,284,1798,761",
+                            iframeURL: "https://monkeymunchy.com/company/migros"
                         },
                         {
                             coords: "255,731,1,358",
@@ -235,7 +235,7 @@ var vue = new Vue({
                             inside: "src/images/mcdonalds-insider.png",
                             position: "right",
                             iframePosition: "1072,287,1795,763",
-                            iframeURL: "https://www.mcdonalds.com/ch/de-ch/error-page-404.html"
+                            iframeURL: "https://monkeymunchy.com/company/mc-donalds"
                         }
                     ]
                 },
@@ -315,7 +315,7 @@ var vue = new Vue({
                             inside: "src/images/jumbor-insider.png",
                             position: "right",
                             iframePosition: "1070,282,1797,763",
-                            iframeURL: "https://www.jumbo.ch/de/aktionen"
+                            iframeURL: "https://monkeymunchy.com/company/jumbo"
                         },
                         {
                             coords: "1427,778,1652,268",
@@ -323,7 +323,7 @@ var vue = new Vue({
                             inside: "src/images/tchibo-insider.png",
                             position: "right",
                             iframePosition: "1072,285,1795,760",
-                            iframeURL: "https://www.tchibo.ch/shop-prozente-c400064723.html"
+                            iframeURL: "https://monkeymunchy.com/company/tchibo"
                         },
                         {
                             coords: "601,721,937,263",
@@ -331,7 +331,7 @@ var vue = new Vue({
                             inside: "src/images/conforama-insider.png",
                             position: "left",
                             iframePosition: "1072,285,1795,760",
-                            iframeURL: "https://www.conforama.ch/de/alle-unsere-angebote/c/offres"
+                            iframeURL: "https://monkeymunchy.com/company/conforama"
                         }
                     ]
                 },
@@ -386,7 +386,7 @@ var vue = new Vue({
                             inside: "src/images/jumbor-insider.png",
                             position: "right",
                             iframePosition: "1070,282,1797,763",
-                            iframeURL: "https://www.jumbo.ch/de/aktionen"
+                            iframeURL: "https://monkeymunchy.com/company/jumbo"
                         },
                         {
                             coords: "1427,778,1652,268",
@@ -394,7 +394,7 @@ var vue = new Vue({
                             inside: "src/images/tchibo-insider.png",
                             position: "right",
                             iframePosition: "1072,285,1795,760",
-                            iframeURL: "https://www.tchibo.ch/shop-prozente-c400064723.html"
+                            iframeURL: "https://monkeymunchy.com/company/tchibo"
                         },
                         {
                             coords: "601,721,937,263",
@@ -402,7 +402,7 @@ var vue = new Vue({
                             inside: "src/images/conforama-insider.png",
                             position: "left",
                             iframePosition: "1072,285,1795,760",
-                            iframeURL: "https://www.conforama.ch/de/alle-unsere-angebote/c/offres"
+                            iframeURL: "https://monkeymunchy.com/company/conforama"
                         }
                     ]
                 },
@@ -466,7 +466,7 @@ var vue = new Vue({
                             inside: "src/images/sunrise-insider.png",
                             position: "left",
                             iframePosition: "1080,297,1795,750",
-                            iframeURL: "https://www.sunrise.ch/de/privatkunden/startseite/Angebote.html"
+                            iframeURL: "https://monkeymunchy.com/company/sunrise"
                         },
                         {
                             coords: "1670,158,1917,744",
@@ -474,7 +474,7 @@ var vue = new Vue({
                             inside: "src/images/manor-insider.png",
                             position: "left",
                             iframePosition: "1072,260,1810,758",
-                            iframeURL: "https://www.manor.ch/de/u/sale"
+                            iframeURL: "https://monkeymunchy.com/company/manor"
                         },
                         {
                             coords: "1726,773,1918,373",
@@ -482,7 +482,7 @@ var vue = new Vue({
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
                             iframePosition: "1057,267,1825,758",
-                            iframeURL: "https://monkey-munchy-store.myspreadshop.net/"
+                            iframeURL: "https://monkey-munchy-store.myspreadshop.net/all"
                         },
                         {
                             coords: "802,142,1122,726",
@@ -490,7 +490,7 @@ var vue = new Vue({
                             inside: "src/images/post-insider.png",
                             position: "right",
                             iframePosition: "1070,283,1801,760",
-                            iframeURL: "https://www.postfinance.ch"
+                            iframeURL: "https://monkeymunchy.com/company/post-finance"
                         },
                         {
                             coords: "349,361,561,743",
@@ -498,7 +498,7 @@ var vue = new Vue({
                             inside: "src/images/orell-insider.png",
                             position: "right",
                             iframePosition: "1075,282,1797,768",
-                            iframeURL: "https://www.orellfuessli.ch/kampagnen/studentcard-aktion"
+                            iframeURL: "https://monkeymunchy.com/company/orel-fuessli"
                         }
                     ]
                 },
