@@ -531,7 +531,7 @@ var vue = new Vue({
         isWalk: false,
         walkDelay: false,
         isHorizontalScroll: false,
-        pageLoad: false,
+        pageLoad: true,
         mouseWhellShow: true
     },
     methods: {
@@ -543,7 +543,7 @@ var vue = new Vue({
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
                 isLoop = getVideo.loop;
-            getVideo.playbackRate = 1;
+            getVideo.playbackRate = 10;
             $this.loopScreen = isLoop;
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
