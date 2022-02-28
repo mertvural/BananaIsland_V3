@@ -521,7 +521,7 @@ var vue = new Vue({
                 backTurned: true
             }
         ],
-        activeScene: 1,
+        activeScene: 34,
         duration: 250,
         junction: false,
         junctionBack: false,
@@ -531,7 +531,7 @@ var vue = new Vue({
         isWalk: false,
         walkDelay: false,
         isHorizontalScroll: false,
-        pageLoad: false,
+        pageLoad: true,
         mouseWhellShow: true
     },
     methods: {
@@ -766,12 +766,7 @@ var vue = new Vue({
             e = e || window.event;
             switch (e.keyCode) {
                 //ileri
-                case 38:
-                    
-                    if($this.end) {
-                        $this.resetVideos()
-                        return
-                    }
+                case 38:                 
                     
                     if ($this.isMouseWhellBackShow())
                         $this.backCornerBttn($this.activeScene)
@@ -780,6 +775,12 @@ var vue = new Vue({
                     break;
                 //geri
                 case 40:
+
+                    if($this.end) {
+                        $this.resetVideos()
+                        return
+                    }
+                    
                     if ($this.buildScreen) {
                         $this.buildExit($this.activeScene)
                         return
