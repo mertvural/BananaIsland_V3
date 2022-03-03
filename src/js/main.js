@@ -930,7 +930,7 @@ var vue = new Vue({
             }
 
             $this.isAutoPlayVideo()
-            console.log($this.duration)
+   
         })
     }
 })
