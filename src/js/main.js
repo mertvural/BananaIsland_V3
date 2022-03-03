@@ -712,6 +712,7 @@ var vue = new Vue({
                     break;
                 case 31:
                     this.activeScene = 5;
+                    this.junction = true
                     break;
                 case 18:
                     this.activeScene = 5;
@@ -758,10 +759,9 @@ var vue = new Vue({
             switch (e.keyCode) {
                 //ileri
                 case 38:
-
                     if ($this.isMouseWhellBackShow())
                         $this.backCornerBttn($this.activeScene)
-                    else if (!$this.walkDelay && $this.pageLoad)
+                    else if (!$this.walkDelay && $this.pageLoad && $this.activeScene !== 31 && this.activeScene !== 5)
                         $this.goMonkey()
                     break;
                 //geri
