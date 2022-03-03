@@ -10,6 +10,7 @@
   <script src="src/js/ios-orientationchange-fix.min.js"></script>
   <script src="src/js/jquery-3.6.0.min.js"></script>
   <script src="src/js/vue.js"></script>
+  <script src="src/js/TweenMax.min.js"></script>
   <script src="src/js/jquery-migrate-1.4.1.min.js"></script>
   <script src="src/js/jquery.rwdImageMaps.min.js"></script>
   <script src="src/js/jquery.mobile-events.min.js"></script>
@@ -41,9 +42,19 @@
         <div class="mouse-whell" :class="video.backTurned ? 'down' : ''" v-if="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow && !junction"></div>
 
         <!--video-->
-        <video v-show="!buildScreen" class="video" v-if="video.id === activeScene || video.id === activeScene+1 || video.id === activeScene+2 || video.id === 19 || video.id === 6 || video.id === 1 || 
-      video.id === 32 || video.id === backCorner" :key="video.id" :src="video.src" :autoplay="video.loop"
-          :muted="video.muted" :loop="video.loop" playsinline></video>
+        <video v-show="!buildScreen" muted class="video" 
+        v-if="video.id === activeScene 
+        || video.id === activeScene-1 
+        || video.id === activeScene+1 
+        || video.id === activeScene+2 
+        || video.id === 19 
+        || video.id === 6 
+        || video.id === 1 
+        || video.id === 32 || video.id === backCorner" 
+        :key="video.id" 
+        :src="video.src" 
+        :autoplay="video.loop"
+        :loop="video.loop" playsinline></video>
         <!--video-->
 
         <!--building-->
