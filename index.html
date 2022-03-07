@@ -83,7 +83,7 @@
 
           <img src="src/images/turn.png" @click="buildExit(video.id)" class="buildings__turn" />
 
-          <div class="handrightleft" v-show="isHorizontalScroll && buildScreen"></div>
+          <div class="handrightleft" v-show="isHorizontalScroll && buildScreen && !isInsideEnter"></div>
 
           <!--insider-->
           <div class="insiderCapsul">

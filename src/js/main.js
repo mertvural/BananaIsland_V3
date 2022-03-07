@@ -497,7 +497,8 @@ var vue = new Vue({
         walkDelay: false,
         isHorizontalScroll: false,
         pageLoad: false,
-        mouseWhellShow: true
+        mouseWhellShow: true,
+        isInsideEnter : false
     },
     methods: {
 
@@ -635,7 +636,7 @@ var vue = new Vue({
 
         horizontalScrollControl(buildW, buildImgW) {
 
-            buildImgW > buildW + 100 ? this.isHorizontalScroll = true : this.isHorizontalScroll = false
+            buildImgW > buildW ? this.isHorizontalScroll = true : this.isHorizontalScroll = false
         },
 
         checkOrientation() {      
@@ -676,6 +677,7 @@ var vue = new Vue({
         //yapılardan cikis aninda
         buildExit(getVideoID) {
             this.resetBuild(getVideoID);
+            this.isInsideEnter = false
         },
 
         //yapılari resetler. en bas ozelliklerine geri dondurur
@@ -695,6 +697,7 @@ var vue = new Vue({
         },
 
         insideEnter(id) {
+            this.isInsideEnter = true;
             $('img[usemap]').rwdImageMaps();
             $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft(this.scrollLeftPosition("inside"))
             $(".insiderItem.active").find(".buildings__horizon").show()
@@ -912,10 +915,6 @@ var vue = new Vue({
                 setTimeout(() => {
                     $(active).find("video")[0].play()
                 }, 1200);
-            })
-
-            $(".buildings__build").on("click", function () {
-                $(".handrightleft").hide()
             })
 
             var percent = $(".video-loader .percent"),
