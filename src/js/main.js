@@ -676,8 +676,7 @@ var vue = new Vue({
 
         //yapılardan cikis aninda
         buildExit(getVideoID) {
-            this.resetBuild(getVideoID);
-            this.isInsideEnter = false
+            this.resetBuild(getVideoID);            
         },
 
         //yapılari resetler. en bas ozelliklerine geri dondurur
@@ -686,6 +685,7 @@ var vue = new Vue({
                 insiderItem = buildCapsul.find(".insiderItem");
             if (insiderItem.hasClass("active")) {
                 insiderItem.removeClass("active")
+                this.isInsideEnter = false
             } else {
                 target
                     ?
