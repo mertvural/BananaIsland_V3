@@ -31,7 +31,7 @@ var vue = new Vue({
                             href: "sunrise",
                             inside: "src/images/sunrise-insider.png",
                             position: "left",
-                            iframePosition: "1080,297,1795,750",
+                            iframePosition: "1052,262,1821,765",
                             iframeURL: "https://monkeymunchy.com/company/sunrise"
                         },
                         {
@@ -39,7 +39,7 @@ var vue = new Vue({
                             href: "manor",
                             inside: "src/images/manor-insider.png",
                             position: "left",
-                            iframePosition: "1072,260,1810,758",
+                            iframePosition: "1050,237,1839,765",
                             iframeURL: "https://monkeymunchy.com/company/manor"
                         },
                         {
@@ -63,7 +63,7 @@ var vue = new Vue({
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
                             position: "right",
-                            iframePosition: "1075,282,1797,768",
+                            iframePosition: "1050,270,1825,771",
                             iframeURL: "https://monkeymunchy.com/company/orel-fuessli"
                         }
                     ]
@@ -432,7 +432,7 @@ var vue = new Vue({
                             href: "sunrise",
                             inside: "src/images/sunrise-insider.png",
                             position: "left",
-                            iframePosition: "1080,297,1795,750",
+                            iframePosition: "1052,262,1821,765",
                             iframeURL: "https://monkeymunchy.com/company/sunrise"
                         },
                         {
@@ -440,7 +440,7 @@ var vue = new Vue({
                             href: "manor",
                             inside: "src/images/manor-insider.png",
                             position: "left",
-                            iframePosition: "1072,260,1810,758",
+                            iframePosition: "1050,237,1839,765",
                             iframeURL: "https://monkeymunchy.com/company/manor"
                         },
                         {
@@ -448,7 +448,7 @@ var vue = new Vue({
                             href: "store",
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
-                            iframePosition: "1057,267,1825,758",
+                            iframePosition: "1047,267,1825,758",
                             iframeURL: "https://monkey-munchy-store.myspreadshop.net/all"
                         },
                         {
@@ -464,7 +464,7 @@ var vue = new Vue({
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
                             position: "right",
-                            iframePosition: "1075,282,1797,768",
+                            iframePosition: "1050,270,1825,771",
                             iframeURL: "https://monkeymunchy.com/company/orel-fuessli"
                         }
                     ]
