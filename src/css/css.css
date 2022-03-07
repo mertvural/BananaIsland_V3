@@ -32,7 +32,7 @@ cursor: pointer;height: 115px;padding: 0;position: fixed;width: 180px;top: 10%;t
 .buildings__build>img, .insiderItem img {min-width: 100%;width: auto;}
 .buildings__build>img {height: 100%;object-fit: cover}
 .insiderItem img {height: auto}
-.buildings__arrows, .buildings__build, .buildings__turn, .build-capsul.active-right .mouse-whell, .build-capsul.active-left .mouse-whell {display: none;}
+.buildings__arrows, .buildings__build, .buildings__turn, .build-capsul.active-right .mouse-whell, .build-capsul.active-left .mouse-whell, .buildings__horizon {display: none;}
 .video-active .buildings__arrows {display: block;}
 .handrightleft {width: 200px;height: 166px;background: url("../images/handrightleft.png") no-repeat center center;position: fixed;right:0;top:0;left:0;z-index: 105;
   margin: auto;animation: leftRight 2s linear infinite;}
@@ -52,6 +52,7 @@ iframe {border:0;outline: 0}
   font-size: 70px;font-family: '000_astounder_squared_tbRg', Sans-serif;color: #1E2868;}
 .video-loader .text {animation: heartbeat 1s infinite;position: fixed;bottom: 64%;right: 0;left: 0;text-align: center}
 .text-loading {display: none;}
+
 
 
 @keyframes mouseWhell {
@@ -118,6 +119,12 @@ iframe {border:0;outline: 0}
   }
 }
 
+@keyframes rotate {
+  0% {transform: rotate(0deg);} 
+  100% {transform: rotate(10deg);} 
+}
+
+
 /*responsive*/
 
 @media only screen and (max-height: 770px) {
@@ -161,9 +168,12 @@ iframe {border:0;outline: 0}
 
 @media only screen and (max-width: 768px) and (orientation: portrait) {
 .iframeCapsul {height: 100% !important;left: 0 !important;position: fixed;width: 100vw !important;top: 23vw !important}
-.insiderItem[data-href="store"] img {display: none;}
+.insiderItem[data-href="store"] .insiderCapsul__build--img {display: none;}
 .insiderItem[data-href="store"]::before {content:"";background: url(../images/store-mobil-header.png) no-repeat;position: fixed;top:0;left:0;background-size: contain;
 width:100%;height: 100%}
+.insiderItem.active .buildings__horizon {display:block;position: fixed;bottom: 0;left: 0;right: 0;margin: auto;width: 100%;height: 100%;object-fit: contain;object-position: center center;
+z-index: 107;animation: rotate 2s ease alternate infinite;}
+
 }
 
 @media only screen and (max-width: 992px) and (orientation: landscape) {
