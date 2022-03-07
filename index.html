@@ -58,7 +58,7 @@
         <!--video-->
 
         <!--building-->
-        <div class="build-capsul" :data-build="video.id" v-if="video.build">
+        <div class="build-capsul" :data-build="video.id" v-if="video.build && video.id === activeScene">
           <div class="buildings__arrows">
             <button type="button" class="video-arrow left" @click="buildEnter(video.id,'left')"></button>
             <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')"></button>

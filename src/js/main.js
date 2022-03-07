@@ -638,6 +638,25 @@ var vue = new Vue({
             buildImgW > buildW + 100 ? this.isHorizontalScroll = true : this.isHorizontalScroll = false
         },
 
+        checkOrientation() {      
+
+            var insiderItemActive = $(".insiderItem.active");
+            
+            if(insiderItemActive.length <= 0) return 
+
+            setTimeout(() => {
+                var coord = insiderItemActive.find("area").attr("coords").split(",");
+                insiderItemActive.find(".iframeCapsul").css({
+                    'left': coord[0] + "px",
+                    'top': coord[1] + "px",
+                    'width': coord[2] - coord[0] + "px",
+                    'height': coord[3] - coord[1] + "px"
+                });
+                insiderItemActive.scrollLeft(this.scrollLeftPosition("inside"))  
+            }, 500);        
+
+        },
+
         scrollLeftPosition(direction) {
             var build = $(".build-capsul.active .buildings__build"),
                 inside = $(".insiderItem.active");
@@ -652,7 +671,7 @@ var vue = new Vue({
                     return (inside.children("img").width() - inside.width()) / 2
                     break;
             }
-        },
+        },        
 
         //yapılardan cikis aninda
         buildExit(getVideoID) {
@@ -879,6 +898,8 @@ var vue = new Vue({
             document.addEventListener("wheel", $this.mouseWhellFunc);
 
             document.onkeydown = $this.checkKey;
+
+            window.addEventListener("orientationchange", $this.checkOrientation, false);
 
             $(document).bind("swipeup swipedown", function () {
                 if (!$this.walkDelay && $this.pageLoad) {
