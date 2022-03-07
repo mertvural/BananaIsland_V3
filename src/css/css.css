@@ -38,7 +38,7 @@ cursor: pointer;height: 115px;padding: 0;position: fixed;width: 180px;top: 10%;t
   margin: auto;animation: leftRight 2s linear infinite;}
 .build-capsul.active.right .buildings__build.right, 
 .build-capsul.active.left .buildings__build.left, .build-capsul.active .buildings__turn {display: block;}
-.buildings__turn, .restart-turn {position: fixed;bottom:10px;left:0;right:0;margin: auto;width: 100px;z-index: 105;cursor: pointer;}
+.buildings__turn, .restart-turn {position: fixed;bottom:0;left:0;right:0;margin: auto;width: 100px;z-index: 105;cursor: pointer;}
 .mouse-whell {background: url(../images/mouse-whell.png) no-repeat center center;width: 87px;height:200px;position: fixed;bottom:10px;left:0;right: 0;margin:auto;
   z-index: 102;background-size: 100%;animation: mouseWhell 1s ease-out alternate infinite}
 .mouse-whell.down {background-image: url("../images/mouse-whell-down.png");height: 150px;animation: mouseWhellDown 1s ease alternate infinite}
@@ -170,7 +170,7 @@ width:100%;height: 100%}
 
 .insiderItem img {width: 130%;height: auto;}
 .insiderItem {margin-top: -25px;}
-.buildings__turn, .restart-turn {width: 30px;bottom: 0;}
+.buildings__turn, .restart-turn {width: 30px}
 
 }
 
