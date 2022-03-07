@@ -47,7 +47,7 @@ var vue = new Vue({
                             href: "store",
                             inside: "src/images/monkey_store-insider.png",
                             position: "right",
-                            iframePosition: "1057,267,1825,758",
+                            iframePosition: "1047,267,1825,758",
                             iframeURL: "https://monkey-munchy-store.myspreadshop.net/all"
                         },
                         {
@@ -55,7 +55,7 @@ var vue = new Vue({
                             href: "postFinance",
                             inside: "src/images/post-insider.png",
                             position: "right",
-                            iframePosition: "1070,283,1801,760",
+                            iframePosition: "1045,251,1825,765",
                             iframeURL: "https://monkeymunchy.com/company/post-finance"
                         },
                         {
@@ -456,7 +456,7 @@ var vue = new Vue({
                             href: "postFinance",
                             inside: "src/images/post-insider.png",
                             position: "right",
-                            iframePosition: "1070,283,1801,760",
+                            iframePosition: "1045,251,1825,765",
                             iframeURL: "https://monkeymunchy.com/company/post-finance"
                         },
                         {
@@ -486,7 +486,7 @@ var vue = new Vue({
                 backTurned: true
             }
         ],
-        activeScene: 1,
+        activeScene: 3,
         duration: 250,
         junction: false,
         junctionBack: false,
