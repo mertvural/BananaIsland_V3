@@ -204,7 +204,6 @@ z-index: 107;animation: rotate 2s ease alternate infinite;}
 
 .exit {background-size: 40px;width: 41px;height: 41px;}
 .board {display: none !important;}
-.buildings__turn, .restart-turn {width: 30px}
 
 }
 
