@@ -39,7 +39,7 @@ var vue = new Vue({
                             href: "manor",
                             inside: "src/images/manor-insider.png",
                             position: "left",
-                            iframePosition: "1050,237,1839,765",
+                            iframePosition: "1055,237,1831,765",
                             iframeURL: "https://monkeymunchy.com/company/manor"
                         },
                         {
@@ -55,7 +55,7 @@ var vue = new Vue({
                             href: "postFinance",
                             inside: "src/images/post-insider.png",
                             position: "right",
-                            iframePosition: "1045,251,1825,765",
+                            iframePosition: "1050,255,1818,760",
                             iframeURL: "https://monkeymunchy.com/company/post-finance"
                         },
                         {
@@ -63,7 +63,7 @@ var vue = new Vue({
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
                             position: "right",
-                            iframePosition: "1050,270,1825,771",
+                            iframePosition: "1053,273,1826,766",
                             iframeURL: "https://monkeymunchy.com/company/orel-fuessli"
                         }
                     ]
@@ -440,7 +440,7 @@ var vue = new Vue({
                             href: "manor",
                             inside: "src/images/manor-insider.png",
                             position: "left",
-                            iframePosition: "1050,237,1839,765",
+                            iframePosition: "1055,237,1831,765",
                             iframeURL: "https://monkeymunchy.com/company/manor"
                         },
                         {
@@ -456,7 +456,7 @@ var vue = new Vue({
                             href: "postFinance",
                             inside: "src/images/post-insider.png",
                             position: "right",
-                            iframePosition: "1045,251,1825,765",
+                            iframePosition: "1050,255,1818,760",
                             iframeURL: "https://monkeymunchy.com/company/post-finance"
                         },
                         {
@@ -464,7 +464,7 @@ var vue = new Vue({
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
                             position: "right",
-                            iframePosition: "1050,270,1825,771",
+                            iframePosition: "1053,273,1826,766",
                             iframeURL: "https://monkeymunchy.com/company/orel-fuessli"
                         }
                     ]
