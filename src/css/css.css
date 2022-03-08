@@ -48,11 +48,15 @@ cursor: pointer;height: 115px;padding: 0;position: fixed;width: 180px;top: 10%;t
 .SprdMain .sprd-startpage-preview-tiles {margin: 10px !important;}
 .SprdMain .sprd-listpage, .SprdMain .sprd-listpage__header {margin-left: 0 !important;}
 iframe {border:0;outline: 0}
-.video-loader {background: url("../images/loadingbg.png") no-repeat center center;background-size: cover;position: fixed;top:0;left:0;width:100%;height: 100%;z-index: 1001;
+.video-loader {background: url("../images/loadingbg.png") no-repeat center center;background-size: cover;position: fixed;top:0;left:0;width:100%;height: 100%;z-index: 9999;
   font-size: 70px;font-family: '000_astounder_squared_tbRg', Sans-serif;color: #1E2868;}
 .video-loader .text {animation: heartbeat 1s infinite;position: fixed;bottom: 64%;right: 0;left: 0;text-align: center}
 .text-loading {display: none;}
-
+.exit {position: fixed;top:0;right: 0;background: url("../images/icon-exit.png") no-repeat;width:100px;height: 82px;z-index: 108;text-indent: -9999px;font-size: 0;
+transition: transform .4s ease;}
+.exit:hover {transform: scale(.95) rotate(5deg)}
+.board {position: fixed;left: 0;bottom: 0;z-index: 101;transition: transform 1s ease-in-out;}
+.board.hide {transform: translateY(100%);}
 
 
 @keyframes mouseWhell {
@@ -172,7 +176,10 @@ iframe {border:0;outline: 0}
 .insiderItem::before {content:"";position: fixed;top:0;left:0;background-size: contain !important;width:100%;height: 100%}
 .insiderItem[data-href="store"]::before {background: url(../images/store-mobil-header.png) no-repeat;}
 .insiderItem[data-href="postFinance"]::before {background: url(../images/postinsider-mobil-header.png) no-repeat;}
-
+.insiderItem[data-href="orellfussli"]::before {background: url(../images/orell-insider-mobil-header.png) no-repeat;}
+.insiderItem[data-href="manor"]::before {background: url(../images/manor-insider-mobil-header.png) no-repeat;}
+.insiderItem[data-href="mediamarkt"]::before {background: url(../images/mediamarkt-mobil-header.png) no-repeat;}
+.insiderItem[data-href="sunrise"]::before {background: url(../images/sunrise-mobil-header.png) no-repeat;}
 .insiderItem.active .buildings__horizon {display:block;position: fixed;bottom: 0;left: 0;right: 0;margin: auto;width: 100%;height: 100%;object-fit: contain;object-position: center center;
 z-index: 107;animation: rotate 2s ease alternate infinite;}
 
@@ -186,3 +193,17 @@ z-index: 107;animation: rotate 2s ease alternate infinite;}
 
 }
 
+
+@media only screen and (max-width: 768px) {
+
+.exit {background-size: 40px;width: 41px;height: 41px;}
+.board {display: none !important;}
+
+}
+
+
+@media only screen and (min-width: 769px) {
+
+.keyboardControl {width: 150px;height: 105px;background: url("../images/icon-keyboardcontrol.png") no-repeat;position: fixed;bottom:0px;right: 0;z-index: 102}
+
+}

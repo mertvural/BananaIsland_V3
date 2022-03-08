@@ -20,6 +20,14 @@
 
   <div id="app" v-cloak>
 
+    <!--exit-->
+    <a class="exit" href="https://monkeymunchy.com" v-show="!buildScreen">Exit</a>
+    <!--exit-->
+
+    <!--board-->
+    <img src="src/images/board.png" alt="board" title="board" :class="activeScene === 1 ? 'board' : 'board hide'"  />
+    <!--board-->
+
     <!--loading-->
     <div class="video-loader" v-if="!pageLoad">
       <div class="text">
@@ -40,6 +48,8 @@
         :data-id="video.id">
 
         <div class="mouse-whell" :class="video.backTurned ? 'down' : ''" v-if="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow && !junction"></div>
+
+        <div class="keyboardControl" v-if="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow"></div>
 
         <!--video-->
         <video v-show="!buildScreen" muted class="video" 
