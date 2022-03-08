@@ -43,7 +43,7 @@ cursor: pointer;height: 115px;padding: 0;position: fixed;width: 180px;top: 10%;t
   z-index: 102;background-size: 100%;animation: mouseWhell 1s ease-out alternate infinite}
 .mouse-whell.down {background-image: url("../images/mouse-whell-down.png");height: 150px;animation: mouseWhellDown 1s ease alternate infinite}
 .buildings__build--pathimg {position: absolute;}
-.iframeCapsul {position: absolute;z-index: 106;overflow: auto;}
+.iframeCapsul {position: absolute;z-index: 106;overflow: auto;background-color: #fff}
 #onetrust-consent-sdk {display: none !important;opacity: 0 !important;visibility: hidden !important;}
 .SprdMain .sprd-startpage-preview-tiles {margin: 10px !important;}
 .SprdMain .sprd-listpage, .SprdMain .sprd-listpage__header {margin-left: 0 !important;}
@@ -171,7 +171,7 @@ transition: transform .4s ease;}
 
 
 @media only screen and (max-width: 768px) and (orientation: portrait) {
-.iframeCapsul {height: 100% !important;left: 0 !important;position: fixed;width: 100vw !important;top: 23vw !important}
+.iframeCapsul {height: 100% !important;left: 0 !important;position: fixed;width: 100vw !important;top: 23vw !important;max-height: calc(100vh - 23vw);}
 .insiderCapsul__build--img {display: none;}
 .insiderItem::before {content:"";position: fixed;top:0;left:0;background-size: contain !important;width:100%;height: 100%}
 .insiderItem[data-href="store"]::before {background: url(../images/store-mobil-header.png) no-repeat;}
@@ -180,6 +180,13 @@ transition: transform .4s ease;}
 .insiderItem[data-href="manor"]::before {background: url(../images/manor-insider-mobil-header.png) no-repeat;}
 .insiderItem[data-href="mediamarkt"]::before {background: url(../images/mediamarkt-mobil-header.png) no-repeat;}
 .insiderItem[data-href="sunrise"]::before {background: url(../images/sunrise-mobil-header.png) no-repeat;}
+.insiderItem[data-href="jumbo"]::before {background: url(../images/jumbo-mobil-header.png) no-repeat;}
+.insiderItem[data-href="tchibo"]::before {background: url(../images/tchibo-mobil-header.png) no-repeat;}
+.insiderItem[data-href="conforama"]::before {background: url(../images/conforama-mobil-header.png) no-repeat;}
+.insiderItem[data-href="ochsner"]::before {background: url(../images/ochsner-mobil-header.png) no-repeat;}
+.insiderItem[data-href="migros"]::before {background: url(../images/migros-mobil-header.png) no-repeat;}
+.insiderItem[data-href="mcdonalds"]::before {background: url(../images/mcdonalds-mobil-header.png) no-repeat;}
+
 .insiderItem.active .buildings__horizon {display:block;position: fixed;bottom: 0;left: 0;right: 0;margin: auto;width: 100%;height: 100%;object-fit: contain;object-position: center center;
 z-index: 107;animation: rotate 2s ease alternate infinite;}
 
