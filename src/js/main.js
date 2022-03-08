@@ -565,6 +565,7 @@ var vue = new Vue({
             };
 
         },
+
         backMonkey() {
 
             var $this = this,
@@ -593,6 +594,7 @@ var vue = new Vue({
             }
 
         },
+
         //aktif videoyu dondurur
         getActiveVideos() {
 
@@ -906,10 +908,12 @@ var vue = new Vue({
             window.addEventListener("orientationchange", $this.checkOrientation, false);
 
             $(document).bind("swipeup swipedown", function () {
-                if (!$this.walkDelay && $this.pageLoad) {
-                    $this.goMonkey()
-                }
+
+                if (!$this.walkDelay && $this.pageLoad) $this.goMonkey()
+                
             }).bind("swipeleft swiperight", function () {
+                $(".handrightleft").hide()
+            }).on("click", ".buildings__build", function () {
                 $(".handrightleft").hide()
             })
 
