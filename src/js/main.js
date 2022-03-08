@@ -63,7 +63,7 @@ var vue = new Vue({
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
                             position: "right",
-                            iframePosition: "1053,273,1826,766",
+                            iframePosition: "1053,273,1823,766",
                             iframeURL: "https://monkeymunchy.com/company/orel-fuessli"
                         }
                     ]
@@ -464,7 +464,7 @@ var vue = new Vue({
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
                             position: "right",
-                            iframePosition: "1053,273,1826,766",
+                            iframePosition: "1053,273,1823,766",
                             iframeURL: "https://monkeymunchy.com/company/orel-fuessli"
                         }
                     ]
