@@ -165,7 +165,6 @@ transition: transform .4s ease;}
 .video-arrow.turn {margin: 68px 0 0 -37px;width: 70px;height: 55px}
 .mouse-whell {background-size: 50%;height:102px !important}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
-.buildings__turn, .restart-turn {width: 60px;}
 
 }
 
@@ -205,6 +204,7 @@ z-index: 107;animation: rotate 2s ease alternate infinite;}
 
 .exit {background-size: 40px;width: 41px;height: 41px;}
 .board {display: none !important;}
+.buildings__turn, .restart-turn {width: 30px}
 
 }
 
