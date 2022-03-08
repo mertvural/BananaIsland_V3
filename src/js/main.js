@@ -498,7 +498,7 @@ var vue = new Vue({
         isHorizontalScroll: false,
         pageLoad: false,
         mouseWhellShow: true,
-        isInsideEnter : false
+        isInsideEnter: false
     },
     methods: {
 
@@ -639,11 +639,11 @@ var vue = new Vue({
             buildImgW > buildW ? this.isHorizontalScroll = true : this.isHorizontalScroll = false
         },
 
-        checkOrientation() {      
+        checkOrientation() {
 
             var insiderItemActive = $(".insiderItem.active");
-            
-            if(insiderItemActive.length <= 0) return 
+
+            if (insiderItemActive.length <= 0) return
 
             setTimeout(() => {
                 var coord = insiderItemActive.find("area").attr("coords").split(",");
@@ -653,8 +653,8 @@ var vue = new Vue({
                     'width': coord[2] - coord[0] + "px",
                     'height': coord[3] - coord[1] + "px"
                 });
-                insiderItemActive.scrollLeft(this.scrollLeftPosition("inside"))  
-            }, 500);        
+                insiderItemActive.scrollLeft(this.scrollLeftPosition("inside"))
+            }, 500);
 
         },
 
@@ -672,11 +672,11 @@ var vue = new Vue({
                     return (inside.children("img").width() - inside.width()) / 2
                     break;
             }
-        },        
+        },
 
         //yapılardan cikis aninda
         buildExit(getVideoID) {
-            this.resetBuild(getVideoID);            
+            this.resetBuild(getVideoID);
         },
 
         //yapılari resetler. en bas ozelliklerine geri dondurur
@@ -702,7 +702,7 @@ var vue = new Vue({
             $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft(this.scrollLeftPosition("inside"))
             $(".insiderItem.active").find(".buildings__horizon").show()
             setTimeout(() => {
-               $(".buildings__horizon").fadeOut() 
+                $(".buildings__horizon").fadeOut()
             }, 3000);
             if (!$(".insiderItem.active area").length) return
             setTimeout(() => {
@@ -908,6 +908,8 @@ var vue = new Vue({
                 if (!$this.walkDelay && $this.pageLoad) {
                     $this.goMonkey()
                 }
+            }).bind("swipeleft swiperight", function () {
+                $(".handrightleft").hide()
             })
 
             $(window).on('load', function () {
@@ -954,7 +956,7 @@ var vue = new Vue({
             }
 
             $this.isAutoPlayVideo()
-   
+
         })
     }
 })
