@@ -559,7 +559,7 @@ var vue = new Vue({
                 $this.isWalk = false
 
                 if ($this.duration !== "end") {
-                    $this.isMobile() ? $this.duration = 600 : $this.duration = 250;
+                    $this.isMobile ? $this.duration = 600 : $this.duration = 250;
                 }
 
             };
@@ -765,16 +765,6 @@ var vue = new Vue({
             videoCapsul.first().children("video")[0].play()
         },
 
-        isMobile() {
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            return isMobile ? true : false
-        },
-
-        isSafari() {
-            var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
-            return isSafari;
-        },
-
         showBuild() {
             return $(".video-active").find(".build-capsul").length > 0
         },
@@ -853,6 +843,17 @@ var vue = new Vue({
     },
 
     computed: {
+
+        isSafari() {
+            var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+            return isSafari;
+        },
+
+        isMobile() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            return isMobile ? true : false
+        },
+
         backCorner: function () {
             switch (this.activeScene) {
                 case 3:
@@ -896,7 +897,7 @@ var vue = new Vue({
             var active = $this.getActiveVideos();
             $(active).find("video")[0].pause();
 
-            $this.isSafari() ? $this.duration = "end" : $this.duration = 250
+            $this.isSafari ? $this.duration = "end" : $this.duration = 250
 
             document.addEventListener("wheel", $this.mouseWhellFunc);
 
@@ -950,7 +951,7 @@ var vue = new Vue({
                 }, 2500);
             }
 
-            if (!videoActiveNext.attr("autoplay") && $this.isSafari()) {
+            if (!videoActiveNext.attr("autoplay") && $this.isSafari) {
                 videoActiveNext[0].play()
                 videoActiveNext[0].pause()
             }
