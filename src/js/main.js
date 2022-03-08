@@ -509,7 +509,7 @@ var vue = new Vue({
                 active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0],
                 isLoop = getVideo.loop;
-            getVideo.playbackRate = 4;
+            getVideo.playbackRate = 1;
             $this.loopScreen = isLoop;
 
             if ($this.junction || $this.buildScreen || $this.end || $this.isWalk) return
