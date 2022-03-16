@@ -584,6 +584,7 @@ var vue = new Vue({
 
             if ($this.mobilDeviceOpened) {
                 $this.interval = setInterval(() => {
+                    console.log("asdasdasdasd")
                     TweenLite.to(getVideo, 0.3, {
                         currentTime: getVideo.currentTime - 0.22,
                         ease: Linear.easeNone
@@ -888,9 +889,10 @@ var vue = new Vue({
             if (!getVideo.loop && $this.activeScene !== 19 && $this.activeScene !== 6) {
                 setTimeout(() => {
                     getVideo.pause()
+                    clearInterval($this.interval)
                 }, $this.duration);
             }
-            clearInterval($this.interval)
+            clearInterval($this.interval)            
         },
 
         isAutoPlayVideo() {
