@@ -137,7 +137,7 @@ transition: transform .4s ease;}
 }
 .mobil-joystick {position: fixed;bottom: 0;left:0;right:0;margin: auto;z-index: 102;width: 170px;height: 140px;}
 .mobil-joystick .button {width: 54px;height: 50px;background-repeat: no-repeat;position: absolute;}
-.mobil-joystick .button:active {opacity: .5;transform: scale(1.1);}
+.mobil-joystick .button:active {opacity: .5;transform: scale(1.12);}
 .mobil-joystick .button.left {background-image: url("../images/mobile-keyboard-left.png");left: 0;top: 45px;}
 .mobil-joystick .button.top {background-image: url("../images/mobile-keyboard-top.png");top: 0;left: 60px;}
 .mobil-joystick .button.right {background-image: url("../images/mobile-keyboard-right.png");right: 0;top: 45px;}

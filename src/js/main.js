@@ -500,7 +500,8 @@ var vue = new Vue({
         mouseWhellShow: true,
         isInsideEnter: false,
         mobilDeviceOpened: false,
-        isFaceDown: false
+        isFaceDown: false,
+        interval: null
     },
     methods: {
 
@@ -581,10 +582,19 @@ var vue = new Vue({
 
             // getVideo.currentTime -= 0.05
 
-            TweenLite.to(getVideo, 0.3, {
-                currentTime: getVideo.currentTime - 0.22,
-                ease: Linear.easeNone
-            });
+            if ($this.mobilDeviceOpened) {
+                $this.interval = setInterval(() => {
+                    TweenLite.to(getVideo, 0.3, {
+                        currentTime: getVideo.currentTime - 0.22,
+                        ease: Linear.easeNone
+                    });
+                }, 100);
+            } else {
+                TweenLite.to(getVideo, 0.3, {
+                    currentTime: getVideo.currentTime - 0.22,
+                    ease: Linear.easeNone
+                });
+            }
 
             if (getVideo.currentTime === 0 && !!$(active).prev().find("video").attr("loop")) {
 
@@ -845,9 +855,10 @@ var vue = new Vue({
             var $this = this;
             switch (position) {
                 case 'top':
-                    if (!$this.walkDelay) {
-                        $this.isFaceDown ? $this.backMonkey() : $this.goMonkey()
-                    }
+                    if ($this.isMouseWhellBackShow())
+                        $this.backCornerBttn($this.activeScene)
+                    else if (!$this.walkDelay && $this.pageLoad && $this.activeScene !== 31 && this.activeScene !== 5)
+                        $this.goMonkey()
                     break;
                 case 'bottom':
                     if (!$this.walkDelay) {
@@ -879,6 +890,7 @@ var vue = new Vue({
                     getVideo.pause()
                 }, $this.duration);
             }
+            clearInterval($this.interval)
         },
 
         isAutoPlayVideo() {
