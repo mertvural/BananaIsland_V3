@@ -20,6 +20,19 @@
 
   <div id="app" v-cloak>
 
+    <!--mobil joystick control-->
+    <div class="mobil-joystick" v-if="mobilDeviceOpened && !buildScreen && !end">
+      <span class="button left" @click="joystickBtn('left')" :class="showBuild() || junction ? 'active' : ''" ></span>
+      <span class="button top" @click="joystickBtn('top')"></span>
+      <span class="button right" @click="joystickBtn('right')" :class="showBuild() || junction ? 'active' : ''" ></span>
+      <span class="button bottom" @click="joystickBtn('bottom')"></span>
+    </div>
+    <!--mobil joystick control-->
+
+    <!--mouseWhell-->
+    <div class="mouse-whell" :class="isFaceDown ? 'down' : ''" v-show="mouseWhellShow && !junction && !mobilDeviceOpened"></div>
+     <!--mouseWhell-->
+
     <!--exit-->
     <a class="exit" href="https://monkeymunchy.com" v-show="!buildScreen">Exit</a>
     <!--exit-->
@@ -35,8 +48,8 @@
         <span class="percent">0%</span>
       </div>
     </div>
-    <!--loading-->
-
+    <!--loading-->    
+     
     <!--again-->
     <img src="src/images/turn.png" @click="resetVideos()" class="restart-turn" v-if="end" title="restart"
       alt="restart" />
@@ -45,9 +58,7 @@
     <section class="video-list">
 
       <article class="video-capsul" :class="video.id === activeScene ? 'video-active' : ''" v-for="video in sourceState"
-        :data-id="video.id">
-
-        <div class="mouse-whell" :class="video.backTurned ? 'down' : ''" v-if="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow && !junction"></div>
+        :data-id="video.id">        
 
         <div class="keyboardControl" v-if="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow"></div>
 
@@ -70,8 +81,8 @@
         <!--building-->
         <div class="build-capsul" :data-build="video.id" v-if="video.build && video.id === activeScene">
           <div class="buildings__arrows">
-            <button type="button" class="video-arrow left" @click="buildEnter(video.id,'left')"></button>
-            <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')"></button>
+            <button type="button" class="video-arrow left" @click="buildEnter(video.id,'left')" v-if="!mobilDeviceOpened"></button>
+            <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')" v-if="!mobilDeviceOpened"></button>
             <button type="button" class="video-arrow turn" @click="backCornerBttn(video.id)"></button>
           </div>
           <div class="buildings__build right">
@@ -105,7 +116,6 @@
               </map>
               <iframe :src="insider.iframeURL" allowtransparency="true" class="iframeCapsul"
                 v-if="insider.iframeURL"></iframe>
-                <img src="src/images/horizon.png" class="buildings__horizon" />
             </div>
           </div>
           <!--insider-->
@@ -115,8 +125,8 @@
 
         <!--junction-->
         <div v-show="junction || junctionBack">
-          <button type="button" class="video-arrow left" @click="direction('left')"></button>
-          <button type="button" class="video-arrow right" @click="direction('right')"></button>
+          <button type="button" class="video-arrow left" @click="direction('left')" v-if="!mobilDeviceOpened"></button>
+          <button type="button" class="video-arrow right" @click="direction('right')" v-if="!mobilDeviceOpened"></button>
           <button type="button" class="video-arrow turn" @click="backCornerBttn(video.id)"></button>
         </div>
         <!--junction-->

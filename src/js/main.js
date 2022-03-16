@@ -498,7 +498,9 @@ var vue = new Vue({
         isHorizontalScroll: false,
         pageLoad: false,
         mouseWhellShow: true,
-        isInsideEnter: false
+        isInsideEnter: false,
+        mobilDeviceOpened: false,
+        isFaceDown: false
     },
     methods: {
 
@@ -754,12 +756,13 @@ var vue = new Vue({
         },
 
         isMouseWhellBackShow() {
-            return $(".video-active .mouse-whell").hasClass("down")
+            return this.isFaceDown
         },
         //basa dondugunde videolarin currentTime'ını basa alir
         resetVideos() {
             this.end = false;
             this.activeScene = 1;
+            this.isFaceDown = false;
             var videoCapsul = $(".video-capsul");
             videoCapsul.each(function (i, el) {
                 $(el).children("video").length > 0 ? $(el).children("video")[0].currentTime = 0 : ""
@@ -839,6 +842,35 @@ var vue = new Vue({
             }
         },
 
+        joystickBtn(position) {
+            var $this = this;
+            switch (position) {
+                case 'top':
+                    if (!$this.walkDelay) {
+                        $this.isFaceDown ? $this.backMonkey() : $this.goMonkey()
+                    }
+                    break;
+                case 'bottom':
+                    if (!$this.walkDelay) {
+                        $this.isFaceDown ? $this.goMonkey() : $this.backMonkey()
+                    }
+                    break;
+                case 'right':
+                    if ($this.showBuild())
+                        $this.buildEnter($this.activeScene, "right")
+                    else if ($this.junction || $this.junctionBack)
+                        $this.direction("right")
+                    break;
+                case 'left':
+                    if ($this.showBuild())
+                        $this.buildEnter($this.activeScene, "left")
+                    else if ($this.junction || $this.junctionBack)
+                        $this.direction("left")
+                    break;
+
+            }
+        },
+
         isAutoPlayVideo() {
             $(".video-active video").attr("loop") ? this.mouseWhellShow = true : this.mouseWhellShow = false
         }
@@ -889,6 +921,13 @@ var vue = new Vue({
         }
     },
 
+    watch: {
+        activeScene: function (newVal, oldVal) {
+            var [getScene] = this.sourceState.filter(x => x.id === newVal)
+            getScene.backTurned ? this.isFaceDown = true : this.isFaceDown = false
+        }
+    },
+
     //DOM hazir oldugunda
     mounted: function () {
 
@@ -907,11 +946,7 @@ var vue = new Vue({
 
             window.addEventListener("orientationchange", $this.checkOrientation, false);
 
-            $(document).bind("swipeup swipedown", function () {
-
-                if (!$this.walkDelay && $this.pageLoad) $this.goMonkey()
-                
-            }).bind("swipeleft swiperight", function () {
+            $(document).bind("swipeleft swiperight", function () {
                 $(".handrightleft").hide()
             }).on("click", ".buildings__build", function () {
                 $(".handrightleft").hide()
@@ -938,6 +973,8 @@ var vue = new Vue({
                 textLoading.show()
                 percent.hide()
             }
+
+            $this.isMobile ? $this.mobilDeviceOpened = true : $this.mobilDeviceOpened = false
 
 
         })//nextTick end
