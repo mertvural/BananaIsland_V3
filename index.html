@@ -23,9 +23,9 @@
     <!--mobil joystick control-->
     <div class="mobil-joystick" v-if="mobilDeviceOpened && !buildScreen && !end">
       <span class="button left" @click="joystickBtn('left')" :class="!showBuild() && !junction ? 'disabled' : ''" ></span>
-      <span class="button top" @touchstart="joystickBtn('top')" @touchend='stopVideo()' :class="junction || junctionBack ? 'disabled' : ''"></span>
+      <span class="button top" @touchstart="joystickBtn('top')" @touchend='stopVideo()' :class="junction || junctionBack || (showBuild() && isFaceDown) ? 'disabled' : ''"></span>
       <span class="button right" @click="joystickBtn('right')" :class="!showBuild() && !junction ? 'disabled' : ''" ></span>
-      <span class="button bottom" @touchstart="joystickBtn('bottom')" @touchend='stopVideo()' :class="junction ? 'disabled' : ''"></span>
+      <span class="button bottom" @touchstart="joystickBtn('bottom')" @touchend='stopVideo()' :class="junction || (showBuild() && !isFaceDown) ? 'disabled' : ''"></span>
     </div>
     <!--mobil joystick control-->
 

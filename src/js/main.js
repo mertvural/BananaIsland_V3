@@ -871,13 +871,14 @@ var vue = new Vue({
         },
 
         stopVideo() {
-            var active = this.getActiveVideos(),
+            var $this = this;
+            var active = $this.getActiveVideos(),
                 getVideo = $(active).find("video")[0];
-                if(!getVideo.loop && this.activeScene !== 19 && this.activeScene !== 6) {
+            if (!getVideo.loop && $this.activeScene !== 19 && $this.activeScene !== 6) {
+                setTimeout(() => {
                     getVideo.pause()
-                }
-     
-
+                }, $this.duration);
+            }
         },
 
         isAutoPlayVideo() {
