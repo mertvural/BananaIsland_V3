@@ -23,14 +23,14 @@
     <!--mobil joystick control-->
     <div class="mobil-joystick" v-if="mobilDeviceOpened && !buildScreen && !end">
       <span class="button left" @click="joystickBtn('left')" :class="showBuild() || junction ? 'active' : ''" ></span>
-      <span class="button top" @touchstart="joystickBtn('top')"></span>
+      <span class="button top" @touchstart="joystickBtn('top')" @touchend='stopVideo()'></span>
       <span class="button right" @click="joystickBtn('right')" :class="showBuild() || junction ? 'active' : ''" ></span>
       <span class="button bottom" @click="joystickBtn('bottom')"></span>
     </div>
     <!--mobil joystick control-->
 
     <!--mouseWhell-->
-    <div class="mouse-whell" :class="isFaceDown ? 'down' : ''" v-show="mouseWhellShow && !junction && !mobilDeviceOpened"></div>
+    <div class="mouse-whell" :class="isFaceDown ? 'down' : ''" v-show="mouseWhellShow && !junction && !mobilDeviceOpened && !end"></div>
      <!--mouseWhell-->
 
     <!--exit-->

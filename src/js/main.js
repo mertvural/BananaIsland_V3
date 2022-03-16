@@ -519,6 +519,14 @@ var vue = new Vue({
             if ($this.loopScreen === false) {
                 $this.isWalk = true
                 getVideo.play()
+                setTimeout(() => {
+
+                    if (!$this.mobilDeviceOpened) {
+                        getVideo.pause()
+                    }
+
+                    $this.isWalk = false
+                }, $this.duration);
             }
 
             else {
@@ -529,13 +537,6 @@ var vue = new Vue({
                 else {
                     $this.activeScene++
                 }
-            }
-
-            if ($this.duration !== "end") {
-                setTimeout(() => {
-                    $this.loopScreen === false ? getVideo.pause() : ""
-                    $this.isWalk = false
-                }, $this.duration);
             }
 
             // video bittiğinde calisir
@@ -560,9 +561,7 @@ var vue = new Vue({
                 }
                 $this.isWalk = false
 
-                if ($this.duration !== "end") {
-                    $this.isMobile ? $this.duration = 600 : $this.duration = 250;
-                }
+                $this.duration = 250;
 
             };
 
@@ -612,14 +611,14 @@ var vue = new Vue({
                     this.activeScene = 6;
                     this.junction = false;
                     this.junctionBack = false;
-                    this.duration !== "end" ? this.duration = 10000 : ""
+                    this.duration = 10000
                     this.goMonkey();
                     break;
                 case "right":
                     this.activeScene = 19;
                     this.junction = false
                     this.junctionBack = false;
-                    this.duration !== "end" ? this.duration = 10000 : ""
+                    this.duration = 10000
                     this.goMonkey();
                     break;
             }
@@ -871,6 +870,14 @@ var vue = new Vue({
             }
         },
 
+        stopVideo() {
+            console.log("asdasd")
+            var active = this.getActiveVideos(),
+                getVideo = $(active).find("video")[0];
+            getVideo.pause()
+
+        },
+
         isAutoPlayVideo() {
             $(".video-active video").attr("loop") ? this.mouseWhellShow = true : this.mouseWhellShow = false
         }
@@ -937,8 +944,6 @@ var vue = new Vue({
 
             var active = $this.getActiveVideos();
             $(active).find("video")[0].pause();
-
-            $this.isSafari ? $this.duration = "end" : $this.duration = 250
 
             document.addEventListener("wheel", $this.mouseWhellFunc);
 
