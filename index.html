@@ -22,15 +22,16 @@
 
     <!--mobil joystick control-->
     <div class="mobil-joystick" v-if="mobilDeviceOpened && !buildScreen && !end">
-      <span class="button left" @click="joystickBtn('left')" :class="showBuild() || junction ? 'active' : ''" ></span>
-      <span class="button top" @touchstart="joystickBtn('top')" @touchend='stopVideo()'></span>
-      <span class="button right" @click="joystickBtn('right')" :class="showBuild() || junction ? 'active' : ''" ></span>
-      <span class="button bottom" @click="joystickBtn('bottom')"></span>
+      <span class="button left" @click="joystickBtn('left')" :class="!showBuild() && !junction ? 'disabled' : ''" ></span>
+      <span class="button top" @touchstart="joystickBtn('top')" @touchend='stopVideo()' :class="junction || junctionBack ? 'disabled' : ''"></span>
+      <span class="button right" @click="joystickBtn('right')" :class="!showBuild() && !junction ? 'disabled' : ''" ></span>
+      <span class="button bottom" @touchstart="joystickBtn('bottom')" @touchend='stopVideo()' :class="junction ? 'disabled' : ''"></span>
     </div>
     <!--mobil joystick control-->
 
     <!--mouseWhell-->
-    <div class="mouse-whell" :class="isFaceDown ? 'down' : ''" v-show="mouseWhellShow && !junction && !mobilDeviceOpened && !end"></div>
+    <div class="mouse-whell" :class="isFaceDown ? 'down' : ''" v-show="mouseWhellShow && !junction && !mobilDeviceOpened && !end && !buildScreen"></div>
+    <div class="keyboardControl" v-show="mouseWhellShow && !junction && !mobilDeviceOpened && !end && !buildScreen"></div>
      <!--mouseWhell-->
 
     <!--exit-->
@@ -59,8 +60,6 @@
 
       <article class="video-capsul" :class="video.id === activeScene ? 'video-active' : ''" v-for="video in sourceState"
         :data-id="video.id">        
-
-        <div class="keyboardControl" v-if="activeScene < sourceState.length && video.id === activeScene" v-show="mouseWhellShow"></div>
 
         <!--video-->
         <video v-show="!buildScreen" muted class="video" 

@@ -871,10 +871,12 @@ var vue = new Vue({
         },
 
         stopVideo() {
-            console.log("asdasd")
             var active = this.getActiveVideos(),
                 getVideo = $(active).find("video")[0];
-            getVideo.pause()
+                if(!getVideo.loop && this.activeScene !== 19 && this.activeScene !== 6) {
+                    getVideo.pause()
+                }
+     
 
         },
 

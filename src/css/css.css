@@ -134,7 +134,7 @@ transition: transform .4s ease;}
 .mobil-joystick .button.top {background-image: url("../images/mobile-keyboard-top.png");top: 0;left: 60px;}
 .mobil-joystick .button.right {background-image: url("../images/mobile-keyboard-right.png");right: 0;top: 45px;}
 .mobil-joystick .button.bottom {background-image: url("../images/mobile-keyboard-bottom.png");left: 60px;bottom: 0;}
-.mobil-joystick .button.left:not(.active), .mobil-joystick .button.right:not(.active) {opacity: .3;pointer-events: none;}
+.mobil-joystick .button.disabled {opacity: .3;pointer-events: none;}
 
 /*responsive*/
 
