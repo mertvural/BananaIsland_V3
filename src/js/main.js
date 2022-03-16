@@ -954,7 +954,11 @@ var vue = new Vue({
 
             window.addEventListener("orientationchange", $this.checkOrientation, false);
 
-            $(document).bind("swipeleft swiperight", function () {
+            $(document).bind("swipeup swipedown", function () {
+
+                if (!$this.walkDelay && $this.pageLoad) $this.goMonkey()
+
+            }).bind("swipeleft swiperight", function () {
                 $(".handrightleft").hide()
             }).on("click", ".buildings__build", function () {
                 $(".handrightleft").hide()
