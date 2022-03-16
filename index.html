@@ -22,10 +22,10 @@
 
     <!--mobil joystick control-->
     <div class="mobil-joystick" v-if="mobilDeviceOpened && !buildScreen && !end">
-      <span class="button left" @click="joystickBtn('left')" :class="showBuild() || junction ? 'active' : ''" ></span>
-      <span class="button top" @click="joystickBtn('top')"></span>
-      <span class="button right" @click="joystickBtn('right')" :class="showBuild() || junction ? 'active' : ''" ></span>
-      <span class="button bottom" @click="joystickBtn('bottom')"></span>
+      <span class="button left" @mouseup="joystickBtn('left')" :class="showBuild() || junction ? 'active' : ''" ></span>
+      <span class="button top" @mouseup="joystickBtn('top')" @mousedown="joystickBtn('top')"></span>
+      <span class="button right" @mouseup="joystickBtn('right')" :class="showBuild() || junction ? 'active' : ''" ></span>
+      <span class="button bottom" @mouseup="joystickBtn('bottom')"></span>
     </div>
     <!--mobil joystick control-->
 
