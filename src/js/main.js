@@ -583,11 +583,8 @@ var vue = new Vue({
             // getVideo.currentTime -= 0.05
 
 
-            TweenLite.to(getVideo, 0.3, {
-                currentTime: getVideo.currentTime - 0.22,
-                ease: Linear.easeNone
-            });
-
+            var duration = getVideo.currentTime;
+            gsap.to(getVideo, { duration: duration, currentTime: 0 });
 
             if (getVideo.currentTime === 0 && !!$(active).prev().find("video").attr("loop")) {
 
@@ -881,6 +878,8 @@ var vue = new Vue({
             if (!getVideo.loop && $this.activeScene !== 19 && $this.activeScene !== 6) {
                 setTimeout(() => {
                     getVideo.pause()
+                    var duration = getVideo.currentTime;
+                    gsap.to(getVideo, { duration: duration, currentTime: duration });
                 }, $this.duration);
             }
         },
