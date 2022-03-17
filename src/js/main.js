@@ -486,7 +486,7 @@ var vue = new Vue({
                 backTurned: true
             }
         ],
-        activeScene: 1,
+        activeScene: 3,
         duration: 250,
         junction: false,
         junctionBack: false,
@@ -728,10 +728,6 @@ var vue = new Vue({
             }, 500);
 
             $(".insiderItem.active").on("click", function () {
-                zoomIn($(".insiderItem.active"))
-            })
-
-            $(".iframeCapsul").on("mouseenter", function () {
                 zoomIn($(".insiderItem.active"))
             })
 
@@ -992,11 +988,7 @@ var vue = new Vue({
                 $(".handrightleft").hide()
             }).on("click", ".buildings__build", function () {
                 $(".handrightleft").hide()
-            })
-
-            $(document).bind("tapend", function () {
-                $this.isInsideEnter ? $("body").removeClass("zoom-out") : ""
-            })
+            })       
 
             $(window).on('load', function () {
                 $this.pageLoad = true
