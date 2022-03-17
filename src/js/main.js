@@ -994,7 +994,7 @@ var vue = new Vue({
                 $(".handrightleft").hide()
             })
 
-            $(document).bind("tapstart", function () {
+            $(document).bind("tapend", function () {
                 $this.isInsideEnter ? $("body").removeClass("zoom-out") : ""
             })
 
