@@ -694,7 +694,8 @@ var vue = new Vue({
                 insiderItem = buildCapsul.find(".insiderItem");
             if (insiderItem.hasClass("active")) {
                 insiderItem.removeClass("active")
-                this.isInsideEnter = false
+                this.isInsideEnter = false;
+                $("body").addClass("zoom-out")
             } else {
                 target
                     ?
@@ -706,10 +707,12 @@ var vue = new Vue({
         },
 
         insideEnter(id) {
-            this.isInsideEnter = true;
+            var $this = this;
+            $this.isInsideEnter = true;
             $('img[usemap]').rwdImageMaps();
-            $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft(this.scrollLeftPosition("inside"))
+            $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft($this.scrollLeftPosition("inside"))
             $(".insiderItem.active").find(".buildings__horizon").show()
+            $(".insiderItem.active .iframeCapsul").hide()
             setTimeout(() => {
                 $(".buildings__horizon").fadeOut()
             }, 3000);
@@ -721,8 +724,27 @@ var vue = new Vue({
                     'top': coord[1] + "px",
                     'width': coord[2] - coord[0] + "px",
                     'height': coord[3] - coord[1] + "px"
-                });
+                }).show();
             }, 500);
+
+            $(".insiderItem.active").on("click", function () {
+                zoomIn($(".insiderItem.active"))
+            })
+
+            $(".iframeCapsul").on("mouseenter", function () {
+                zoomIn($(".insiderItem.active"))
+            })
+
+            function zoomIn(ths) {
+                if (!$("body").hasClass("zoom-out")) return
+                $("body").removeClass("zoom-out")
+                $(ths).find("iframe").css("opacity", "0")
+                $this.insideEnter($(ths).data("href"))
+                setTimeout(() => {
+                    $(ths).find("iframe").css("opacity", "1")
+                }, 500);
+            }
+
         },
 
         backCornerBttn(id) {
