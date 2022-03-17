@@ -581,6 +581,7 @@ var vue = new Vue({
             $this.loopScreen = isLoop;
 
             if ($this.mobilDeviceOpened) {
+                clearInterval($this.interval)
                 $this.interval = setInterval(function () {
                     getVideo.currentTime -= 0.05
                 }, 100);
