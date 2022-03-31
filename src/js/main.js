@@ -726,21 +726,21 @@ var vue = new Vue({
                     'height': coord[3] - coord[1] + "px"
                 }).show();
             }, 500);
+            
 
-            $(".insiderItem.active").on("click", function () {
-                zoomIn($(".insiderItem.active"))
-            })
+        },
 
-            function zoomIn(ths) {
-                if (!$("body").hasClass("zoom-out")) return
-                $("body").removeClass("zoom-out")
-                $(ths).find("iframe").css("opacity", "0")
-                $this.insideEnter($(ths).data("href"))
-                setTimeout(() => {
-                    $(ths).find("iframe").css("opacity", "1")
-                }, 500);
-            }
+        zoomIn(ths) {
+            var body = $("body"),
+                ths = $(".insiderItem").filter("[data-href="+ths+"]");
 
+            if (!body.hasClass("zoom-out")) return
+            body.removeClass("zoom-out");            
+            ths.find("iframe").css("opacity", "0")
+            this.insideEnter(ths.data("href"))
+            setTimeout(() => {
+                ths.find("iframe").css("opacity", "1")
+            }, 500);
         },
 
         backCornerBttn(id) {

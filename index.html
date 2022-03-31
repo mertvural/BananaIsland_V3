@@ -116,6 +116,7 @@
               </map>
               <iframe :src="insider.iframeURL" allowtransparency="true" class="iframeCapsul"
                 v-if="insider.iframeURL"></iframe>
+                <a href="#" class="btn-zoomIn" @click="zoomIn(insider.href)"></a>
             </div>
           </div>
           <!--insider-->
