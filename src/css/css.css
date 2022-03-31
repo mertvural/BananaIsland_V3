@@ -231,7 +231,7 @@ body.zoom-out .btn-zoomIn {width:80px;height: 50px;}
 }
 
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1025px) {
 
 .keyboardControl {width: 150px;height: 105px;background: url("../images/icon-keyboardcontrol.png") no-repeat;position: fixed;bottom:0px;right: 0;z-index: 102}
 

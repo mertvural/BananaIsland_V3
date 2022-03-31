@@ -922,9 +922,9 @@ var vue = new Vue({
         },
 
         isMobile() {
-            alert(navigator.userAgent.match(/iPad/i))
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            return isMobile ? true : false
+            var isMobile = $(window).width() <= 1024 ? true : false;
+            alert(isMobile)
+            return isMobile
         },
 
         backCorner: function () {
