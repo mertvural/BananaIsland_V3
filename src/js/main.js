@@ -922,6 +922,7 @@ var vue = new Vue({
         },
 
         isMobile() {
+            alert(navigator.userAgent.match(/iPad/i))
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             return isMobile ? true : false
         },
@@ -1012,7 +1013,7 @@ var vue = new Vue({
                 percent.hide()
             }
 
-            $this.isSafari ? $this.mobilDeviceOpened = true : $this.mobilDeviceOpened = false
+            $this.isMobile ? $this.mobilDeviceOpened = true : $this.mobilDeviceOpened = false
 
 
         })//nextTick end
