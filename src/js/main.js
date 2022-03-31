@@ -711,11 +711,8 @@ var vue = new Vue({
             $this.isInsideEnter = true;
             $('img[usemap]').rwdImageMaps();
             $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft($this.scrollLeftPosition("inside"))
-            $(".insiderItem.active").find(".buildings__horizon").show()
             $(".insiderItem.active .iframeCapsul, .insiderItem.active .btn-zoomIn").hide()
-            setTimeout(() => {
-                $(".buildings__horizon").fadeOut()
-            }, 3000);
+    
             if (!$(".insiderItem.active area").length) return
             setTimeout(() => {
                 var coord = $(".insiderItem.active area").attr("coords").split(",")
