@@ -1030,7 +1030,7 @@ var vue = new Vue({
                 }, 2500);
             }
 
-            if (!videoActiveNext.attr("autoplay") && $this.isSafari) {
+            if (!videoActiveNext.attr("autoplay")) {
                 videoActiveNext[0].play()
                 videoActiveNext[0].pause()
             }
