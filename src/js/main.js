@@ -712,7 +712,7 @@ var vue = new Vue({
             $('img[usemap]').rwdImageMaps();
             $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft($this.scrollLeftPosition("inside"))
             $(".insiderItem.active").find(".buildings__horizon").show()
-            $(".insiderItem.active .iframeCapsul").hide()
+            $(".insiderItem.active .iframeCapsul, .insiderItem.active .btn-zoomIn").hide()
             setTimeout(() => {
                 $(".buildings__horizon").fadeOut()
             }, 3000);
@@ -725,7 +725,15 @@ var vue = new Vue({
                     'width': coord[2] - coord[0] + "px",
                     'height': coord[3] - coord[1] + "px"
                 }).show();
+                $(".insiderItem.active .btn-zoomIn").css({
+                    'left': 0,
+                    'right': 0,
+                    'margin' : "0 auto",
+                    'bottom' : 'inherit',
+                    'top': parseInt(coord[3]) + $(".btn-zoomIn").innerHeight() / 2 + "px"
+                }).show()
             }, 500);
+            
             
 
         },
