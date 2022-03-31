@@ -922,7 +922,9 @@ var vue = new Vue({
         },
 
         isMobile() {
+            
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            alert(isMobile)
             return isMobile ? true : false
         },
 
@@ -1030,7 +1032,7 @@ var vue = new Vue({
                 }, 2500);
             }
 
-            if (!videoActiveNext.attr("autoplay")) {
+            if (!videoActiveNext.attr("autoplay") && $this.isSafari) {
                 videoActiveNext[0].play()
                 videoActiveNext[0].pause()
             }
