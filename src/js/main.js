@@ -923,7 +923,6 @@ var vue = new Vue({
 
         isMobile() {
             var isMobile = $(window).width() <= 1024 ? true : false;
-            alert(isMobile)
             return isMobile
         },
 
