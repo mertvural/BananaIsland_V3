@@ -878,10 +878,19 @@ var vue = new Vue({
                         $this.backCornerBttn($this.activeScene)
                     else if (!$this.walkDelay && $this.pageLoad && $this.activeScene !== 31 && this.activeScene !== 5)
                         $this.goMonkey()
+                        $this.goMonkey()
                     break;
                 case 'bottom':
                     if (!$this.walkDelay) {
-                        $this.isFaceDown ? $this.goMonkey() : $this.backMonkey()
+                        if( $this.isFaceDown) {
+                            $this.goMonkey()
+                            $this.goMonkey()
+                        }
+                        else {
+                            $this.backMonkey()
+                            $this.backMonkey()
+                        }
+                 
                     }
                     break;
                 case 'right':
