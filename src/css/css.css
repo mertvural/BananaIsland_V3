@@ -150,7 +150,7 @@ body.zoom-out .btn-zoomIn {background: url("../images/loupe.svg") no-repeat;widt
 .mobil-joystick .button.bottom {background-image: url("../images/mobile-keyboard-bottom.png");left: 60px;bottom: 0;}
 .mobil-joystick .button.disabled {opacity: .3;pointer-events: none;}
 .speechBalloon {position: fixed;width: 310px;height: 173px;background: url("../images/speech-baallon.png") no-repeat;z-index: 105;bottom: 50%;right: 0;left: 0;
-margin:auto;animation: swing 8s linear infinite alternate;}
+margin:auto;}
 .speechBalloon figcaption {position: absolute;top: 0;left: 0;display: flex;bottom: 0;align-items: center;padding: 28px 28px 68px 35px;
   font-family: '000_astounder_squared_tbRg', Sans-serif;color: #1E2868;font-size:29px;text-shadow: 0 0 0 #1e2868;}
   @keyframes swing { 
