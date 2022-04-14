@@ -888,7 +888,7 @@ var vue = new Vue({
                         $this.goMonkey()
                       var active = $this.getActiveVideos(),
                          getVideo = $(active).find("video")[0];                         
-                         getVideo.playbackRate = 2;
+                         getVideo.playbackRate = 1.4;
                     break;
                 case 'bottom':
                     if (!$this.walkDelay) {
