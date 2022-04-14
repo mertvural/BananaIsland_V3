@@ -883,9 +883,12 @@ var vue = new Vue({
                 case 'top':
                     if ($this.isMouseWhellBackShow())
                         $this.backCornerBttn($this.activeScene)
-                    else if (!$this.walkDelay && $this.pageLoad && $this.activeScene !== 31 && this.activeScene !== 5)
+                    else if ($this.pageLoad && $this.activeScene !== 31 && this.activeScene !== 5)
                         $this.goMonkey()
-                    $this.goMonkey()
+                        $this.goMonkey()
+                      var active = $this.getActiveVideos(),
+                         getVideo = $(active).find("video")[0];                         
+                         getVideo.playbackRate = 2;
                     break;
                 case 'bottom':
                     if (!$this.walkDelay) {
