@@ -22,35 +22,45 @@
 
     <!--mobil joystick control-->
     <div class="mobil-joystick" v-if="mobilDeviceOpened && !buildScreen && !end">
-      <span class="button left" @click="joystickBtn('left')" :class="!showBuild() && !junction && !junctionBack ? 'disabled' : ''" ></span>
-      <span class="button top" @touchstart="joystickBtn('top')" :class="isFaceDown || junction || junctionBack ? 'disabled' : ''"></span>
-      <span class="button right" @click="joystickBtn('right')" :class="!showBuild() && !junction && !junctionBack ? 'disabled' : ''" ></span>
+      <span class="button left" @click="joystickBtn('left')"
+        :class="!showBuild() && !junction && !junctionBack ? 'disabled' : ''"></span>
+      <span class="button top" @touchstart="joystickBtn('top')"
+        :class="isFaceDown || junction || junctionBack ? 'disabled' : ''"></span>
+      <span class="button right" @click="joystickBtn('right')"
+        :class="!showBuild() && !junction && !junctionBack ? 'disabled' : ''"></span>
       <span class="button bottom" @touchstart="joystickBtn('bottom')" :class="!isFaceDown ? 'disabled' : ''"></span>
     </div>
     <!--mobil joystick control-->
 
     <!--mouseWhell-->
-    <div class="mouse-whell" :class="isFaceDown ? 'down' : ''" v-show="mouseWhellShow && !junction && !mobilDeviceOpened && !end && !buildScreen"></div>
-    <div class="keyboardControl" v-show="mouseWhellShow && !junction && !mobilDeviceOpened && !end && !buildScreen"></div>
-     <!--mouseWhell-->
+    <div class="mouse-whell" :class="isFaceDown ? 'down' : ''"
+      v-show="mouseWhellShow && !junction && !mobilDeviceOpened && !end && !buildScreen"></div>
+    <div class="keyboardControl" v-show="mouseWhellShow && !junction && !mobilDeviceOpened && !end && !buildScreen">
+    </div>
+    <!--mouseWhell-->
 
     <!--exit-->
     <a class="exit" href="https://monkeymunchy.com" v-show="!buildScreen">Exit</a>
     <!--exit-->
 
     <!--board-->
-    <img src="src/images/board.png" alt="board" title="board" :class="activeScene === 1 ? 'board' : 'board hide'"  />
+    <img src="src/images/board.png" alt="board" title="board" :class="activeScene === 1 ? 'board' : 'board hide'" />
     <!--board-->
 
     <!--loading-->
-    <div class="video-loader" v-if="!pageLoad">
-      <div class="text">
-        <span class="text-loading">Loading</span>
-        <span class="percent">0%</span>
+    <div class="video-loader-sw" v-if="!pageLoad">
+      <div id="titles">
+        <div id="titlecontent">
+
+          <p>Monkey Munchy, the leader of Metia Island, aims to make this island a tourist destination.</p>
+          <p>Before a real visit, the island will meet individuals in a metaverse.</p>
+          <p> Now you will see what the metaverse will look like.</p>
+
+        </div>
       </div>
     </div>
-    <!--loading-->    
-     
+    <!--loading-->
+
     <!--again-->
     <img src="src/images/turn.png" @click="resetVideos()" class="restart-turn" v-if="end" title="restart"
       alt="restart" />
@@ -59,11 +69,19 @@
     <section class="video-list">
 
       <article class="video-capsul" :class="video.id === activeScene ? 'video-active' : ''" v-for="video in sourceState"
-        :data-id="video.id">        
+        :data-id="video.id">
+
+        <figure class="speechBalloon" v-if="video.speechBalloon">
+          <figcaption v-if="!isMobile">
+            {{video.speechBalloon.desktopText}}
+          </figcaption>
+          <figcaption v-if="isMobile">
+            {{video.speechBalloon.mobilText}}
+          </figcaption>
+        </figure>
 
         <!--video-->
-        <video v-show="!buildScreen" muted class="video" 
-        v-if="video.id === activeScene 
+        <video v-show="!buildScreen" muted class="video" v-if="video.id === activeScene 
         || video.id === activeScene-1 
         || video.id === activeScene+1 
         || video.id === activeScene+2 
@@ -71,18 +89,17 @@
         || video.id === 6 
         || video.id === 1 
         || video.id === 32 
-        || video.id === backCorner" 
-        :key="video.id" 
-        :src="video.src" 
-        :autoplay="video.loop"
-        :loop="video.loop" playsinline></video>
+        || video.id === backCorner" :key="video.id" :src="video.src" :autoplay="video.loop" :loop="video.loop"
+          playsinline></video>
         <!--video-->
 
         <!--building-->
         <div class="build-capsul" :data-build="video.id" v-if="video.build && video.id === activeScene">
           <div class="buildings__arrows">
-            <button type="button" class="video-arrow left" @click="buildEnter(video.id,'left')" v-if="!mobilDeviceOpened"></button>
-            <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')" v-if="!mobilDeviceOpened"></button>
+            <button type="button" class="video-arrow left" @click="buildEnter(video.id,'left')"
+              v-if="!mobilDeviceOpened"></button>
+            <button type="button" class="video-arrow right" @click="buildEnter(video.id,'right')"
+              v-if="!mobilDeviceOpened"></button>
             <button type="button" class="video-arrow turn" @click="backCornerBttn(video.id)"></button>
           </div>
           <div class="buildings__build right">
@@ -104,7 +121,13 @@
 
           <img src="src/images/turn.png" @click="buildExit(video.id)" class="buildings__turn" />
 
-          <div class="handrightleft" v-show="isHorizontalScroll && buildScreen && !isInsideEnter"></div>
+          <!-- <div class="handrightleft" v-show="isHorizontalScroll && buildScreen && !isInsideEnter"></div> -->
+
+          <figure class="speechBalloon" v-show="isHorizontalScroll && buildScreen && !isInsideEnter">
+            <figcaption>
+              Swipe left and right to look around
+            </figcaption>
+          </figure>
 
           <!--insider-->
           <div class="insiderCapsul">
@@ -116,7 +139,13 @@
               </map>
               <iframe :src="insider.iframeURL" allowtransparency="true" class="iframeCapsul"
                 v-if="insider.iframeURL"></iframe>
-                <a href="#" class="btn-zoomIn" @click="zoomIn(insider.href)"></a>
+              <a href="#" class="btn-zoomIn" @click="zoomIn(insider.href)"></a>
+              {{isInsideEnter}}
+              <figure class="speechBalloon" v-show="isInsideEnter">
+                <figcaption>
+                  Use the magnifying glass to get closer to the wall
+                </figcaption>
+              </figure>
             </div>
           </div>
           <!--insider-->
@@ -127,7 +156,8 @@
         <!--junction-->
         <div v-show="junction || junctionBack">
           <button type="button" class="video-arrow left" @click="direction('left')" v-if="!mobilDeviceOpened"></button>
-          <button type="button" class="video-arrow right" @click="direction('right')" v-if="!mobilDeviceOpened"></button>
+          <button type="button" class="video-arrow right" @click="direction('right')"
+            v-if="!mobilDeviceOpened"></button>
           <button type="button" class="video-arrow turn" @click="backCornerBttn(video.id)"></button>
         </div>
         <!--junction-->

@@ -149,6 +149,46 @@ body.zoom-out .btn-zoomIn {background: url("../images/loupe.svg") no-repeat;widt
 .mobil-joystick .button.right {background-image: url("../images/mobile-keyboard-right.png");right: 0;top: 45px;}
 .mobil-joystick .button.bottom {background-image: url("../images/mobile-keyboard-bottom.png");left: 60px;bottom: 0;}
 .mobil-joystick .button.disabled {opacity: .3;pointer-events: none;}
+.speechBalloon {position: fixed;width: 310px;height: 173px;background: url("../images/speech-baallon.png") no-repeat;z-index: 105;bottom: 50%;right: 0;left: 0;
+margin:auto;animation: swing 8s linear infinite alternate;}
+.speechBalloon figcaption {position: absolute;top: 0;left: 0;display: flex;bottom: 0;align-items: center;padding: 28px 28px 68px 35px;
+  font-family: '000_astounder_squared_tbRg', Sans-serif;color: #1E2868;font-size:29px;text-shadow: 0 0 0 #1e2868;}
+  @keyframes swing { 
+    0% { transform: rotate(-3deg); } 
+    20% { transform: rotate(3deg); } 
+    40% { transform: rotate(-3deg); } 
+    60% { transform: rotate(3deg); } 
+    80% { transform: rotate(-3deg); } 
+    100% { transform: rotate(0deg); } 
+ }
+.build-capsul .speechBalloon {bottom: 60px;background-size: 200px;width: 200px;height: 110px;}
+.build-capsul .speechBalloon  figcaption {font-size: 20px;padding: 11px 20px 34px 20px;}
+#titles{position: absolute;width: 18em;height: 50em;bottom: 0;
+left: 50%;margin-left: -9em;font-size: 350%;font-weight: bold;text-align: justify;overflow: hidden;
+transform-origin: 50% 100%;transform: perspective(300px) rotateX(25deg);}
+#titles:after{position: absolute;content: ' ';left: 0;right: 0;top: 0;bottom: 60%;
+background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+pointer-events: none;
+}
+#titlecontent
+{
+	position: absolute;
+	top: 100%;
+	animation: scroll 70s linear infinite;
+}
+
+@keyframes scroll {
+	0% { top: 98%; }
+	100% { top: -170%; }
+}
+.video-loader-sw {position: fixed;top:0;left:0;z-index: 99999;background-color: #151515;
+width: 100%;height: 100%;font-family: "Droid Sans", arial, verdana, sans-serif;font-weight: 700;
+color: #ff6;overflow: hidden;    background-image: url(../images/bg-stars-left.jpg),url(../images/bg-stars-right.jpg);
+background-repeat: repeat-y;
+background-position: left top,right top;
+background-attachment: fixed;
+background-size: auto,auto;}
+
 
 /*responsive*/
 
@@ -186,7 +226,11 @@ body.zoom-out .btn-zoomIn {background: url("../images/loupe.svg") no-repeat;widt
 .video-arrow.turn {margin: 68px 0 0 -37px;width: 70px;height: 55px}
 .mouse-whell {background-size: 50%;height:102px !important}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
-
+#titles {width:8em;margin-left: -4em;text-align: center;}
+#titlecontent
+{
+	animation: scroll 50s linear infinite;
+}
 }
 
 

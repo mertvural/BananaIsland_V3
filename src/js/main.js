@@ -7,7 +7,14 @@ var vue = new Vue({
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/099-Main_Street_1-FWR-LOOP.mp4",
                 loop: true,
                 build: false,
-                backTurned: false
+                backTurned: false,
+                speechBalloon:
+                {
+                    scene: 1,
+                    desktopText: "You can use the keyboard arrow keys to navigate",
+                    mobilText: "You can use the arrow keys to navigate"
+                }
+
             },
             {
                 id: 2,
@@ -712,7 +719,7 @@ var vue = new Vue({
             $('img[usemap]').rwdImageMaps();
             $(".insiderItem").filter("[data-href=" + id + "]").addClass("active").scrollLeft($this.scrollLeftPosition("inside"))
             $(".insiderItem.active .iframeCapsul, .insiderItem.active .btn-zoomIn").hide()
-    
+
             if (!$(".insiderItem.active area").length) return
             setTimeout(() => {
                 var coord = $(".insiderItem.active area").attr("coords").split(",")
@@ -725,22 +732,22 @@ var vue = new Vue({
                 $(".insiderItem.active .btn-zoomIn").css({
                     'left': 0,
                     'right': 0,
-                    'margin' : "0 auto",
-                    'bottom' : 'inherit',
+                    'margin': "0 auto",
+                    'bottom': 'inherit',
                     'top': parseInt(coord[3]) + $(".btn-zoomIn").innerHeight() / 2 + "px"
                 }).show()
             }, 500);
-            
-            
+
+
 
         },
 
         zoomIn(ths) {
             var body = $("body"),
-                ths = $(".insiderItem").filter("[data-href="+ths+"]");
+                ths = $(".insiderItem").filter("[data-href=" + ths + "]");
 
             if (!body.hasClass("zoom-out")) return
-            body.removeClass("zoom-out");            
+            body.removeClass("zoom-out");
             ths.find("iframe").css("opacity", "0")
             this.insideEnter(ths.data("href"))
             setTimeout(() => {
@@ -878,11 +885,11 @@ var vue = new Vue({
                         $this.backCornerBttn($this.activeScene)
                     else if (!$this.walkDelay && $this.pageLoad && $this.activeScene !== 31 && this.activeScene !== 5)
                         $this.goMonkey()
-                        $this.goMonkey()
+                    $this.goMonkey()
                     break;
                 case 'bottom':
                     if (!$this.walkDelay) {
-                        if( $this.isFaceDown) {
+                        if ($this.isFaceDown) {
                             $this.goMonkey()
                             $this.goMonkey()
                         }
@@ -890,7 +897,7 @@ var vue = new Vue({
                             $this.backMonkey()
                             $this.backMonkey()
                         }
-                 
+
                     }
                     break;
                 case 'right':
@@ -999,16 +1006,18 @@ var vue = new Vue({
             $(document).bind("swipeup swipedown", function () {
                 if (!$this.walkDelay && $this.pageLoad) $this.goMonkey()
             }).bind("swipeleft swiperight", function () {
-                $(".handrightleft").hide()
+                $(".build-capsul>.speechBalloon").hide()
             }).on("click", ".buildings__build", function () {
-                $(".handrightleft").hide()
-            })       
+                $(".build-capsul>.speechBalloon").hide()
+            })
 
             $(window).on('load', function () {
-                $this.pageLoad = true
+                setTimeout(() => {
+                    $this.pageLoad = true
+                }, 10000);
                 setTimeout(() => {
                     $(active).find("video")[0].play()
-                }, 1200);
+                }, 12000);
             })
 
             var percent = $(".video-loader .percent"),
