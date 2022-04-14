@@ -163,8 +163,8 @@ margin:auto;}
  }
 .build-capsul .speechBalloon {bottom: 50px;background-size: 200px;width: 200px;height: 110px;}
 .build-capsul .speechBalloon  figcaption {font-size: 20px;padding: 11px 20px 34px 20px;}
-#titles{position: absolute;width: 10em;height: 50em;bottom: 0;
-left: 50%;margin-left: -5em;font-size: 350%;font-weight: bold;text-align: justify;overflow: hidden;
+#titles{position: absolute;width: 6em;height: 50em;bottom: 60%;text-align: center;
+left: 50%;margin-left: -3em;font-size: 90%;overflow: hidden;
 transform-origin: 50% 100%;transform: perspective(300px) rotateX(20deg);}
 #titles:after{position: absolute;content: ' ';left: 0;right: 0;top: 0;bottom: 60%;
 background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
@@ -174,7 +174,7 @@ pointer-events: none;
 {
 	position: absolute;
 	top: 100%;
-	animation: scroll 70s linear infinite;
+	animation: scroll 150s linear infinite;
 }
 
 @keyframes scroll {
@@ -220,8 +220,7 @@ pointer-events: none;
 .video-arrow.turn {margin: 68px 0 0 -37px;width: 70px;height: 55px}
 .mouse-whell {background-size: 50%;height:102px !important}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
-#titles {width:8em;margin-left: -4em;text-align: center;font-size: 100%;}
-#titlecontent{	animation: scroll 50s linear infinite;}
+#titles {font-size: 70%;}
 .speechBalloon {background-size: 200px;width: 200px;height: 110px;}
 .speechBalloon  figcaption {font-size: 20px;padding: 11px 20px 34px 20px;}
 

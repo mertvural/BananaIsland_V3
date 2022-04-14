@@ -1014,10 +1014,10 @@ var vue = new Vue({
             $(window).on('load', function () {
                 setTimeout(() => {
                     $this.pageLoad = true
-                }, 9000);
+                }, 31000);
                 setTimeout(() => {
                     $(active).find("video")[0].play()
-                }, 11000);
+                }, 33000);
             })
 
             var percent = $(".video-loader .percent"),
