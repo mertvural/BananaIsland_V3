@@ -227,10 +227,10 @@ background-size: auto,auto;}
 .mouse-whell {background-size: 50%;height:102px !important}
 .handrightleft {width: 104px;height: 90px;background-size:97px;animation: leftRightMobil 5s linear infinite;right: inherit;}
 #titles {width:8em;margin-left: -4em;text-align: center;}
-#titlecontent
-{
-	animation: scroll 50s linear infinite;
-}
+#titlecontent{	animation: scroll 50s linear infinite;}
+.speechBalloon {background-size: 200px;width: 200px;height: 110px;}
+.speechBalloon  figcaption {font-size: 20px;padding: 11px 20px 34px 20px;}
+
 }
 
 
