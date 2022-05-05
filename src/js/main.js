@@ -936,10 +936,6 @@ var vue = new Vue({
 
         isAutoPlayVideo() {
             $(".video-active video").attr("loop") ? this.mouseWhellShow = true : this.mouseWhellShow = false
-        },
-
-        pageLoadControl(val) {
-            this.pageLoad = val
         }
     },
 
@@ -1026,6 +1022,9 @@ var vue = new Vue({
             })
 
             $(window).on('load', function () {
+                setTimeout(() => {
+                    $this.pageLoad = true
+                }, 31000);
                 setTimeout(() => {
                     $this.btnSkip = true
                 }, 5000);
