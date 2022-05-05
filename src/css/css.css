@@ -182,7 +182,15 @@ pointer-events: none;
 	100% { top: -170%; }
 }
 
-
+.btn-skip {width: 180px;height: 60px;cursor: pointer;background: rgba(255, 255, 255, .8);border: 1px solid #1E2868;outline: none;transition: .5s ease-in-out;
+bottom: 1px;right: 1px;position: absolute;}
+.btn-skip svg {position: absolute;left: 0;top: 0;fill: none;stroke: #fff;stroke-dasharray: 150 480;stroke-dashoffset: 150;transition: .5s ease-in-out;}
+.btn-skip:hover {transition: .5s ease-in-out;background: #1E2868;}
+.btn-skip:hover span {color:#fff}
+.btn-skip:hover svg {stroke-dashoffset: -480;}
+.btn-skip span {color: #1E2868;font-size: 30px;font-weight: 100;transition: .5s ease-in-out;font-family: '000_astounder_squared_tbRg', Arial;}
+.fade-enter-active, .fade-leave-active {transition: opacity .5s}
+.fade-enter, .fade-leave-to {opacity: 0}
 
 /*responsive*/
 
@@ -262,7 +270,8 @@ body.zoom-out .insiderItem::before {display: none !important;}
 .exit {background-size: 40px;width: 41px;height: 41px;}
 .board {display: none !important;}
 body.zoom-out .btn-zoomIn {width:127px;height: 70px;}
-
+.btn-skip, .btn-skip svg {width: 90px;height: 40px;}
+.btn-skip span {font-size: 19px;white-space: nowrap;}
 }
 
 

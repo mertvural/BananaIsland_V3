@@ -508,7 +508,8 @@ var vue = new Vue({
         isInsideEnter: false,
         mobilDeviceOpened: false,
         isFaceDown: false,
-        interval: null
+        interval: null,
+        btnSkip : false
     },
     methods: {
 
@@ -935,6 +936,10 @@ var vue = new Vue({
 
         isAutoPlayVideo() {
             $(".video-active video").attr("loop") ? this.mouseWhellShow = true : this.mouseWhellShow = false
+        },
+
+        pageLoadControl(val) {
+            this.pageLoad = val
         }
     },
 
@@ -987,6 +992,12 @@ var vue = new Vue({
         activeScene: function (newVal, oldVal) {
             var [getScene] = this.sourceState.filter(x => x.id === newVal)
             getScene.backTurned ? this.isFaceDown = true : this.isFaceDown = false
+        },
+        pageLoad : function(newVal, oldVal) {
+            if(newVal) {
+                var active = this.getActiveVideos();
+                $(active).find("video")[0].play()
+            }
         }
     },
 
@@ -1016,11 +1027,8 @@ var vue = new Vue({
 
             $(window).on('load', function () {
                 setTimeout(() => {
-                    $this.pageLoad = true
-                }, 31000);
-                setTimeout(() => {
-                    $(active).find("video")[0].play()
-                }, 33000);
+                    $this.btnSkip = true
+                }, 5000);
             })
 
             var percent = $(".video-loader .percent"),
