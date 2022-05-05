@@ -1024,7 +1024,7 @@ var vue = new Vue({
             $(window).on('load', function () {
                 setTimeout(() => {
                     $this.pageLoad = true
-                }, 31000);
+                }, 30000);
                 setTimeout(() => {
                     $this.btnSkip = true
                 }, 5000);
