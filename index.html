@@ -163,9 +163,15 @@
         <!--building-->
 
         <!--junction-->
-        <div v-show="junction || junctionBack">
+        <div v-show="junction">
           <button type="button" class="video-arrow left" @click="direction('left')" v-if="!mobilDeviceOpened"></button>
           <button type="button" class="video-arrow right" @click="direction('right')"
+            v-if="!mobilDeviceOpened"></button>
+          <button type="button" class="video-arrow turn" @click="backCornerBttn(video.id)"></button>
+        </div>
+        <div v-show="junctionBack">
+          <button type="button" class="video-arrow left" @click="direction('right')" v-if="!mobilDeviceOpened"></button>
+          <button type="button" class="video-arrow right" @click="direction('left')"
             v-if="!mobilDeviceOpened"></button>
           <button type="button" class="video-arrow turn" @click="backCornerBttn(video.id)"></button>
         </div>

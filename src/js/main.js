@@ -179,14 +179,14 @@ var vue = new Vue({
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/305-Left_Street_Turn_Back-LOOP.mp4",
                 loop: true,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 13,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/306-Left_Street_2-BWR.mp4",
                 loop: false,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 14,
@@ -195,14 +195,14 @@ var vue = new Vue({
                 build: true,
                 buildOptions:
                 {
-                    rightImg: "src/images/right-2-perspective.png",
-                    leftImg: "src/images/left-2-perspective.png",
+                    rightImg: "src/images/left-2-perspective.png",
+                    leftImg: "src/images/right-2-perspective.png",
                     usemaps: [
                         {
                             coords: "3,292,327,791",
                             href: "ochsner",
                             inside: "src/images/ochsner-insider.png",
-                            position: "left",
+                            position: "right",
                             iframePosition: "1070,285,1800,768",
                             iframeURL: "https://monkeymunchy.com/company/ochsner-sport"
                         },
@@ -210,7 +210,7 @@ var vue = new Vue({
                             coords: "791,318,328,768",
                             href: "mediamarkt",
                             inside: "src/images/mediamarkt-insider.png",
-                            position: "left",
+                            position: "right",
                             iframePosition: "1050,272,1825,767",
                             iframeURL: "https://monkeymunchy.com/company/media-markt"
                         },
@@ -218,7 +218,7 @@ var vue = new Vue({
                             coords: "1304,203,1763,727",
                             href: "migros",
                             inside: "src/images/migros-insider.png",
-                            position: "right",
+                            position: "left",
                             iframePosition: "1069,284,1798,761",
                             iframeURL: "https://monkeymunchy.com/company/migros"
                         },
@@ -226,41 +226,41 @@ var vue = new Vue({
                             coords: "255,731,1,358",
                             href: "mcdonalds",
                             inside: "src/images/mcdonalds-insider.png",
-                            position: "right",
+                            position: "left",
                             iframePosition: "1072,287,1795,763",
                             iframeURL: "https://monkeymunchy.com/company/mc-donalds"
                         }
                     ]
                 },
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 15,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/308-Left_Street_1-BWR.mp4",
                 loop: false,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 16,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/309-Left_Street_1-BWR-LOOP.mp4",
                 loop: true,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 17,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/310-Left_Street_Turn_Juction.mp4",
                 loop: false,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 18,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/400-Main_Street_Juction-BWR-LOOP.mp4",
                 loop: true,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 19,
@@ -341,14 +341,14 @@ var vue = new Vue({
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/605-Right_Street_Turn_Back-LOOP.mp4",
                 loop: true,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 26,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/606-Right_Street_2-BWR.mp4",
                 loop: false,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 27,
@@ -357,14 +357,14 @@ var vue = new Vue({
                 build: true,
                 buildOptions:
                 {
-                    rightImg: "src/images/right-3-perspective.png",
-                    leftImg: "src/images/left-3-perspective.png",
+                    rightImg: "src/images/left-3-perspective.png",
+                    leftImg: "src/images/right-3-perspective.png",
                     usemaps: [
                         {
                             coords: "306,747,598,369",
                             href: "jumbo",
                             inside: "src/images/jumbor-insider.png",
-                            position: "right",
+                            position: "left",
                             iframePosition: "1070,282,1797,763",
                             iframeURL: "https://monkeymunchy.com/company/jumbo"
                         },
@@ -372,7 +372,7 @@ var vue = new Vue({
                             coords: "1427,778,1652,268",
                             href: "tchibo",
                             inside: "src/images/tchibo-insider.png",
-                            position: "right",
+                            position: "left",
                             iframePosition: "1072,285,1795,760",
                             iframeURL: "https://monkeymunchy.com/company/tchibo"
                         },
@@ -380,13 +380,13 @@ var vue = new Vue({
                             coords: "601,721,937,263",
                             href: "conforama",
                             inside: "src/images/conforama-insider.png",
-                            position: "left",
+                            position: "right",
                             iframePosition: "1072,285,1795,760",
                             iframeURL: "https://monkeymunchy.com/company/conforama"
                         }
                     ]
                 },
-                backTurned: true
+                backTurned: false
 
             },
             {
@@ -394,35 +394,35 @@ var vue = new Vue({
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/608-Right_Street_1-BWR.mp4",
                 loop: false,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 29,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/609-Right_Street_1-BWR-LOOP.mp4",
                 loop: true,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 30,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/610-Right_Street_Turn_Juction.mp4",
                 loop: false,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 31,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/400-Main_Street_Juction-BWR-LOOP.mp4",
                 loop: true,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 32,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/701-Main_Street_2-BWR.mp4",
                 loop: false,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 33,
@@ -431,14 +431,14 @@ var vue = new Vue({
                 build: true,
                 buildOptions:
                 {
-                    rightImg: "src/images/right-1-perspective.png",
-                    leftImg: "src/images/left-1-perspective.png",
+                    rightImg: "src/images/left-1-perspective.png",
+                    leftImg: "src/images/right-1-perspective.png",
                     usemaps: [
                         {
                             coords: "718,372,974,724",
                             href: "sunrise",
                             inside: "src/images/sunrise-insider.png",
-                            position: "left",
+                            position: "right",
                             iframePosition: "1045,262,1831,773",
                             iframeURL: "https://monkeymunchy.com/company/sunrise"
                         },
@@ -446,7 +446,7 @@ var vue = new Vue({
                             coords: "1670,158,1917,744",
                             href: "manor",
                             inside: "src/images/manor-insider.png",
-                            position: "left",
+                            position: "right",
                             iframePosition: "1055,237,1831,765",
                             iframeURL: "https://monkeymunchy.com/company/manor"
                         },
@@ -454,7 +454,7 @@ var vue = new Vue({
                             coords: "1726,773,1918,373",
                             href: "store",
                             inside: "src/images/monkey_store-insider.png",
-                            position: "right",
+                            position: "left",
                             iframePosition: "1047,267,1825,758",
                             iframeURL: "https://monkey-munchy-store.myspreadshop.net/all"
                         },
@@ -462,7 +462,7 @@ var vue = new Vue({
                             coords: "802,142,1122,726",
                             href: "postFinance",
                             inside: "src/images/post-insider.png",
-                            position: "right",
+                            position: "left",
                             iframePosition: "1050,255,1818,760",
                             iframeURL: "https://monkeymunchy.com/company/post-finance"
                         },
@@ -470,27 +470,27 @@ var vue = new Vue({
                             coords: "349,361,561,743",
                             href: "orellfussli",
                             inside: "src/images/orell-insider.png",
-                            position: "right",
+                            position: "left",
                             iframePosition: "1053,273,1823,766",
                             iframeURL: "https://monkeymunchy.com/company/orel-fuessli"
                         }
                     ]
                 },
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 34,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/703-Main_Street_1-BWR.mp4",
                 loop: false,
                 build: false,
-                backTurned: true
+                backTurned: false
             },
             {
                 id: 35,
                 src: "https://alpiocdnjs.blob.core.windows.net/monkeymunchy/704-Main_Street_1-BWR-LOOP.mp4",
                 loop: true,
                 build: false,
-                backTurned: true
+                backTurned: false
             }
         ],
         activeScene: 1,
